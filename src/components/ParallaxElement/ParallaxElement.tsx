@@ -1,0 +1,91 @@
+import React, { useState } from 'react';
+import { PropsWithChildren } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import styles from './ParallaxElement.module.css';
+
+type Type = 'a' | 'li' | 'button' | 'div';
+
+interface Props {
+  className?: string;
+  as: Type;
+  href?: string;
+  onClick?: () => void;
+  isInView?: boolean;
+}
+
+export const ParallaxElement = ({ className, isInView, children, as, ...props }: PropsWithChildren<Props>): JSX.Element => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const fillControls = useAnimation();
+
+  const distance = (x1: number, y1: number, x2: number, y2: number): number => {
+    var a = x1 - x2;
+    var b = y1 - y2;
+
+    return Math.hypot(a, b);
+  };
+
+  const handleMouseMove = (event: React.MouseEvent<HTMLElement, MouseEvent>): void => {
+    const { clientX, clientY } = event;
+    const { height, width, left, top } = event.currentTarget.getBoundingClientRect();
+
+    const distanceToTrigger = width * 0.7;
+
+    const distanceMouseButton = distance(clientX + window.scrollX, clientY + window.scrollY, left + width / 2, top + height / 2);
+
+    if (distanceMouseButton < distanceToTrigger) {
+      const middleX = (clientX + window.scrollX - (left + width / 3)) * 0.2;
+      const middleY = (clientY + window.scrollY - (top + height / 3)) * 0.2;
+      setPosition({ x: middleX, y: middleY });
+    }
+  };
+
+  const handleMouseLeave = (): void => {
+    fillControls.start({
+      y: '-90%',
+      transition: { ease: [0.19, 1, 0.22, 1], duration: 1 },
+    });
+    setPosition({ x: 0, y: 0 });
+  };
+
+  const onMouseEnter = (): void => {
+    fillControls.start({
+      y: ['90%', '-20%'],
+      transition: { ease: [0.19, 1, 0.22, 1], duration: 2 },
+    });
+  };
+
+  const { x, y } = position;
+
+  switch (as) {
+    case 'div':
+      return (
+        <motion.div {...props} className={className} onMouseMove={event => handleMouseMove(event)} onMouseLeave={handleMouseLeave} animate={{ x, y }} whileTap={{ scale: 0.9 }}>
+          {children}
+        </motion.div>
+      );
+    case 'li':
+      return (
+        <motion.li {...props} className={className} onMouseMove={event => handleMouseMove(event)} onMouseLeave={handleMouseLeave} animate={{ x, y }} whileTap={{ scale: 0.9 }}>
+          {children}
+        </motion.li>
+      );
+    case 'button':
+      return (
+        <motion.button
+          {...props}
+          className={className}
+          onMouseEnter={onMouseEnter}
+          onMouseMove={event => handleMouseMove(event)}
+          onMouseLeave={handleMouseLeave}
+          animate={{ x, y, scale: isInView ? 1 : 0, visibility: 'visible', opacity: isInView ? 1 : 0 }}
+          transition={{ duration: 0.2 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          {children}
+          <motion.div className={styles.fill} animate={fillControls}></motion.div>
+        </motion.button>
+      );
+    default:
+      return <></>;
+  }
+};

@@ -1,0 +1,116 @@
+.overlay {
+  position: absolute;
+  top: -10%;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-primary-alpha);
+}
+
+.banner {
+  width: auto;
+  height: 110%;
+  z-index: 10;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 10000;
+  order: 1;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  position: static;
+  z-index: 10000;
+  order: 2;
+  padding-bottom: calc(var(--gap-padding) * 1.25);
+}
+
+.about .col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  position: relative;
+  z-index: 10000;
+}
+
+.about h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  font-size: clamp(1.55rem, 2.3vw, 2.4rem);
+  line-height: 1.2;
+  font-weight: 400;
+  padding-right: calc(var(--gap-padding) * 2.5);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  z-index: 10000;
+}
+
+.label .wrapper {
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-left: calc(var(--gap-padding) * 1.5);
+}
+
+.label .wrapper p {
+  display: inline-block;
+}
+
+.label .labelIcon {
+  width: auto;
+  height: 6.2em;
+  fill: var(--element-primary-alpha);
+}
+
+@media screen and (max-width: 780px) {
+  .about {
+    position: static;
+    padding-left: var(--gap-padding);
+    padding-right: var(--gap-padding);
+    padding-bottom: calc(var(--vh, 1vh) * 6);
+    order: 2;
+  }
+
+  .name {
+    order: 1;
+  }
+
+  .about h1 {
+    padding-right: 0;
+  }
+
+  .label {
+    display: none;
+  }
+}

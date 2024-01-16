@@ -1,0 +1,17 @@
+:root {
+  --bg-primary-alpha: #999d9e;
+  --bg-primary-gamma: #ffffff;
+  --bg-primary-beta: #1c1d20;
+
+  --element-primary-alpha: #1c1d20;
+  --element-primary-gamma: #455ce9;
+
+  --text-primary-alpha: #1c1d20;
+  --text-primary-gamma: #ffffff;
+  --text-primary-beta: #b3b3b4;
+  --text-primary-delta: #8e8e90;
+
+  --container-padding: clamp(2.5em, 8vw, 8em);
+  --section-padding: clamp(5em, 21vh, 12em);
+  --gap-padding: clamp(.8em, 4vw, 1em);
+}

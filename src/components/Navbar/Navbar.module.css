@@ -1,0 +1,34 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 30;
+  padding: 15px 0;
+  width: 100%;
+  padding: calc(var(--gap-padding) * 1.5) calc(var(--gap-padding) * 1.5);
+}
+
+.routes {
+  display: flex;
+  gap: 10px;
+}
+
+.routes.visible {
+  display: none;
+}
+
+
+@media screen and (max-width: 780px) {
+  .nav {
+    padding: calc(var(--gap-padding) * 2) var(--gap-padding);
+  }
+
+  .routes.visible {
+    display: flex;
+  }
+
+  .routes {
+    display: none;
+  }
+
+}
