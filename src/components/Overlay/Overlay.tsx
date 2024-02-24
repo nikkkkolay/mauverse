@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import classnames from 'classnames';
 import { ParallaxText } from '..';
-// import { ArrowIcon } from './ArrowIcon';
 import { LabelIcon } from './LabelIcon';
-import { CutIcon } from './CutIcon';
+import { ArrowIcon } from './ArrowIcon';
 import styles from './Overlay.module.css';
 
 export const Overlay = (): JSX.Element => {
@@ -19,25 +18,20 @@ export const Overlay = (): JSX.Element => {
         <div className={classnames(styles.row, styles.about)}>
           <div className={styles.label}>
             <div className={styles.wrapper}>
-              <p>Москва </p>
-              <p>Санкт-Петербург</p>
               <p>Мурманск </p>
             </div>
             <LabelIcon className={styles.labelIcon} />
           </div>
           <div className={styles.col}>
-            {/* <ArrowIcon className={styles.arrow} /> */}
-            <CutIcon className={styles.cut} />
+            <ArrowIcon className={styles.arrow} />
             <h1>
-              <span>Стилист</span>
-              <span> – </span>
-              <span>парикмахер</span>
+              <span>Test</span>
+              <span>Test</span>
             </h1>
           </div>
         </div>
         <div className={classnames(styles.row, styles.name)}>
-          <ParallaxText baseVelocity={5}>Дарья Яблукова</ParallaxText>
-          <ParallaxText baseVelocity={-5}>Дарья Яблукова</ParallaxText>
+          <ParallaxText baseVelocity={5}>Test</ParallaxText>
         </div>
       </div>
     </div>
