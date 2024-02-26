@@ -18,12 +18,12 @@ export const Navbar = (): JSX.Element => {
     <nav className={styles.nav} ref={ref}>
       <img className={styles.logo} src="" alt="Лого" />
       <ul className={styles.routes}>
-        <MenuLink path="/" name="Контакты" />
-        <MenuLink path="/" name="Контакты" />
-        <MenuLink path="/" name="Контакты" />
+        <MenuLink path="/" name="Lorem" />
+        <MenuLink path="/" name="Lorem" />
+        <MenuLink path="/" name="Lorem" />
       </ul>
       <ul className={classNames(styles.routes, styles.visible)}>
-        <MenuLink name="Меню" type="menu" onClick={() => toggleOpenMenu()} />
+        <MenuLink name="Lorem" type="menu" onClick={() => toggleOpenMenu()} />
       </ul>
       <Hamburger onClick={() => toggleOpenMenu()} active={activeMenu} isInView={!isInView} />
     </nav>

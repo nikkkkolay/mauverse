@@ -4,6 +4,7 @@
   align-items: center;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .headerHeight {
@@ -12,9 +13,8 @@
   min-height: 110vh;
 }
 
-
 @media screen and (max-width: 780px) {
-  .headerHeight{
+  .headerHeight {
     min-height: calc(var(--vh, 1vh) * 110);
   }
 }

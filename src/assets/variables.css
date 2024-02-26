@@ -13,5 +13,5 @@
 
   --container-padding: clamp(2.5em, 8vw, 8em);
   --section-padding: clamp(5em, 21vh, 12em);
-  --gap-padding: clamp(.8em, 4vw, 1em);
+  --gap-padding: clamp(0.8em, 4vw, 1em);
 }

@@ -13,25 +13,22 @@ export const Overlay = (): JSX.Element => {
 
   return (
     <div className={styles.overlay}>
-      <img className={styles.banner} src="./DSC07033.jpg" />
+      <img className={styles.banner} src="./kelly-sikkema-7alo7OJVNVw-unsplash.jpg" />
       <div className={styles.container}>
         <div className={classnames(styles.row, styles.about)}>
           <div className={styles.label}>
             <div className={styles.wrapper}>
-              <p>Мурманск </p>
+              <p>Lorem.</p>
             </div>
             <LabelIcon className={styles.labelIcon} />
           </div>
           <div className={styles.col}>
             <ArrowIcon className={styles.arrow} />
-            <h1>
-              <span>Test</span>
-              <span>Test</span>
-            </h1>
+            <h1>Lorem, ipsum dolor.</h1>
           </div>
         </div>
         <div className={classnames(styles.row, styles.name)}>
-          <ParallaxText baseVelocity={5}>Test</ParallaxText>
+          <ParallaxText baseVelocity={5}>Hello WOrld</ParallaxText>
         </div>
       </div>
     </div>
