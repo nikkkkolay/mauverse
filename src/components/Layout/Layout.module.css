@@ -13,6 +13,45 @@
   min-height: 110vh;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: var(--text-primary-alpha);
+  background-color: var(--bg-primary-gamma);
+  padding: var(--section-padding) 0;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: calc(var(--gap-padding) * 1.5) calc(var(--gap-padding) * 1.5);
+  background-color: var(--bg-primary-beta);
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  gap: 18px;
+}
+
+.link a {
+  color: var(--text-primary-gamma);
+  font-size: 0.9em;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--text-primary-delta);
+  margin-bottom: 12px;
+}
+
 @media screen and (max-width: 780px) {
   .headerHeight {
     min-height: calc(var(--vh, 1vh) * 110);

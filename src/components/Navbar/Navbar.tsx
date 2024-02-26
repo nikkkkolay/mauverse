@@ -23,7 +23,7 @@ export const Navbar = (): JSX.Element => {
         <MenuLink path="/" name="Lorem" />
       </ul>
       <ul className={classNames(styles.routes, styles.visible)}>
-        <MenuLink name="Lorem" type="menu" onClick={() => toggleOpenMenu()} />
+        <MenuLink name="Меню" type="menu" onClick={() => toggleOpenMenu()} />
       </ul>
       <Hamburger onClick={() => toggleOpenMenu()} active={activeMenu} isInView={!isInView} />
     </nav>

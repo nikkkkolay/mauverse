@@ -1,21 +1,44 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import clasnames from 'classnames';
-import { Navbar, Overlay } from '../';
+import classnames from 'classnames';
+import { Navbar, Overlay, ParallaxElement } from '../';
 import styles from './Layout.module.css';
+import { motion } from 'framer-motion';
 
 export const Layout = (): JSX.Element => {
   let location = useLocation();
 
   return (
     <>
-      <header className={clasnames(styles.header, { [styles.headerHeight]: location.pathname === '/' })}>
+      <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/' })}>
         <Navbar />
         {location.pathname === '/' && <Overlay />}
       </header>
-      <main>
+      <main className={styles.main}>
         <Outlet />
       </main>
-      <footer>FOOTER</footer>
+      <footer className={styles.footer}>
+        <div className={styles.version}>
+          <p className={styles.title}>ВЕРСИЯ</p>
+          <p>©</p>
+        </div>
+        <div className={styles.social}>
+          <p className={styles.title}>CОЦИАЛЬНЫЕ СЕТИ</p>
+          <ul className={styles.links}>
+            <ParallaxElement as="li" className={styles.link}>
+              <motion.a href="">вконтакте</motion.a>
+            </ParallaxElement>
+            <ParallaxElement as="li" className={styles.link}>
+              <motion.a href="">инстаграм</motion.a>
+            </ParallaxElement>
+            <ParallaxElement as="li" className={styles.link}>
+              <motion.a href="">телеграм</motion.a>
+            </ParallaxElement>
+            <ParallaxElement as="li" className={styles.link}>
+              <motion.a href="">паралелограм</motion.a>
+            </ParallaxElement>
+          </ul>
+        </div>
+      </footer>
     </>
   );
 };
