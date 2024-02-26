@@ -9,7 +9,7 @@
 
 .parallax .scroller {
   font-weight: 400;
-  font-size: max(4em, 5vw);
+  font-size: max(10em, 5vw);
   line-height: 1.1;
   display: flex;
   white-space: nowrap;

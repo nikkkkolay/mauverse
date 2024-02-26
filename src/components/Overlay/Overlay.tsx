@@ -28,7 +28,7 @@ export const Overlay = (): JSX.Element => {
           </div>
         </div>
         <div className={classnames(styles.row, styles.name)}>
-          <ParallaxText baseVelocity={5}>Hello WOrld</ParallaxText>
+          <ParallaxText baseVelocity={5}>Hello WOrld -</ParallaxText>
         </div>
       </div>
     </div>
