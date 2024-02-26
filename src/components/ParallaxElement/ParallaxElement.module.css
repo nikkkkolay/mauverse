@@ -1,13 +1,13 @@
 .fill {
-    z-index: 10;
-    position: absolute;
-    top: -50%;
-    left: -25%;
-    width: 150%;
-    height: 250%;
-    display: block;
-    border-radius: 50%;
-    background: var(--element-primary-gamma);
-    pointer-events: none;
-    transform: translate3d(0, 80%, 0);
+  z-index: 10;
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  width: 150%;
+  height: 250%;
+  display: block;
+  border-radius: 50%;
+  background: var(--element-primary-gamma);
+  pointer-events: none;
+  transform: translate3d(0, 80%, 0);
 }
