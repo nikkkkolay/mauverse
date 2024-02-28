@@ -6,7 +6,7 @@ export const Footer = (): JSX.Element => {
         <footer className={styles.footer}>
             <div className={styles.version}>
                 <p className={styles.title}>ВЕРСИЯ</p>
-                <p>©</p>
+                <p className={styles.copyright}>©</p>
             </div>
             <div className={styles.social}>
                 <p className={styles.title}>CОЦИАЛЬНЫЕ СЕТИ</p>

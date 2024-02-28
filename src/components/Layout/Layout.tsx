@@ -4,18 +4,18 @@ import classnames from 'classnames';
 import styles from './Layout.module.css';
 
 export const Layout = (): JSX.Element => {
-  let location = useLocation();
+    let location = useLocation();
 
-  return (
-    <>
-      <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/' })}>
-        <Navbar />
-        {location.pathname === '/' && <Overlay />}
-      </header>
-      <main className={styles.main}>
-        <Outlet />
-      </main>
-      <Footer />
-    </>
-  );
+    return (
+        <>
+            <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/' })}>
+                <Navbar />
+                {location.pathname === '/' && <Overlay />}
+            </header>
+            <main className={styles.main}>
+                <Outlet />
+            </main>
+            <Footer />
+        </>
+    );
 };

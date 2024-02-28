@@ -1,0 +1,8 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary-beta);
+    color: var(--text-primary-gamma);
+    width: 100%;
+}

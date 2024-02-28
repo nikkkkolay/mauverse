@@ -21,7 +21,7 @@ export const Link = ({ name, path }: Props): JSX.Element => {
                     variants={listVariants}
                     style={{
                         position: 'absolute',
-                        bottom: '-6px',
+                        bottom: '-8px',
                         height: '1px',
                         background: '#ffffff',
                     }}
