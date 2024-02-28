@@ -34,7 +34,6 @@
 @media screen and (max-width: 780px) {
     .footer {
         flex-direction: column;
-        padding: calc(var(--gap-padding) * 2) var(--gap-padding);
     }
 
     .links {

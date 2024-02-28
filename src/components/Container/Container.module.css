@@ -7,9 +7,9 @@
     max-width: 1440px;
 }
 
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
     .container {
         padding-left: var(--gap-padding);
         padding-right: var(--gap-padding);
     }
-}
+} */
