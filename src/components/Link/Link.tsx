@@ -4,25 +4,28 @@ import styles from './Link.module.css';
 
 interface Props {
     name: string;
+    path: string;
 }
 
-const slashMotion = {
-    rest: { opacity: 0, ease: 'easeOut', duration: 0.2, type: 'tween' },
-    hover: {
-        opacity: 1,
-        transition: {
-            duration: 0.4,
-            type: 'tween',
-            ease: 'easeIn',
-        },
-    },
+const listVariants = {
+    visible: { left: 0, right: 0 },
+    hidden: { left: '50%', right: '50%' },
 };
 
-export const Link = ({ name }: Props): JSX.Element => {
+export const Link = ({ name, path }: Props): JSX.Element => {
     return (
         <ParallaxElement as="li" className={styles.link}>
-            <motion.a variants={slashMotion} initial="rest" whileHover="hover" animate="rest" href="">
+            <motion.a whileHover="visible" initial="hidden" exit="hidden" href={path}>
                 {name}
+                <motion.div
+                    variants={listVariants}
+                    style={{
+                        position: 'absolute',
+                        bottom: '-6px',
+                        height: '1px',
+                        background: '#ffffff',
+                    }}
+                ></motion.div>
             </motion.a>
         </ParallaxElement>
     );
