@@ -1,20 +1,55 @@
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+import { motion, useAnimation, useInView } from 'framer-motion';
 import { Button, Container, ParallaxElement, Title } from '../../components';
 import { ArrowIcon } from './Arrow';
 import classnames from 'classnames';
 import styles from './Main.module.css';
 
+const textAnimation = {
+    hidden: {
+        y: -10,
+        opacity: 0,
+    },
+    visible: (custom: number) => ({
+        y: 0,
+        opacity: 1,
+        transition: { delay: custom * 0.1 },
+    }),
+};
+
+const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet iure provident laboriosam earum placeat voluptas repellat
+                    corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores`;
+
 export const Main = (): JSX.Element => {
+    const controls = useAnimation();
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+
+    useEffect(() => {
+        if (isInView) {
+            controls.start('visible');
+        }
+    }, [controls, isInView]);
+
     return (
         <>
-            <Container>
-                <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true, amount: 0.5 }}>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet iure provident laboriosam earum placeat voluptas repellat
-                    corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores, dolor ducimus iure molestias beatae excepturi, quibusdam
-                    veniam maxime rerum neque sint, pariatur deleniti voluptatem. Eveniet voluptate placeat, nobis harum est sapiente eum veniam magni repellendus nam eaque,
-                    maiores quos. Impedit harum ratione optio vitae minus. Eaque nulla hic reiciendis dignissimos, consequatur voluptates eveniet possimus illo, similique rem culpa
-                    aut, esse explicabo sit magni quae soluta aliquam ex quaerat
-                </motion.div>
+            <Container className={styles.textContainer}>
+                <div>
+                    {text &&
+                        text.split(' ').map((p, i) => (
+                            <motion.span key={p + i} custom={i} ref={ref} variants={textAnimation} initial="hidden" animate={controls} className={styles.text}>
+                                {p + ' '}
+                            </motion.span>
+                        ))}
+                </div>
+                <motion.p animate={{ visibility: 'visible', opacity: isInView ? 1 : 0 }}>Lorem ipsum dolor sit amet consectetur adipisicing elit</motion.p>
+                <div className={styles.buttonFixed}>
+                    <Button isInView className={classnames(styles.button)}>
+                        <ParallaxElement as="div" className={styles.wrapper}>
+                            Lorem
+                        </ParallaxElement>
+                    </Button>
+                </div>
             </Container>
 
             <div className={styles.formContainer}>

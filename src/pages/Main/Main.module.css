@@ -1,3 +1,11 @@
+.textContainer {
+    display: flex;
+}
+
+.text {
+    font-size: clamp(1.1rem, 2vw, 1.8rem);
+}
+
 .formContainer {
     display: flex;
     align-items: center;
@@ -25,14 +33,14 @@
     flex-direction: column;
     gap: .8em;
     border-top: 1px solid var(--text-primary-delta);
-    padding: 1.66em 2.75em;
+    padding: 1.90em 2.75em;
 }
 
 .item span {
     color: var(--text-primary-gamma);
     position: absolute;
     left: 0;
-    top: 2.8em;
+    top: 2.98em;
     opacity: .33;
     font-size: .8em;
 }
@@ -51,7 +59,7 @@
 }
 
 .row {
-    padding: calc(var(--section-padding) * 1.25) 0;
+    padding: calc(var(--section-padding) / 2) 0;
     position: relative;
 }
 
