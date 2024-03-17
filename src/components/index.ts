@@ -9,4 +9,5 @@ export { Hamburger } from './Hamburger/Hamburger';
 export { Sidebar } from './Sidebar/Sidebar';
 export { ParallaxText } from './ParallaxText/ParallaxText';
 export { Link } from './Link/Link';
+export { Title } from './Title/Title';
 export { Footer } from './Footer/Footer';

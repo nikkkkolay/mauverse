@@ -5,6 +5,7 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   border-radius: 100%;
   background-color: var(--element-primary-alpha);
+  color: var(--text-primary-gamma);
   cursor: pointer;
   border: none;
   overflow: hidden;

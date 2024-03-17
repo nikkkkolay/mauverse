@@ -4,15 +4,16 @@ import classnames from 'classnames';
 import styles from './Button.module.css';
 
 interface Props {
-  className?: string;
-  onClick?: () => void;
-  isInView?: boolean;
+    className?: string;
+    onClick?: () => void;
+    isInView?: boolean;
+    fill?: boolean;
 }
 
-export const Button = ({ className, isInView, children, ...props }: PropsWithChildren<Props>): JSX.Element => {
-  return (
-    <ParallaxElement {...props} as="button" isInView={isInView} className={classnames(styles.button, className)}>
-      {children}
-    </ParallaxElement>
-  );
+export const Button = ({ className, isInView, children, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+    return (
+        <ParallaxElement {...props} as="button" isInView={isInView} fill={fill} className={classnames(styles.button, className)}>
+            {children}
+        </ParallaxElement>
+    );
 };

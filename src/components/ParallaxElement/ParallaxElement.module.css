@@ -11,3 +11,7 @@
   pointer-events: none;
   transform: translate3d(0, 80%, 0);
 }
+
+.fill.black {
+  background: var(--element-primary-beta);
+}

@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
-import { Container } from '../../components';
+import { Button, Container, ParallaxElement, Title } from '../../components';
+import { ArrowIcon } from './Arrow';
+import classnames from 'classnames';
 import styles from './Main.module.css';
 
 export const Main = (): JSX.Element => {
@@ -17,25 +19,43 @@ export const Main = (): JSX.Element => {
 
             <div className={styles.formContainer}>
                 <Container>
-                    <h2>Lorem, ipsum dolor.</h2>
-                    <form action="">
+                    <div className={styles.titleContainer}>
+                        <Title tag="h2"> Lorem ipsum</Title>
+                        <Title tag="h2">dolor sit amet consectetur</Title>
+                        <ArrowIcon className={styles.arrow} />
+                    </div>
+                    <form className={styles.form} action="">
                         <div className={styles.item}>
+                            <span>01</span>
                             <label htmlFor="">
                                 <h4>Lorem, ipsum.</h4>
                             </label>
-                            <input type="text" />
+                            <input className={styles.input} type="text" placeholder="Lorem, ipsum." required />
                         </div>
                         <div className={styles.item}>
+                            <span>02</span>
                             <label htmlFor="">
                                 <h4>Lorem, ipsum.</h4>
                             </label>
-                            <input type="text" />
+                            <input className={styles.input} type="text" placeholder="Lorem, ipsum." required />
                         </div>
                         <div className={styles.item}>
+                            <span>03</span>
                             <label htmlFor="">
                                 <h4>Lorem, ipsum.</h4>
                             </label>
-                            <input type="text" />
+                            <textarea className={styles.input} placeholder="Lorem, ipsum." required />
+                        </div>
+
+                        <div className={styles.row}>
+                            <div className={styles.stripe}></div>
+                            <div className={styles.buttonFixed}>
+                                <Button isInView fill className={classnames(styles.button)}>
+                                    <ParallaxElement as="div" className={styles.wrapper}>
+                                        Lorem
+                                    </ParallaxElement>
+                                </Button>
+                            </div>
                         </div>
                     </form>
                 </Container>
