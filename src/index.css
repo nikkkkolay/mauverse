@@ -6,48 +6,48 @@
 *::before,
 *::after,
 :root {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html,
 body {
-  font-family: 'Roboto', Arial, sans-serif;
-  line-height: 1.2;
-  font-weight: 400;
-  color: var(--text-primary-gamma);
-  background-color: var(--bg-primary-alpha);
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.2;
+    font-weight: 400;
+    color: var(--text-primary-gamma);
+    background-color: var(--bg-primary-alpha);
 
-  margin: 0;
-  padding: 0;
-  overflow: auto;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
 
-  position: relative;
-  z-index: 20;
+    position: relative;
+    z-index: 20;
 
-  /* scrollbar-width: none; */
+    scrollbar-width: none;
 }
 
-/* body::-webkit-scrollbar {
-  width: 0;
+body::-webkit-scrollbar {
+    width: 0;
 }
 
 ::-webkit-scrollbar {
-  width: 0;
-} */
+    width: 0;
+}
 
 #root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
 }

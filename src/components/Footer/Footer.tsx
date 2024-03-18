@@ -1,24 +1,21 @@
-import { Link } from '../Link/Link';
+import { Link, Info } from '../index';
 import styles from './Footer.module.css';
 
 export const Footer = (): JSX.Element => {
     return (
         <footer className={styles.footer}>
-            <div className={styles.version}>
-                <p className={styles.title}>ВЕРСИЯ</p>
+            <Info title={'Версия'} className={styles.version}>
                 <p className={styles.copyright}>©</p>
-            </div>
-            <div className={styles.social}>
-                <p className={styles.title}>CОЦИАЛЬНЫЕ СЕТИ</p>
+            </Info>
+
+            <Info title={'Социальные сети'} className={styles.social}>
                 <ul className={styles.links}>
                     <Link name="Вконтакте" path="#" />
                     <Link name="Вконтакте" path="#" />
                     <Link name="Вконтакте" path="#" />
                     <Link name="Вконтакте" path="#" />
                 </ul>
-            </div>
+            </Info>
         </footer>
     );
 };
-
-export default Footer;

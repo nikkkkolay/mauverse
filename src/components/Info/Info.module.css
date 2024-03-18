@@ -1,0 +1,7 @@
+.title {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--text-primary-delta);
+    margin-bottom: 16px;
+}

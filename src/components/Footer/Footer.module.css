@@ -15,16 +15,8 @@
     list-style-type: none;
 }
 
-.title {
-    font-size: 0.8em;
-    font-weight: 500;
-    color: var(--text-primary-delta);
-    margin-bottom: 16px;
-}
-
 .social {
     order: 2;
-    margin-right: var(--gap-padding);
 }
 
 .version {
@@ -41,8 +33,8 @@
     }
 
     .social {
-        border-bottom: 1px solid var(--text-primary-delta);
         order: 1;
+        border-bottom: 1px solid var(--text-primary-delta);
         padding-bottom: calc(var(--gap-padding) * 1.5);
         margin-right: 0;
     }

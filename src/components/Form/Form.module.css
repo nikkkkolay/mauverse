@@ -1,39 +1,10 @@
-.textContainer {
-    display: flex;
-}
-
-.text {
-    font-size: clamp(1.1rem, 2vw, 1.8rem);
-}
-
-.formContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--bg-primary-beta);
-    color: var(--text-primary-gamma);
-    width: 100%;
-}
-
-.titleContainer {
-    position: relative;
-    padding-bottom: calc(var(--section-padding) / 2);
-}
-
-.arrow {
-    position: absolute;
-    right: 0;
-    bottom: calc(var(--section-padding) / 2);
-    transform: rotate(90deg);
-}
-
 .item {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: .8em;
+    gap: 0.8em;
     border-top: 1px solid var(--text-primary-delta);
-    padding: 1.90em 2.75em;
+    padding: 1.9em 2.75em;
 }
 
 .item span {
@@ -41,8 +12,8 @@
     position: absolute;
     left: 0;
     top: 2.98em;
-    opacity: .33;
-    font-size: .8em;
+    opacity: 0.33;
+    font-size: 0.8em;
 }
 
 .input {

@@ -1,0 +1,20 @@
+.sectionContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-primary-beta);
+    color: var(--text-primary-gamma);
+    width: 100%;
+}
+
+.titleContainer {
+    position: relative;
+    padding-bottom: calc(var(--section-padding) / 2);
+}
+
+.arrow {
+    position: absolute;
+    right: 0;
+    bottom: calc(var(--section-padding) / 2);
+    transform: rotate(90deg);
+}
