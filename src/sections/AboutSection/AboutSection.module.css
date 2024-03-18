@@ -1,7 +1,65 @@
-.textContainer {
+.container {
     display: flex;
+    flex-direction: row;
+    padding-bottom: calc(var(--section-padding) / 2);
+}
+
+.col:nth-child(1) {
+    width: 70%;
+    padding-right: var(--gap-padding);
+}
+
+.col:nth-child(2) {
+    width: 30%;
+    padding-left: var(--gap-padding);
 }
 
 .text {
     font-size: clamp(1.1rem, 2vw, 1.8rem);
+}
+
+.row {
+    padding: calc(var(--section-padding) / 2) 0 var(--section-padding) 0;
+    position: relative;
+}
+
+.buttonFixed {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.button {
+    position: relative;
+    width: clamp(9em, 12vw, 11em);
+    height: clamp(9em, 12vw, 11em);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 10000;
+    width: 80%;
+    height: 60%;
+}
+
+@media screen and (max-width: 780px) {
+    .container {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+
+    .col:nth-child(1) {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .col:nth-child(2) {
+        width: 100%;
+        padding: calc(var(--section-padding) / 3) 0 0 0;
+        max-width: 14em;
+    }
 }
