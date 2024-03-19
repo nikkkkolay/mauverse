@@ -1,21 +1,21 @@
 .container {
     display: flex;
     flex-direction: row;
-    padding-bottom: calc(var(--section-padding) / 2);
+    padding-bottom: 0;
 }
 
 .col:nth-child(1) {
     width: 70%;
-    padding-right: var(--gap-padding);
+    padding-right: calc(var(--gap-padding) * 2);
 }
 
 .col:nth-child(2) {
     width: 30%;
-    padding-left: var(--gap-padding);
+    padding-left: calc(var(--gap-padding) * 2);
 }
 
 .text {
-    font-size: clamp(1.1rem, 2vw, 1.8rem);
+    font-size: clamp(1.4rem, 2vw, 1.6rem);
 }
 
 .row {
@@ -25,7 +25,7 @@
 
 .buttonFixed {
     position: absolute;
-    right: 10%;
+    right: 15%;
     top: 50%;
     transform: translateY(-50%);
 }
@@ -34,6 +34,7 @@
     position: relative;
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
+    font-size: 1em;
 }
 
 .wrapper {
@@ -49,7 +50,6 @@
 @media screen and (max-width: 780px) {
     .container {
         flex-direction: column;
-        padding-bottom: 0;
     }
 
     .col:nth-child(1) {
@@ -59,7 +59,7 @@
 
     .col:nth-child(2) {
         width: 100%;
-        padding: calc(var(--section-padding) / 3) 0 0 0;
-        max-width: 14em;
+        padding: calc(var(--section-padding) / 4) 0 0 0;
+        max-width: 30em;
     }
 }

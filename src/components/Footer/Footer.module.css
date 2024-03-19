@@ -3,7 +3,10 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    padding: calc(var(--gap-padding) * 1.5) calc(var(--gap-padding) * 1.5);
+    padding-top: calc(var(--gap-padding) * 1.5);
+    padding-bottom: calc(var(--gap-padding) * 2);
+    padding-left: calc(var(--gap-padding) * 2);
+    padding-right: calc(var(--gap-padding) * 2);
     background-color: var(--bg-primary-beta);
 }
 
@@ -11,8 +14,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: var(--gap-padding);
     list-style-type: none;
+}
+
+.link {
+    font-size: 0.9em;
 }
 
 .social {

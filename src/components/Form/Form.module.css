@@ -16,12 +16,16 @@
     font-size: 0.8em;
 }
 
+.item label {
+    font-size: 1.5em;
+}
+
 .input {
     color: var(--text-primary-gamma);
     background-color: var(--bg-primary-beta);
     border: none;
     outline: none;
-    font-size: 1.2em;
+    font-size: 1.3em;
     resize: none;
 }
 
@@ -50,6 +54,7 @@
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
     background-color: var(--element-primary-gamma);
+    font-size: 1em;
 }
 
 .wrapper {

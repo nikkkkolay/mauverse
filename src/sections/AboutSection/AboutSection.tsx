@@ -38,8 +38,8 @@ export const AboutSection = (): JSX.Element => {
                         ))}
                 </div>
                 <div className={styles.col}>
-                    <motion.p animate={{ visibility: 'visible', opacity: isInView ? 1 : 0 }} transition={{ duration: 0.2, delay: 2 }}>
-                        Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores
+                    <motion.p animate={{ visibility: 'visible', opacity: isInView ? 1 : 0 }} transition={{ duration: 0.4, delay: 0.4 }}>
+                        Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores Lorem voluptas repellat corrupt
                     </motion.p>
                 </div>
             </Container>
@@ -47,7 +47,7 @@ export const AboutSection = (): JSX.Element => {
                 <div className={styles.buttonFixed}>
                     <Button isInView className={styles.button}>
                         <ParallaxElement as="div" className={styles.wrapper}>
-                            Lorem
+                            <p>Lorem</p>
                         </ParallaxElement>
                     </Button>
                 </div>

@@ -1,15 +1,17 @@
 .container {
-    padding-left: calc(var(--gap-padding) * 1.5);
-    padding-right: calc(var(--gap-padding) * 1.5);
+    padding-left: calc(var(--gap-padding) * 6);
+    padding-right: calc(var(--gap-padding) * 6);
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
     width: 100%;
     max-width: 1440px;
 }
 
-/* @media screen and (max-width: 780px) {
+@media screen and (max-width: 780px) {
     .container {
-        padding-left: var(--gap-padding);
-        padding-right: var(--gap-padding);
+        padding-left: calc(var(--gap-padding) * 2);
+        padding-right: calc(var(--gap-padding) * 2);
+        padding-top: calc(var(--section-padding) / 1.5);
+        padding-bottom: calc(var(--section-padding) / 1.5);
     }
-} */
+}

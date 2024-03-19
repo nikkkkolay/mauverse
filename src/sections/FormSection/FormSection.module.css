@@ -1,5 +1,6 @@
 .sectionContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: var(--bg-primary-beta);
@@ -17,4 +18,5 @@
     right: 0;
     bottom: calc(var(--section-padding) / 2);
     transform: rotate(90deg);
+    width: clamp(0.9em, 1.1vw, 1.1em);
 }

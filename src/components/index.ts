@@ -12,4 +12,5 @@ export { Link } from './Link/Link';
 export { Title } from './Title/Title';
 export { Form } from './Form/Form';
 export { Info } from './Info/Info';
+export { BigButton } from './BigButton/BigButton';
 export { Footer } from './Footer/Footer';

@@ -1,10 +1,12 @@
 import { ParallaxElement } from '..';
 import { motion } from 'framer-motion';
 import styles from './Link.module.css';
+import classnames from 'classnames';
 
 interface Props {
     name: string;
     path: string;
+    className?: string;
 }
 
 const listVariants = {
@@ -12,9 +14,9 @@ const listVariants = {
     hidden: { left: '50%', right: '50%' },
 };
 
-export const Link = ({ name, path }: Props): JSX.Element => {
+export const Link = ({ name, path, className }: Props): JSX.Element => {
     return (
-        <ParallaxElement as="li" className={styles.link}>
+        <ParallaxElement as="li" className={classnames(styles.link, className)}>
             <motion.a whileHover="visible" initial="hidden" exit="hidden" href={path}>
                 {name}
                 <motion.div

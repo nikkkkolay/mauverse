@@ -1,4 +1,4 @@
-import { Link, Info } from '../index';
+import { Link, Info, Container } from '../index';
 import styles from './Footer.module.css';
 
 export const Footer = (): JSX.Element => {
@@ -10,10 +10,10 @@ export const Footer = (): JSX.Element => {
 
             <Info title={'Социальные сети'} className={styles.social}>
                 <ul className={styles.links}>
-                    <Link name="Вконтакте" path="#" />
-                    <Link name="Вконтакте" path="#" />
-                    <Link name="Вконтакте" path="#" />
-                    <Link name="Вконтакте" path="#" />
+                    <Link name="Вконтакте" path="#" className={styles.link} />
+                    <Link name="Вконтакте" path="#" className={styles.link} />
+                    <Link name="Вконтакте" path="#" className={styles.link} />
+                    <Link name="Вконтакте" path="#" className={styles.link} />
                 </ul>
             </Info>
         </footer>

@@ -5,7 +5,7 @@ import styles from './FormSection.module.css';
 export const FormSection = (): JSX.Element => {
     return (
         <section className={styles.sectionContainer}>
-            <Container>
+            <Container className={styles.container}>
                 <div className={styles.titleContainer}>
                     <Title tag="h2"> Lorem ipsum</Title>
                     <Title tag="h2">dolor sit amet consectetur</Title>
