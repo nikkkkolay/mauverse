@@ -1,4 +1,4 @@
-import { Button, ParallaxElement } from '../../components';
+import { BigButtonRow } from '../../components';
 import styles from './Form.module.css';
 
 export const Form = (): JSX.Element => {
@@ -20,16 +20,7 @@ export const Form = (): JSX.Element => {
                 <textarea className={styles.input} placeholder="Lorem, ipsum." required />
             </div>
 
-            <div className={styles.row}>
-                <div className={styles.stripe}></div>
-                <div className={styles.buttonFixed}>
-                    <Button isInView fill className={styles.button}>
-                        <ParallaxElement as="div" className={styles.wrapper}>
-                            <p>Lorem</p>
-                        </ParallaxElement>
-                    </Button>
-                </div>
-            </div>
+            <BigButtonRow fill stripe />
         </form>
     );
 };

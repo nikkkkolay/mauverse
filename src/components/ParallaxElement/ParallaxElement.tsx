@@ -15,7 +15,7 @@ interface Props {
     fill?: boolean;
 }
 
-export const ParallaxElement = ({ className, isInView, children, as, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const ParallaxElement = ({ className, isInView, onClick, children, as, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const fillControls = useAnimation();
 
@@ -89,16 +89,17 @@ export const ParallaxElement = ({ className, isInView, children, as, fill, ...pr
             return (
                 <motion.button
                     {...props}
-                    className={className}
+                    className={classnames(className, { [styles.changedColor]: fill })}
                     onMouseEnter={onMouseEnter}
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
                     animate={{ x, y, scale: isInView ? 1 : 0, visibility: 'visible', opacity: isInView ? 1 : 0 }}
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}
+                    onClick={onClick}
                 >
                     {children}
-                    <motion.div className={classnames(styles.fill, { [styles.black]: fill })} animate={fillControls}></motion.div>
+                    <motion.div className={classnames(styles.fill, { [styles.changedFill]: fill })} animate={fillControls}></motion.div>
                 </motion.button>
             );
         default:

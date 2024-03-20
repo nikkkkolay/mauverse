@@ -12,6 +12,6 @@
     --text-primary-beta: #b3b3b4;
     --text-primary-delta: #797979;
 
-    --section-padding: clamp(5em, 20vh, 10em);
+    --section-padding: clamp(5em, 20vh, 9em);
     --gap-padding: clamp(0.8em, 4vw, 1em);
 }

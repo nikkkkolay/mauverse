@@ -18,35 +18,6 @@
     font-size: clamp(1.4rem, 2vw, 1.6rem);
 }
 
-.row {
-    padding: calc(var(--section-padding) / 2) 0 var(--section-padding) 0;
-    position: relative;
-}
-
-.buttonFixed {
-    position: absolute;
-    right: 15%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.button {
-    position: relative;
-    width: clamp(9em, 12vw, 11em);
-    height: clamp(9em, 12vw, 11em);
-    font-size: 1em;
-}
-
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 10000;
-    width: 80%;
-    height: 60%;
-}
-
 @media screen and (max-width: 780px) {
     .container {
         flex-direction: column;

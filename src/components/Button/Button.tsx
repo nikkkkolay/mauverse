@@ -10,9 +10,9 @@ interface Props {
     fill?: boolean;
 }
 
-export const Button = ({ className, isInView, children, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const Button = ({ className, onClick, isInView, children, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
     return (
-        <ParallaxElement {...props} as="button" isInView={isInView} fill={fill} className={classnames(styles.button, className)}>
+        <ParallaxElement {...props} as="button" onClick={onClick} isInView={isInView} fill={fill} className={classnames(styles.button, className)}>
             {children}
         </ParallaxElement>
     );

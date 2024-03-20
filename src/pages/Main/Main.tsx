@@ -1,10 +1,10 @@
-import { FormSection, AboutSection } from '../../sections';
+import { ContactSection, AboutSection } from '../../sections';
 
 export const Main = (): JSX.Element => {
     return (
         <>
             <AboutSection />
-            <FormSection />
+            <ContactSection />
         </>
     );
 };

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { Button, Container, ParallaxElement } from '../../components';
+import { Container, BigButtonRow } from '../../components';
 import styles from './AboutSection.module.css';
 
 const textAnimation = {
@@ -23,7 +23,11 @@ export const AboutSection = (): JSX.Element => {
     const isInView = useInView(ref);
 
     useEffect(() => {
-        if (isInView) controls.start('visible');
+        if (isInView) {
+            controls.start('visible');
+        } else {
+            controls.set('hidden');
+        }
     }, [controls, isInView]);
 
     return (
@@ -38,20 +42,12 @@ export const AboutSection = (): JSX.Element => {
                         ))}
                 </div>
                 <div className={styles.col}>
-                    <motion.p animate={{ visibility: 'visible', opacity: isInView ? 1 : 0 }} transition={{ duration: 0.4, delay: 0.4 }}>
+                    <motion.p animate={{ opacity: isInView ? 1 : 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
                         Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores Lorem voluptas repellat corrupt
                     </motion.p>
                 </div>
             </Container>
-            <div className={styles.row}>
-                <div className={styles.buttonFixed}>
-                    <Button isInView className={styles.button}>
-                        <ParallaxElement as="div" className={styles.wrapper}>
-                            <p>Lorem</p>
-                        </ParallaxElement>
-                    </Button>
-                </div>
-            </div>
+            <BigButtonRow />
         </section>
     );
 };

@@ -8,7 +8,7 @@ export const Layout = (): JSX.Element => {
 
     return (
         <>
-            <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/' })}>
+            <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/' }, { [styles.fill]: location.pathname === '/contacts' })}>
                 <Navbar />
                 {location.pathname === '/' && <Overlay />}
             </header>

@@ -33,30 +33,6 @@
     color: var(--text-primary-gamma);
 }
 
-.row {
-    padding: calc(var(--section-padding) / 2) 0;
-    position: relative;
-}
-
-.stripe {
-    border-bottom: 1px solid var(--text-primary-delta);
-}
-
-.buttonFixed {
-    position: absolute;
-    right: 10%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.button {
-    position: relative;
-    width: clamp(9em, 12vw, 11em);
-    height: clamp(9em, 12vw, 11em);
-    background-color: var(--element-primary-gamma);
-    font-size: 1em;
-}
-
 .wrapper {
     display: flex;
     align-items: center;
