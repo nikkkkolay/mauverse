@@ -4,11 +4,11 @@ import { motion, useAnimation } from 'framer-motion';
 import styles from './ParallaxElement.module.css';
 import classnames from 'classnames';
 
-type Type = 'a' | 'li' | 'button' | 'div';
+type Tag = 'a' | 'li' | 'button' | 'div';
 
 interface Props {
     className?: string;
-    as?: Type;
+    as?: Tag;
     href?: string;
     onClick?: () => void;
     isInView?: boolean;

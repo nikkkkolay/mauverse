@@ -10,7 +10,20 @@
 
 .titleContainer {
     position: relative;
-    padding-bottom: calc(var(--section-padding) / 2);
+    padding-bottom: calc(var(--section-padding) / 3);
+}
+
+.imageContainer {
+    display: flex;
+    gap: 15px;
+}
+
+.imageContainer img {
+    object-fit: cover;
+    min-width: clamp(2.5em, 3.5vw, 4em);
+    height: clamp(2.5em, 3.5vw, 4em);
+    border-radius: 50%;
+    align-self: center;
 }
 
 .arrow {
@@ -19,4 +32,14 @@
     bottom: calc(var(--section-padding) / 2);
     transform: rotate(90deg);
     width: clamp(0.9em, 1.1vw, 1.1em);
+}
+
+@media screen and (max-width: 780px) {
+    .arrow {
+        top: 0;
+    }
+
+    .container {
+        padding-bottom: calc(var(--section-padding) / 3);
+    }
 }

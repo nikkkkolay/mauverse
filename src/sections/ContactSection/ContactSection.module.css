@@ -41,17 +41,6 @@
     padding-top: calc(var(--section-padding) / 3);
 }
 
-.link {
-    position: relative;
-    border-radius: 2.125em;
-    padding: 0 2.5em;
-    font-size: 1em;
-    width: 100%;
-    max-width: 16em;
-    height: 4.25em;
-    box-shadow: inset 0px 0px 0px 1px var(--text-primary-delta);
-}
-
 @media screen and (max-width: 780px) {
     .arrow {
         top: 0;

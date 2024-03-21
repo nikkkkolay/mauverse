@@ -20,10 +20,10 @@ export const ContactSection = (): JSX.Element => {
                     <p>Lorem</p>
                 </BigButtonRow>
                 <div className={styles.row}>
-                    <Button as={'a'} href="mailto:lorem@lorem.lo" className={styles.link}>
+                    <Button type={'secondary'} as={'a'} href="mailto:lorem@lorem.lo" className={styles.link}>
                         <p>lorem@lorem.lo</p>
                     </Button>
-                    <Button as={'a'} href="tel:88008888888" className={styles.link}>
+                    <Button type={'secondary'} as={'a'} href="tel:88008888888" className={styles.link}>
                         <p>8 800 888 88 88</p>
                     </Button>
                 </div>
