@@ -8,14 +8,14 @@ type Type = 'a' | 'li' | 'button' | 'div';
 
 interface Props {
     className?: string;
-    as: Type;
+    as?: Type;
     href?: string;
     onClick?: () => void;
     isInView?: boolean;
     fill?: boolean;
 }
 
-export const ParallaxElement = ({ className, isInView, onClick, children, as, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const ParallaxElement = ({ className, isInView, onClick, children, as, href, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const fillControls = useAnimation();
 
@@ -85,7 +85,25 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, fi
                     {children}
                 </motion.li>
             );
-        case 'button':
+        case 'a':
+            return (
+                <motion.a
+                    {...props}
+                    className={classnames(className, { [styles.changedColor]: fill })}
+                    onMouseEnter={onMouseEnter}
+                    onMouseMove={event => handleMouseMove(event)}
+                    onMouseLeave={handleMouseLeave}
+                    animate={{ x, y, scale: isInView ? 1 : 0, visibility: 'visible', opacity: isInView ? 1 : 0 }}
+                    transition={{ duration: 0.2 }}
+                    whileTap={{ scale: 0.9 }}
+                    href={href}
+                    target="_blank"
+                >
+                    {children}
+                    <motion.div className={classnames(styles.fill, { [styles.changedFill]: fill })} animate={fillControls}></motion.div>
+                </motion.a>
+            );
+        default:
             return (
                 <motion.button
                     {...props}
@@ -102,7 +120,5 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, fi
                     <motion.div className={classnames(styles.fill, { [styles.changedFill]: fill })} animate={fillControls}></motion.div>
                 </motion.button>
             );
-        default:
-            return <></>;
     }
 };

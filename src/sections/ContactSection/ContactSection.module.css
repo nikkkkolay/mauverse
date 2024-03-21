@@ -13,6 +13,19 @@
     padding-bottom: calc(var(--section-padding) / 3);
 }
 
+.imageContainer {
+    display: flex;
+    gap: 15px;
+}
+
+.imageContainer img {
+    object-fit: cover;
+    min-width: clamp(2.5em, 3.5vw, 4em);
+    height: clamp(2.5em, 3.5vw, 4em);
+    border-radius: 50%;
+    align-self: center;
+}
+
 .arrow {
     position: absolute;
     right: 0;
@@ -23,21 +36,36 @@
 
 .row {
     display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding-top: calc(var(--section-padding) / 3);
 }
 
-.button {
+.link {
     position: relative;
-    width: clamp(9em, 12vw, 11em);
-    height: clamp(9em, 12vw, 11em);
+    border-radius: 2.125em;
+    padding: 0 2.5em;
     font-size: 1em;
+    width: 100%;
+    max-width: 16em;
+    height: 4.25em;
+    box-shadow: inset 0px 0px 0px 1px var(--text-primary-delta);
 }
 
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 10000;
-    width: 80%;
-    height: 60%;
+@media screen and (max-width: 780px) {
+    .arrow {
+        top: 0;
+    }
+
+    .container {
+        padding-bottom: calc(var(--section-padding) / 3);
+    }
+
+    .link {
+        max-width: 100%;
+    }
+
+    .row {
+        padding-top: calc(var(--section-padding) / 2);
+    }
 }

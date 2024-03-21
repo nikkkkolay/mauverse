@@ -1,7 +1,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    padding-bottom: 0;
+    padding-bottom: calc(var(--section-padding) / 3);
 }
 
 .col:nth-child(1) {
@@ -30,7 +30,7 @@
 
     .col:nth-child(2) {
         width: 100%;
-        padding: calc(var(--section-padding) / 4) 0 0 0;
+        padding: calc(var(--section-padding) / 6) 0 0 0;
         max-width: 30em;
     }
 }

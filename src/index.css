@@ -33,16 +33,16 @@ body {
     position: relative;
     z-index: 20;
 
-    scrollbar-width: none;
+    /* scrollbar-width: none; */
 }
 
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     width: 0;
-}
+} */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 0;
-}
+} */
 
 #root {
     display: flex;

@@ -1,5 +1,5 @@
 .row {
-    padding: calc(var(--section-padding) / 2) 0;
+    padding: calc(var(--section-padding) / 3) 0;
     position: relative;
 }
 

@@ -20,7 +20,9 @@ export const Form = (): JSX.Element => {
                 <textarea className={styles.input} placeholder="Lorem, ipsum." required />
             </div>
 
-            <BigButtonRow fill stripe />
+            <BigButtonRow fill stripe>
+                <p>Lorem</p>
+            </BigButtonRow>
         </form>
     );
 };

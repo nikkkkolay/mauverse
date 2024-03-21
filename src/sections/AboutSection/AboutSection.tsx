@@ -47,7 +47,9 @@ export const AboutSection = (): JSX.Element => {
                     </motion.p>
                 </div>
             </Container>
-            <BigButtonRow />
+            <BigButtonRow>
+                <p>Lorem</p>
+            </BigButtonRow>
         </section>
     );
 };
