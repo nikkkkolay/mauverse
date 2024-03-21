@@ -15,9 +15,7 @@ export const BigButtonRow = ({ className, onClick, fill, stripe }: Props): JSX.E
             {stripe && <div className={styles.stripe}></div>}
             <div className={styles.buttonFixed}>
                 <Button isInView fill={fill} className={classnames(styles.button, className)} onClick={onClick}>
-                    <ParallaxElement as="div" className={styles.wrapper}>
-                        <p>Lorem</p>
-                    </ParallaxElement>
+                    <p>Lorem</p>
                 </Button>
             </div>
         </div>

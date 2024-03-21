@@ -20,13 +20,3 @@
     height: clamp(9em, 12vw, 11em);
     font-size: 1em;
 }
-
-.wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 10000;
-    width: 80%;
-    height: 60%;
-}

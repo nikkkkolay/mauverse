@@ -13,7 +13,9 @@ interface Props {
 export const Button = ({ className, onClick, isInView, children, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
     return (
         <ParallaxElement {...props} as="button" onClick={onClick} isInView={isInView} fill={fill} className={classnames(styles.button, className)}>
-            {children}
+            <ParallaxElement as="div" className={styles.wrapper}>
+                {children}
+            </ParallaxElement>
         </ParallaxElement>
     );
 };

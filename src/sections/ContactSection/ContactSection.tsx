@@ -11,7 +11,15 @@ export const ContactSection = (): JSX.Element => {
                     <Title tag="h2">dolor sit amet consectetur</Title>
                     <ArrowIcon className={styles.arrow} />
                 </div>
-                <BigButtonRow stripe fill onClick={() => console.log('text')} />
+                <BigButtonRow stripe fill />
+                <div className={styles.row}>
+                    <Button isInView className={styles.button}>
+                        <p>lorem@lorem.lo</p>
+                    </Button>
+                    <Button isInView className={styles.button}>
+                        <p>lorem@lorem.lo</p>
+                    </Button>
+                </div>
             </Container>
         </section>
     );
