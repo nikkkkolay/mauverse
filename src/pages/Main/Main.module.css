@@ -1,0 +1,19 @@
+/* .mainScrollContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+} */
+
+.footerMain {
+    /* position: relative; */
+    background-color: blue;
+    width: 100%;
+}
+
+/* .rounded {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+} */

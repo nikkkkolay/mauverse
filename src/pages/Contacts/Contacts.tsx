@@ -10,7 +10,7 @@ export const Contacts = (): JSX.Element => {
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
                         <img src="./kelly-sikkema-7alo7OJVNVw-unsplash.jpg" alt="logo" />
-                        <Title tag="h2"> Lorem ipsum</Title>
+                        <Title tag="h1"> Lorem ipsum</Title>
                     </div>
                     <Title tag="h2">dolor sit amet consectetur</Title>
                     <ArrowIcon className={styles.arrow} />
