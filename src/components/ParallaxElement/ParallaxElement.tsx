@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PropsWithChildren } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, useScroll } from 'framer-motion';
 import styles from './ParallaxElement.module.css';
 import classnames from 'classnames';
 
@@ -93,7 +93,6 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
                     onMouseEnter={onMouseEnter}
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
-                    animate={{ x, y, scale: isInView ? 1 : 0, visibility: 'visible', opacity: isInView ? 1 : 0 }}
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}
                     href={href}
