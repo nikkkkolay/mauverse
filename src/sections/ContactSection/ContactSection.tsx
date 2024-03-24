@@ -4,25 +4,20 @@ import { useMySpring } from '../../hooks/useMySpring';
 import { Container, Title, Button, BigButtonRow } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 import styles from './ContactSection.module.css';
-import { useRef } from 'react';
 
 export const ContactSection = (): JSX.Element => {
-    const ref = useRef(null);
     const navigate = useNavigate();
 
-    const { scrollYProgress } = useScroll({
-        container: ref,
-        offset: ['1 1', '0 0'],
-    });
+    const { scrollY } = useScroll();
 
-    const height = useTransform(scrollYProgress, [0, 1], [90, 0]);
-    const toRight = useTransform(scrollYProgress, [0, 1], ['30%', '10%']);
+    const height = useTransform(scrollY, [0, 1200], [90, 0]);
+    const toRight = useTransform(scrollY, [0, 1200], ['30%', '10%']);
 
     const springHeight = useMySpring(height);
     const springButtonToLeft = useMySpring(toRight);
 
     return (
-        <section className={styles.sectionContainer} ref={ref}>
+        <section className={styles.sectionContainer}>
             <motion.div className={styles.footerMain} style={{ height: springHeight }}>
                 <div className={styles.rounded}></div>
             </motion.div>
