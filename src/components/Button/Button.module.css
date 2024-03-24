@@ -9,6 +9,10 @@
     cursor: pointer;
     border: none;
     overflow: hidden;
+    position: relative;
+    width: clamp(9em, 12vw, 11em);
+    height: clamp(9em, 12vw, 11em);
+    font-size: 1em;
 }
 
 .secondary {

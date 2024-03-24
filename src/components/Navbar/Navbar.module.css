@@ -5,7 +5,7 @@
   z-index: 30;
   padding: 15px 0;
   width: 100%;
-  padding: calc(var(--gap-padding) * 1.5) calc(var(--gap-padding) * 1.5);
+  padding: var(--gap-padding) calc(var(--gap-padding) * 1.5);
 }
 
 .routes {

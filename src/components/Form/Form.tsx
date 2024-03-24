@@ -1,4 +1,4 @@
-import { BigButtonRow } from '../../components';
+import { BigButtonRow, Button } from '../../components';
 import styles from './Form.module.css';
 
 export const Form = (): JSX.Element => {
@@ -20,8 +20,10 @@ export const Form = (): JSX.Element => {
                 <textarea className={styles.input} placeholder="Lorem, ipsum." required />
             </div>
 
-            <BigButtonRow fill stripe>
-                <p>Lorem</p>
+            <BigButtonRow stripe>
+                <Button fill>
+                    <p>Lorem</p>
+                </Button>
             </BigButtonRow>
         </form>
     );

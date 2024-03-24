@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
-import { Container, BigButtonRow } from '../../components';
+import { Container, BigButtonRow, Button } from '../../components';
 import styles from './AboutSection.module.css';
 
 const textAnimation = {
@@ -48,7 +48,9 @@ export const AboutSection = (): JSX.Element => {
                 </div>
             </Container>
             <BigButtonRow>
-                <p>Lorem</p>
+                <Button>
+                    <p>Lorem</p>
+                </Button>
             </BigButtonRow>
         </section>
     );
