@@ -11,10 +11,9 @@ export const ContactSection = (): JSX.Element => {
     const { scrollY } = useScroll();
 
     const height = useTransform(scrollY, [0, 1200], [90, 0]);
-    const toRight = useTransform(scrollY, [0, 1200], ['30%', '10%']);
+    const toRight = useTransform(scrollY, [0, 1200], ['50%', '10%']);
 
     const springHeight = useMySpring(height);
-    const springButtonToLeft = useMySpring(toRight);
 
     return (
         <section className={styles.sectionContainer}>
@@ -30,7 +29,7 @@ export const ContactSection = (): JSX.Element => {
                     <Title tag="h2">dolor sit consectetur</Title>
                     <ArrowIcon className={styles.arrow} />
                 </div>
-                <BigButtonRow stripe style={{ right: springButtonToLeft }}>
+                <BigButtonRow stripe style={{ right: toRight }}>
                     <Button fill onClick={() => navigate('/contacts')}>
                         <p>Lorem</p>
                     </Button>
