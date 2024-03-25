@@ -1,8 +1,15 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
 import { Main, NotFound, Contacts } from './pages';
+import { useEffect } from 'react';
 
 const App = (): JSX.Element => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     return (
         <Routes>
             <Route element={<Layout />}>
