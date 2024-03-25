@@ -37,7 +37,7 @@ export const AboutSection = (): JSX.Element => {
         <section>
             <Container className={styles.container}>
                 <motion.div className={styles.col} style={{ top: colTop }} ref={ref}>
-                    {text &&
+                    {isInView &&
                         text.split(' ').map((p, i) => (
                             <motion.span className={styles.text} key={p + i}>
                                 <motion.span custom={i} variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
