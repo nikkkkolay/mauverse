@@ -1,7 +1,15 @@
 .container {
     display: flex;
     flex-direction: row;
-    padding-bottom: calc(var(--section-padding) / 3);
+    padding-bottom: calc(var(--section-padding) / 4);
+}
+
+.buttonFixed {
+    right: 15%;
+}
+
+.col {
+    position: relative;
 }
 
 .col:nth-child(1) {
@@ -15,12 +23,34 @@
 }
 
 .text {
-    font-size: clamp(1.4rem, 2vw, 1.6rem);
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    overflow: hidden;
+}
+
+.smallText {
+    position: relative;
+    overflow: hidden;
+}
+
+.smallTextInner {
+    display: block;
+    position: relative;
+    line-height: 1.4;
+}
+
+.textInner {
+    display: block;
+    position: relative;
+    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    line-height: 1.4;
 }
 
 @media screen and (max-width: 780px) {
     .container {
         flex-direction: column;
+        padding-bottom: calc(var(--section-padding) / 3);
     }
 
     .col:nth-child(1) {

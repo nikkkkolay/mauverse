@@ -1,26 +1,29 @@
 import { useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
 import { Container, BigButtonRow, Button } from '../../components';
 import styles from './AboutSection.module.css';
 
 const textAnimation = {
     hidden: {
-        y: -10,
-        opacity: 0,
+        top: '60px',
     },
     visible: (custom: number) => ({
-        y: 0,
-        opacity: 1,
-        transition: { delay: custom * 0.1 },
+        top: 0,
+        transition: { delay: custom * 0.03, ease: 'linear', duration: 0.5 },
     }),
 };
 
-const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet iure provident laboriosam earum placeat  vel labore eveniet iure provident laboriosam earum placeat.`;
+const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet`;
 
 export const AboutSection = (): JSX.Element => {
-    const controls = useAnimation();
     const ref = useRef(null);
+
+    const controls = useAnimation();
     const isInView = useInView(ref);
+    const { scrollY } = useScroll();
+
+    const toTop = useTransform(scrollY, [500, 1000], ['70%', '50%']);
+    const colTop = useTransform(scrollY, [500, 1000], ['0%', '-20%']);
 
     useEffect(() => {
         if (isInView) {
@@ -33,21 +36,26 @@ export const AboutSection = (): JSX.Element => {
     return (
         <section>
             <Container className={styles.container}>
-                <div className={styles.col}>
+                <motion.div className={styles.col} style={{ top: colTop }} ref={ref}>
                     {text &&
                         text.split(' ').map((p, i) => (
-                            <motion.span key={p + i} custom={i} ref={ref} variants={textAnimation} initial="hidden" animate={controls} className={styles.text}>
-                                {p + ' '}
+                            <motion.span className={styles.text} key={p + i}>
+                                <motion.span custom={i} variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
+                                    {p}
+                                </motion.span>
+                                {'\u00A0'}
                             </motion.span>
                         ))}
-                </div>
-                <div className={styles.col}>
-                    <motion.p animate={{ opacity: isInView ? 1 : 0 }} transition={{ duration: 0.6, delay: 0.6 }}>
-                        Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio? Ad maiores corrupti libero asperiores Lorem voluptas repellat corrupt
-                    </motion.p>
-                </div>
+                </motion.div>
+                <motion.div className={styles.col} style={{ top: colTop }}>
+                    <span className={styles.smallText}>
+                        <motion.span transition={{ ease: 'linear', duration: 0.5 }} animate={{ top: isInView ? 0 : '30px' }} className={styles.smallTextInner}>
+                            Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio?
+                        </motion.span>
+                    </span>
+                </motion.div>
             </Container>
-            <BigButtonRow>
+            <BigButtonRow style={{ top: toTop }} classNames={styles.buttonFixed}>
                 <Button>
                     <p>Lorem</p>
                 </Button>

@@ -1,33 +1,33 @@
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { useMySpring } from '../../hooks/useMySpring';
 import { Container, Title, Button, BigButtonRow } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 import styles from './ContactSection.module.css';
 
 export const ContactSection = (): JSX.Element => {
-    const navigate = useNavigate();
+    const svgRef = useRef<SVGAElement>(null);
 
+    const navigate = useNavigate();
     const { scrollY } = useScroll();
 
-    const height = useTransform(scrollY, [0, 1200], [90, 0]);
-    const toRight = useTransform(scrollY, [0, 1200], ['50%', '10%']);
-
-    const springHeight = useMySpring(height);
+    const height = useTransform(scrollY, [500, 1100], [100, 0]);
+    const toRight = useTransform(scrollY, [500, 1500], ['40%', '10%']);
+    const rotate = useTransform(scrollY, [800, 1300], [40, 90]);
 
     return (
         <section className={styles.sectionContainer}>
-            <motion.div className={styles.footerMain} style={{ height: springHeight }}>
+            <motion.div className={styles.footerMain} style={{ height: height }}>
                 <div className={styles.rounded}></div>
             </motion.div>
             <Container className={styles.container}>
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
                         <img src="./plug.jpg" alt="logo" />
-                        <Title tag="h2"> Lorem ipsum</Title>
+                        <Title tag="h2">Lorem ipsum</Title>
                     </div>
                     <Title tag="h2">dolor sit consectetur</Title>
-                    <ArrowIcon className={styles.arrow} />
+                    <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
                 </div>
                 <BigButtonRow stripe style={{ right: toRight }}>
                     <Button fill onClick={() => navigate('/contacts')}>
