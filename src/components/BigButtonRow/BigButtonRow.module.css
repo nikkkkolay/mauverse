@@ -13,10 +13,3 @@
     top: 50%;
     transform: translateY(-50%);
 }
-
-.button {
-    position: relative;
-    width: clamp(9em, 12vw, 11em);
-    height: clamp(9em, 12vw, 11em);
-    font-size: 1em;
-}

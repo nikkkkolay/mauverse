@@ -9,7 +9,7 @@ export const Contacts = (): JSX.Element => {
             <Container className={styles.container}>
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
-                        <img src="./kelly-sikkema-7alo7OJVNVw-unsplash.jpg" alt="logo" />
+                        <img src="./plug.jpg" alt="logo" />
                         <Title tag="h1"> Lorem ipsum</Title>
                     </div>
                     <Title tag="h2">dolor sit amet consectetur</Title>

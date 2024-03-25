@@ -1,6 +1,6 @@
 .container {
-    padding-left: calc(var(--gap-padding) * 4);
-    padding-right: calc(var(--gap-padding) * 4);
+    padding-left: calc(var(--gap-padding) * 6);
+    padding-right: calc(var(--gap-padding) * 6);
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
     width: 100%;

@@ -20,8 +20,8 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
     const fillControls = useAnimation();
 
     const distance = (x1: number, y1: number, x2: number, y2: number): number => {
-        var a = x1 - x2;
-        var b = y1 - y2;
+        let a = x1 - x2;
+        let b = y1 - y2;
 
         return Math.hypot(a, b);
     };
@@ -30,13 +30,13 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
         const { clientX, clientY } = event;
         const { height, width, left, top } = event.currentTarget.getBoundingClientRect();
 
-        const distanceToTrigger = width * 0.7;
+        const distanceToTrigger = width * 1.2;
 
-        const distanceMouseButton = distance(clientX + window.scrollX, clientY + window.scrollY, left + width / 2, top + height / 2);
+        const distanceMouseButton = distance(clientX, clientY, left + width / 2, top + height / 2);
 
         if (distanceMouseButton < distanceToTrigger) {
-            const middleX = (clientX + window.scrollX - (left + width / 3)) * 0.2;
-            const middleY = (clientY + window.scrollY - (top + height / 3)) * 0.2;
+            const middleX = (clientX - (left + width / 3)) * 0.2;
+            const middleY = (clientY - (top + height / 3)) * 0.2;
             setPosition({ x: middleX, y: middleY });
         }
     };

@@ -13,7 +13,7 @@ export const Overlay = (): JSX.Element => {
 
     return (
         <div className={styles.overlay}>
-            <img className={styles.banner} src="./kelly-sikkema-7alo7OJVNVw-unsplash.jpg" />
+            <img className={styles.banner} src="./plug.jpg" />
             <div className={styles.container}>
                 <div className={classnames(styles.row, styles.about)}>
                     <div className={styles.label}>
