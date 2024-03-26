@@ -9,7 +9,7 @@ const textAnimation = {
     },
     visible: (custom: number) => ({
         top: 0,
-        transition: { delay: custom * 0.03, ease: 'linear', duration: 0.5 },
+        transition: { delay: custom * 0.005, ease: 'linear', duration: 0.5 },
     }),
 };
 
@@ -34,18 +34,17 @@ export const AboutSection = (): JSX.Element => {
     }, [controls, isInView]);
 
     return (
-        <section>
+        <section className={styles.aboutSection}>
             <Container className={styles.container}>
                 <motion.div className={styles.col} style={{ top: colTop }} ref={ref}>
-                    {isInView &&
-                        text.split(' ').map((p, i) => (
-                            <motion.span className={styles.text} key={p + i}>
-                                <motion.span custom={i} variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
-                                    {p}
-                                </motion.span>
-                                {'\u00A0'}
+                    {text.split(' ').map((p, i) => (
+                        <motion.span className={styles.text} key={p + i}>
+                            <motion.span custom={i} variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
+                                {p}
                             </motion.span>
-                        ))}
+                            {'\u00A0'}
+                        </motion.span>
+                    ))}
                 </motion.div>
                 <motion.div className={styles.col} style={{ top: colTop }}>
                     <span className={styles.smallText}>

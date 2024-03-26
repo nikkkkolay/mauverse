@@ -2,7 +2,7 @@
     position: fixed;
     right: calc(var(--gap-padding) * 2);
     top: var(--gap-padding);
-    z-index: 10000;
+    z-index: 100000;
     width: clamp(4em, 5vw, 5em);
     height: clamp(4em, 5vw, 5em);
     opacity: 0;

@@ -1,5 +1,11 @@
 .footer {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.footerContainer {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
@@ -30,7 +36,7 @@
 }
 
 @media screen and (max-width: 780px) {
-    .footer {
+    .footerContainer {
         flex-direction: column;
         padding-top: calc(var(--gap-padding) * 1.5);
     }

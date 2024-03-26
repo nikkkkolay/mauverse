@@ -7,20 +7,22 @@ import styles from './ContactSection.module.css';
 
 export const ContactSection = (): JSX.Element => {
     const svgRef = useRef<SVGAElement>(null);
+    const containerRef = useRef<HTMLDivElement>(null);
 
     const navigate = useNavigate();
     const { scrollY } = useScroll();
 
-    const height = useTransform(scrollY, [500, 1100], [100, 0]);
+    const height = useTransform(scrollY, [1000, 1100], [100, 0]);
     const toRight = useTransform(scrollY, [500, 1500], ['40%', '10%']);
     const rotate = useTransform(scrollY, [800, 1300], [40, 90]);
+    const parallax = useTransform(scrollY, [800, 1100], [-300, 0]);
 
     return (
         <section className={styles.sectionContainer}>
             <motion.div className={styles.footerMain} style={{ height: height }}>
                 <div className={styles.rounded}></div>
             </motion.div>
-            <Container className={styles.container}>
+            <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
                         <img src="./plug.jpg" alt="logo" />

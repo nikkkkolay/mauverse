@@ -4,12 +4,14 @@ import { ParallaxText } from '..';
 import { LabelIcon } from './LabelIcon';
 import { ArrowIcon } from '../../icons';
 import styles from './Overlay.module.css';
-import { useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Overlay = (): JSX.Element => {
     const { scrollY } = useScroll();
     const svgRef = useRef<SVGAElement>(null);
+
     const rotate = useTransform(scrollY, [0, 400], [0, 40]);
+    const parallax = useTransform(scrollY, [0, 1050], [0, 200]);
 
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
@@ -18,7 +20,7 @@ export const Overlay = (): JSX.Element => {
 
     return (
         <div className={styles.overlay}>
-            <img className={styles.banner} src="./plug.jpg" />
+            <motion.img className={styles.banner} src="./plug.jpg" style={{ y: parallax, x: '-50%' }} />
             <div className={styles.container}>
                 <div className={classnames(styles.row, styles.about)}>
                     <div className={styles.label}>

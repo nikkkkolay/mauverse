@@ -1,3 +1,9 @@
+.aboutSection {
+    position: relative;
+    z-index: 100000;
+    background-color: var(--bg-primary-gamma);
+}
+
 .container {
     display: flex;
     flex-direction: row;
@@ -5,11 +11,13 @@
 }
 
 .buttonFixed {
+    z-index: 10000;
     right: 15%;
 }
 
 .col {
     position: relative;
+    z-index: 10000;
 }
 
 .col:nth-child(1) {
@@ -43,7 +51,7 @@
 .textInner {
     display: block;
     position: relative;
-    font-size: clamp(1.4rem, 3vw, 2.6rem);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
     line-height: 1.4;
 }
 
