@@ -18,6 +18,7 @@ export const ParallaxText = ({ children, baseVelocity = 100 }: Props): JSX.Eleme
     const directionFactor = useRef<number>(1);
 
     useAnimationFrame((t, delta) => {
+        t;
         let moveBy = directionFactor.current * baseVelocity * (delta / 2000);
 
         if (velocityFactor.get() < 0) {

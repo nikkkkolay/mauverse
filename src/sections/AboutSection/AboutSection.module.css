@@ -1,6 +1,6 @@
 .aboutSection {
     position: relative;
-    z-index: 100000;
+    z-index: 10;
     background-color: var(--bg-primary-gamma);
 }
 

@@ -68,7 +68,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    font-size: clamp(1.55rem, 3vw, 2.6rem);
+    font-size: clamp(1.55rem, 3vw, 2.3rem);
     line-height: 1.2;
     font-weight: 400;
     padding-right: calc(var(--gap-padding) * 4.5);
@@ -114,6 +114,7 @@
 
     .name {
         order: 1;
+        padding-bottom: calc(var(--gap-padding) * 2);
     }
 
     .about h1 {

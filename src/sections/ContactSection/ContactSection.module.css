@@ -48,7 +48,7 @@
     left: 0;
     width: 100%;
     overflow: hidden;
-    z-index: 10000;
+    z-index: 10;
 }
 
 .rounded {

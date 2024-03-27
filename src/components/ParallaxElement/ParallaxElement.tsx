@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PropsWithChildren } from 'react';
-import { motion, useAnimation, useScroll } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import styles from './ParallaxElement.module.css';
 import classnames from 'classnames';
 
