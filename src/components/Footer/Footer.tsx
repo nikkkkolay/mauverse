@@ -1,18 +1,14 @@
 import { useLocation } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { ContactSection } from '../../sections';
 import { Link, Info } from '../index';
 import styles from './Footer.module.css';
 
 export const Footer = (): JSX.Element => {
     let location = useLocation();
 
-    const { scrollY } = useScroll();
-    const parallax = useTransform(scrollY, [800, 1100], [-300, 0]);
-
-    const parallaxContacts = location.pathname === '/contacts' || '*' ? 'none' : parallax;
-
     return (
-        <motion.footer className={styles.footer} style={{ y: parallaxContacts }}>
+        <footer className={styles.footer}>
+            {location.pathname !== '/contacts' && <ContactSection />}
             <div className={styles.footerContainer}>
                 <Info title={'Версия'} className={styles.version}>
                     <p className={styles.copyright}>©</p>
@@ -27,6 +23,6 @@ export const Footer = (): JSX.Element => {
                     </ul>
                 </Info>
             </div>
-        </motion.footer>
+        </footer>
     );
 };
