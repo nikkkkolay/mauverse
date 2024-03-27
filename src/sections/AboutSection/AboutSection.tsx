@@ -16,14 +16,15 @@ const textAnimation = {
 const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet`;
 
 export const AboutSection = (): JSX.Element => {
-    const ref = useRef(null);
+    const columnViewArea = useRef<HTMLDivElement>(null);
+    const sectionViewArea = useRef<HTMLDivElement>(null);
 
     const controls = useAnimation();
-    const isInView = useInView(ref);
-    const { scrollY } = useScroll();
+    const isInView = useInView(columnViewArea);
 
-    const toTop = useTransform(scrollY, [500, 1000], ['70%', '50%']);
-    const colTop = useTransform(scrollY, [500, 1000], ['0%', '-20%']);
+    const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end start'] });
+
+    const buttonTop = useTransform(scrollYProgress, [0, 1], ['-30%', '-100%']);
 
     useEffect(() => {
         if (isInView) {
@@ -34,9 +35,9 @@ export const AboutSection = (): JSX.Element => {
     }, [controls, isInView]);
 
     return (
-        <section className={styles.aboutSection}>
+        <section className={styles.aboutSection} ref={sectionViewArea}>
             <Container className={styles.container}>
-                <motion.div className={styles.col} style={{ top: colTop }} ref={ref}>
+                <motion.div className={styles.col} ref={columnViewArea}>
                     {text.split(' ').map((p, i) => (
                         <motion.span className={styles.text} key={p + i}>
                             <motion.span custom={i} variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
@@ -46,7 +47,7 @@ export const AboutSection = (): JSX.Element => {
                         </motion.span>
                     ))}
                 </motion.div>
-                <motion.div className={styles.col} style={{ top: colTop }}>
+                <motion.div className={styles.col}>
                     <span className={styles.smallText}>
                         <motion.span transition={{ ease: 'linear', duration: 0.5 }} animate={{ top: isInView ? 0 : '30px' }} className={styles.smallTextInner}>
                             Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio?
@@ -54,7 +55,7 @@ export const AboutSection = (): JSX.Element => {
                     </span>
                 </motion.div>
             </Container>
-            <BigButtonRow style={{ top: toTop }} classNames={styles.buttonFixed}>
+            <BigButtonRow style={{ y: buttonTop, x: 15 }} classNames={styles.buttonFixed}>
                 <Button>
                     <p>Lorem</p>
                 </Button>

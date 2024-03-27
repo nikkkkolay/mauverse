@@ -104,7 +104,7 @@
         position: static;
         padding-left: var(--gap-padding);
         padding-right: var(--gap-padding);
-        padding-bottom: calc(var(--vh, 1vh) * 6);
+        padding-bottom: calc(var(--vh, 1vh) * 4);
         order: 2;
     }
 

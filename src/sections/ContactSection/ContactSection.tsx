@@ -8,17 +8,18 @@ import styles from './ContactSection.module.css';
 export const ContactSection = (): JSX.Element => {
     const svgRef = useRef<SVGAElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+    const sectionViewArea = useRef<HTMLDivElement>(null);
 
     const navigate = useNavigate();
-    const { scrollY } = useScroll();
+    const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end end'] });
 
-    const height = useTransform(scrollY, [1000, 1100], [100, 0]);
-    const toRight = useTransform(scrollY, [500, 1500], ['40%', '10%']);
-    const rotate = useTransform(scrollY, [800, 1300], [40, 90]);
-    const parallax = useTransform(scrollY, [800, 1100], [-300, 0]);
+    const height = useTransform(scrollYProgress, [0, 1], [90, 0]);
+    const toRight = useTransform(scrollYProgress, [0, 1], ['40%', '10%']);
+    const rotate = useTransform(scrollYProgress, [0, 1], [40, 90]);
+    const parallax = useTransform(scrollYProgress, [0, 1], [-300, 0]);
 
     return (
-        <section className={styles.sectionContainer}>
+        <section className={styles.sectionContainer} ref={sectionViewArea}>
             <motion.div className={styles.footerMain} style={{ height: height }}>
                 <div className={styles.rounded}></div>
             </motion.div>

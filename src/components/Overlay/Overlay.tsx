@@ -7,11 +7,13 @@ import styles from './Overlay.module.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 export const Overlay = (): JSX.Element => {
-    const { scrollY } = useScroll();
     const svgRef = useRef<SVGAElement>(null);
+    const overlayViewArea = useRef<HTMLDivElement>(null);
 
-    const rotate = useTransform(scrollY, [0, 400], [0, 40]);
-    const parallax = useTransform(scrollY, [0, 1050], [0, 200]);
+    const { scrollYProgress } = useScroll({ target: overlayViewArea, offset: ['start start', 'end start'] });
+
+    const rotate = useTransform(scrollYProgress, [0, 1], [0, 40]);
+    const parallax = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
@@ -19,7 +21,7 @@ export const Overlay = (): JSX.Element => {
     }, []);
 
     return (
-        <div className={styles.overlay}>
+        <div className={styles.overlay} ref={overlayViewArea}>
             <motion.img className={styles.banner} src="./plug.jpg" style={{ y: parallax, x: '-50%' }} />
             <div className={styles.container}>
                 <div className={classnames(styles.row, styles.about)}>

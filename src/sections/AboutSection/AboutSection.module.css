@@ -12,7 +12,8 @@
 
 .buttonFixed {
     z-index: 10000;
-    right: 15%;
+    right: 18%;
+    top: unset;
 }
 
 .col {
