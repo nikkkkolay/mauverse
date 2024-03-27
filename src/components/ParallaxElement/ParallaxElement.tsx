@@ -63,7 +63,7 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
             return (
                 <motion.div
                     {...props}
-                    className={className}
+                    className={classnames(className, { [styles.changedColor]: fill })}
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
                     animate={{ x, y }}
@@ -96,6 +96,7 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}
                     href={href}
+                    animate={{ x, y }}
                     target="_blank"
                 >
                     {children}
