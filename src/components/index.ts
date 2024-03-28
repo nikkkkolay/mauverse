@@ -13,4 +13,5 @@ export { Title } from './Title/Title';
 export { Form } from './Form/Form';
 export { Info } from './Info/Info';
 export { BigButtonRow } from './BigButtonRow/BigButtonRow';
+export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Footer } from './Footer/Footer';

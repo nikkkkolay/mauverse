@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { Container, Title, Button, BigButtonRow } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 import styles from './ContactSection.module.css';
+import { useMySpring } from '../../hooks/useMySpring';
 
 export const ContactSection = (): JSX.Element => {
     const svgRef = useRef<SVGAElement>(null);
@@ -13,9 +14,11 @@ export const ContactSection = (): JSX.Element => {
     const navigate = useNavigate();
     const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end end'] });
 
-    const height = useTransform(scrollYProgress, [0, 1], [150, 0]);
-    const toRight = useTransform(scrollYProgress, [0, 1], ['40%', '10%']);
-    const rotate = useTransform(scrollYProgress, [0, 1], [40, 90]);
+    const spring = useMySpring(scrollYProgress);
+
+    const height = useTransform(spring, [0, 1], [150, 0]);
+    const toRight = useTransform(spring, [0, 1], ['40%', '10%']);
+    const rotate = useTransform(spring, [0, 1], [40, 90]);
     const parallax = useTransform(scrollYProgress, [0, 1], [-200, 0]);
 
     return (

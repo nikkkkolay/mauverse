@@ -5,6 +5,7 @@ import { LabelIcon } from './LabelIcon';
 import { ArrowIcon } from '../../icons';
 import styles from './Overlay.module.css';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useMySpring } from '../../hooks/useMySpring';
 
 export const Overlay = (): JSX.Element => {
     const svgRef = useRef<SVGAElement>(null);
@@ -12,7 +13,9 @@ export const Overlay = (): JSX.Element => {
 
     const { scrollYProgress } = useScroll({ target: overlayViewArea, offset: ['start start', 'end start'] });
 
-    const rotate = useTransform(scrollYProgress, [0, 1], [0, 40]);
+    const spring = useMySpring(scrollYProgress);
+
+    const rotate = useTransform(spring, [0, 1], [0, 40]);
     const parallax = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
     useEffect(() => {
