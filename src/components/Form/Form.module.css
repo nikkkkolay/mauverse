@@ -22,7 +22,7 @@
 
 .input {
     color: var(--text-primary-gamma);
-    background-color: var(--bg-primary-beta);
+    background-color: var(--bg-secondary-alpha);
     border: none;
     outline: none;
     font-size: 1.3em;
