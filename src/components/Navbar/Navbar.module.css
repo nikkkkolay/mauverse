@@ -1,34 +1,32 @@
 .nav {
-  display: flex;
-  justify-content: space-between;
-  position: relative;
-  z-index: 30;
-  padding: 15px 0;
-  width: 100%;
-  padding: var(--gap-padding) calc(var(--gap-padding) * 1.5);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 500;
+    padding: 15px 0;
+    width: 100%;
+    padding: var(--gap-padding) calc(var(--gap-padding) * 1.5);
 }
 
 .routes {
-  display: flex;
-  gap: 10px;
+    display: flex;
+    gap: 10px;
 }
 
 .routes.visible {
-  display: none;
+    display: none;
 }
 
-
 @media screen and (max-width: 780px) {
-  .nav {
-    padding: calc(var(--gap-padding) * 2) var(--gap-padding);
-  }
+    .nav {
+        padding: calc(var(--gap-padding) * 2) var(--gap-padding);
+    }
 
-  .routes.visible {
-    display: flex;
-  }
+    .routes.visible {
+        display: flex;
+    }
 
-  .routes {
-    display: none;
-  }
-
+    .routes {
+        display: none;
+    }
 }

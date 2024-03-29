@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: var(--bg-primary-beta);
+    background-color: var(--bg-secondary-alpha);
     color: var(--text-primary-gamma);
     width: 100%;
     position: relative;

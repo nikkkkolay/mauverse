@@ -1,5 +1,5 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { Footer, Navbar, Overlay, SmoothScroll } from '../';
+import { Footer, Navbar, Overlay, Sidebar, SmoothScroll } from '../';
 import classnames from 'classnames';
 import styles from './Layout.module.css';
 
@@ -16,6 +16,7 @@ export const Layout = (): JSX.Element => {
                 <Outlet />
             </main>
             <Footer />
+            <Sidebar />
         </SmoothScroll>
     );
 };

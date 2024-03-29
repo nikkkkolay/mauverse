@@ -11,21 +11,20 @@ export const SmoothScroll = ({ children }: PropsWithChildren): JSX.Element => {
     const springScroll = useMySpring(scrollYProgress);
     const scroll = useTransform(springScroll, [1, 0], ['99%', '1%']);
 
-    // useMotionValueEvent(scrollYProgress, 'change', () => {
-    //     if (scrollY) {
-    //         controls.start({ opacity: 1 });
-    //     }
-    //     setTimeout(() => {
-    //         controls.start({ opacity: 0 });
-    //     }, 800);
-    // });
+    useMotionValueEvent(scrollY, 'change', () => {
+        controls.start({ opacity: 1 });
+
+        // setTimeout(() => {
+        //     controls.start();
+        // }, 800);
+    });
 
     return (
         <>
             <motion.div className={styles.scrollRoot} ref={scrollRef}>
                 {children}
                 <div className={styles.scroll}>
-                    <motion.div className={styles.thumb} style={{ y: scroll }} animate={controls}></motion.div>
+                    <motion.div className={styles.thumb} style={{ y: scroll }} exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={controls}></motion.div>
                 </div>
             </motion.div>
         </>

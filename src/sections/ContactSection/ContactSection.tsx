@@ -17,7 +17,7 @@ export const ContactSection = (): JSX.Element => {
     const spring = useMySpring(scrollYProgress);
 
     const height = useTransform(spring, [0, 1], [150, 0]);
-    const toRight = useTransform(spring, [0, 1], ['40%', '10%']);
+    const toRight = useTransform(spring, [0, 1], ['30%', '10%']);
     const rotate = useTransform(spring, [0, 1], [40, 90]);
     const parallax = useTransform(scrollYProgress, [0, 1], [-200, 0]);
 
