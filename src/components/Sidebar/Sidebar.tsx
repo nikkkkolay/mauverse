@@ -1,4 +1,4 @@
-import { Info, Link, Social } from '..';
+import { Social } from '..';
 import styles from './Sidebar.module.css';
 
 export const Sidebar = (): JSX.Element => {
