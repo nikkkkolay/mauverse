@@ -21,3 +21,17 @@
     /* transition: all 0.6s cubic-bezier(0.7, 0, 0.2, 1); */
     will-change: transform;
 }
+
+.routes {
+    justify-self: start;
+    border-top: 1px solid var(--text-primary-delta);
+    padding-top: 5vh;
+}
+
+.link {
+    font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
+}
+
+.link a {
+    padding: 0;
+}
