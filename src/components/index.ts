@@ -1,4 +1,5 @@
 export { Button } from './Button/Button';
+
 export { Container } from './Container/Container';
 export { Layout } from './Layout/Layout';
 export { Overlay } from './Overlay/Overlay';
@@ -14,4 +15,5 @@ export { Form } from './Form/Form';
 export { Info } from './Info/Info';
 export { BigButtonRow } from './BigButtonRow/BigButtonRow';
 export { SmoothScroll } from './SmoothScroll/SmoothScroll';
+export { Social } from './Social/Social';
 export { Footer } from './Footer/Footer';

@@ -1,0 +1,17 @@
+.links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap-padding);
+    list-style-type: none;
+}
+
+.link {
+    font-size: 0.95em;
+}
+
+@media screen and (max-width: 780px) {
+    .links {
+        gap: 16px;
+    }
+}

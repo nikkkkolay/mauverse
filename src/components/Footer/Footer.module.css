@@ -15,18 +15,6 @@
     background-color: var(--bg-secondary-alpha);
 }
 
-.links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--gap-padding);
-    list-style-type: none;
-}
-
-.link {
-    font-size: 0.95em;
-}
-
 .social {
     order: 2;
 }

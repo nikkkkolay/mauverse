@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router-dom';
 import { ContactSection } from '../../sections';
-import { Link, Info } from '../index';
+import { Social, Info } from '../index';
 import styles from './Footer.module.css';
 
 export const Footer = (): JSX.Element => {
@@ -13,15 +13,7 @@ export const Footer = (): JSX.Element => {
                 <Info title={'Версия'} className={styles.version}>
                     <p className={styles.copyright}>©</p>
                 </Info>
-
-                <Info title={'Социальные сети'} className={styles.social}>
-                    <ul className={styles.links}>
-                        <Link name="Вконтакте" path="#" className={styles.link} />
-                        <Link name="Вконтакте" path="#" className={styles.link} />
-                        <Link name="Вконтакте" path="#" className={styles.link} />
-                        <Link name="Вконтакте" path="#" className={styles.link} />
-                    </ul>
-                </Info>
+                <Social className={styles.social} />
             </div>
         </footer>
     );
