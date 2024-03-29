@@ -8,6 +8,7 @@
     opacity: 0;
     visibility: hidden;
     box-shadow: inset 0px 0px 0px 1px var(--text-primary-delta);
+    background-color: var(--bg-primary-beta);
 }
 
 .wrapper {
