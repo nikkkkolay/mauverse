@@ -1,14 +1,12 @@
-import { useRef } from 'react';
 import { MenuLink, Social } from '..';
 import { useSidebar } from '../../store/useSidebar';
-import styles from './Sidebar.module.css';
 import { motion } from 'framer-motion';
 import classnames from 'classnames';
+import styles from './Sidebar.module.css';
 
 export const Sidebar = (): JSX.Element => {
     const isOpen = useSidebar(state => state.isActive);
     const active = useSidebar(state => state.setActive);
-    const sidebar = useRef(null);
 
     return (
         <>
@@ -19,12 +17,7 @@ export const Sidebar = (): JSX.Element => {
                 onClick={active}
             ></motion.div>
 
-            <motion.div
-                className={styles.sidebar}
-                animate={{ x: isOpen ? 0 : 'calc(100% + 6vw)' }}
-                transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7, delayChildren: 0.5 }}
-                ref={sidebar}
-            >
+            <motion.div className={styles.sidebar} animate={{ x: isOpen ? 0 : 'calc(100% + 6vw)' }} transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7 }}>
                 <div className={styles.sidebarInner}>
                     <p className={styles.nav}>Меню</p>
                     <motion.ul className={styles.routes}>

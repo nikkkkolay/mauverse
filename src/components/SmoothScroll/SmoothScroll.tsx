@@ -1,4 +1,4 @@
-import { PropsWithChildren, useRef } from 'react';
+import { PropsWithChildren, useEffect, useRef } from 'react';
 import { motion, useAnimation, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
 import styles from './SmoothScroll.module.css';
 import { useMySpring } from '../../hooks/useMySpring';
@@ -13,10 +13,9 @@ export const SmoothScroll = ({ children }: PropsWithChildren): JSX.Element => {
 
     useMotionValueEvent(scrollY, 'change', () => {
         controls.start({ opacity: 1 });
-
-        // setTimeout(() => {
-        //     controls.start();
-        // }, 800);
+        setTimeout(() => {
+            controls.start({ opacity: 0 });
+        }, 500);
     });
 
     return (
