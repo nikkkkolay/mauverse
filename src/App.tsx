@@ -2,13 +2,19 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
 import { Main, NotFound, Contacts } from './pages';
 import { useEffect } from 'react';
+import { useSidebar } from './store/useSidebar';
 
 const App = (): JSX.Element => {
     const { pathname } = useLocation();
+    const isOpen = useSidebar(state => state.isActive);
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
+
+    useEffect(() => {
+        document.body.classList.toggle('overflow', isOpen);
+    }, [isOpen]);
 
     return (
         <Routes>

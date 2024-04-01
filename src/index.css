@@ -22,7 +22,6 @@ body {
 
     margin: 0;
     padding: 0;
-    overflow: auto;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -42,6 +41,10 @@ body::-webkit-scrollbar {
 
 ::-webkit-scrollbar {
     width: 0;
+}
+
+body.overflow {
+    overflow: hidden;
 }
 
 #root {

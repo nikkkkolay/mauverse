@@ -6,7 +6,6 @@ import { useSidebar } from '../../store/useSidebar';
 import styles from './Navbar.module.css';
 
 export const Navbar = (): JSX.Element => {
-    const isOpen = useSidebar(state => state.isActive);
     const active = useSidebar(state => state.setActive);
 
     const ref = useRef(null);
@@ -23,7 +22,7 @@ export const Navbar = (): JSX.Element => {
             <ul className={classNames(styles.routes, styles.visible)}>
                 <MenuLink name="Меню" type="menu" onClick={active} />
             </ul>
-            <Hamburger onClick={active} active={isOpen} isInView={!isInView} />
+            <Hamburger onClick={active} isInView={!isInView} />
         </nav>
     );
 };
