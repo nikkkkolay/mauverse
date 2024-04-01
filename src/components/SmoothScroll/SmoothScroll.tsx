@@ -15,7 +15,7 @@ export const SmoothScroll = ({ children }: PropsWithChildren): JSX.Element => {
         controls.start({ opacity: 1 });
         setTimeout(() => {
             controls.start({ opacity: 0 });
-        }, 500);
+        }, 800);
     });
 
     return (
