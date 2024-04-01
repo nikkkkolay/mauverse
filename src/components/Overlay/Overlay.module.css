@@ -51,7 +51,7 @@
     position: static;
     z-index: 10000;
     order: 2;
-    padding-bottom: calc(var(--gap-padding) * 4);
+    padding-bottom: calc(var(--gap-padding) * 2);
 }
 
 .about .col {
@@ -114,7 +114,6 @@
 
     .name {
         order: 1;
-        padding-bottom: calc(var(--gap-padding) * 2);
     }
 
     .about h1 {
