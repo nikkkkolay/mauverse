@@ -2,17 +2,15 @@ import { useRef, useState } from 'react';
 import classNames from 'classnames';
 import { Hamburger, MenuLink } from '..';
 import { useInView } from 'framer-motion';
+import { useSidebar } from '../../store/useSidebar';
 import styles from './Navbar.module.css';
 
 export const Navbar = (): JSX.Element => {
-    const [activeMenu, setActiveMenu] = useState(false);
+    const isOpen = useSidebar(state => state.isActive);
+    const active = useSidebar(state => state.setActive);
 
     const ref = useRef(null);
     const isInView = useInView(ref);
-
-    const toggleOpenMenu = () => {
-        setActiveMenu(state => !state);
-    };
 
     return (
         <nav className={styles.nav} ref={ref}>
@@ -23,9 +21,9 @@ export const Navbar = (): JSX.Element => {
                 <MenuLink path="/" name="Lorem" />
             </ul>
             <ul className={classNames(styles.routes, styles.visible)}>
-                <MenuLink name="Меню" type="menu" onClick={() => toggleOpenMenu()} />
+                <MenuLink name="Меню" type="menu" onClick={active} />
             </ul>
-            <Hamburger onClick={() => toggleOpenMenu()} active={activeMenu} isInView={!isInView} />
+            <Hamburger onClick={active} active={isOpen} isInView={!isInView} />
         </nav>
     );
 };

@@ -80,6 +80,7 @@ export const ParallaxElement = ({ className, isInView, onClick, children, as, hr
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
                     animate={{ x, y }}
+                    onClick={onClick}
                     whileTap={{ scale: 0.9 }}
                 >
                     {children}
