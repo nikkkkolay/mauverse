@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
-import { Main, NotFound, Contacts } from './pages';
+import { Main, NotFound, Contacts, About } from './pages';
 import { useEffect } from 'react';
 import { useSidebar } from './store/useSidebar';
 
@@ -21,6 +21,7 @@ const App = (): JSX.Element => {
             <Route element={<Layout />}>
                 <Route path="/" element={<Main />} />
                 <Route path="/contacts" element={<Contacts />} />
+                <Route path="/about" element={<About />} />
                 <Route path="*" element={<NotFound />} />
             </Route>
         </Routes>

@@ -6,8 +6,13 @@
     width: 100%;
 }
 
-.header.fill {
+.header.fillBlack {
     background-color: var(--bg-secondary-alpha);
+}
+
+.header.fillWhite {
+    background-color: var(--bg-primary-gamma);
+    color: var(--text-primary-alpha);
 }
 
 .headerHeight {

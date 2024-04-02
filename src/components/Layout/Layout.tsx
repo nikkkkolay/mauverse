@@ -8,7 +8,13 @@ export const Layout = (): JSX.Element => {
 
     return (
         <SmoothScroll>
-            <header className={classnames(styles.header, { [styles.headerHeight]: location.pathname === '/', [styles.fill]: location.pathname === '/contacts' })}>
+            <header
+                className={classnames(styles.header, {
+                    [styles.headerHeight]: location.pathname === '/',
+                    [styles.fillBlack]: location.pathname === '/contacts',
+                    [styles.fillWhite]: location.pathname === '/about',
+                })}
+            >
                 <Navbar />
                 {location.pathname === '/' && <Overlay />}
             </header>

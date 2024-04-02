@@ -2,21 +2,20 @@
     position: relative;
     list-style: none;
     cursor: pointer;
-    color: var(--text-primary-gamma);
+    color: inherit;
     user-select: none;
 }
 
 .menu.link::after,
 .link.active::after,
 .link::after {
-    content: '';
+    content: '•';
     position: absolute;
     left: 50%;
     bottom: -5px;
-    background-color: var(--text-primary-gamma);
+    color: inherit;
     width: clamp(6px, 1.2vw, 8px);
     height: clamp(6px, 1.2vw, 8px);
-    border-radius: 100%;
     transform: translate(50%, -50%) scale(0) rotate(0.001deg);
     opacity: 0;
     transition: all ease 0.5s;
@@ -39,7 +38,7 @@
 .link a {
     display: inline-block;
     font-weight: 400;
-    color: var(--text-primary-gamma);
+    color: inherit;
     padding: var(--gap-padding) var(--gap-padding);
 }
 

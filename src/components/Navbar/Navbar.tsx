@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import classNames from 'classnames';
 import { Hamburger, MenuLink } from '..';
 import { useInView } from 'framer-motion';
