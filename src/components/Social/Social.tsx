@@ -7,12 +7,12 @@ interface Props {
 
 export const Social = ({ className }: Props): JSX.Element => {
     return (
-        <Info title={'Социальные сети'} className={className}>
+        <Info title={'Lorem ipsum'} className={className}>
             <ul className={styles.links}>
-                <Link name="Вконтакте" path="#" className={styles.link} />
-                <Link name="Вконтакте" path="#" className={styles.link} />
-                <Link name="Вконтакте" path="#" className={styles.link} />
-                <Link name="Вконтакте" path="#" className={styles.link} />
+                <Link name="Lorem ipsum" path="#" className={styles.link} />
+                <Link name="Lorem" path="#" className={styles.link} />
+                <Link name="Lorem ipsum" path="#" className={styles.link} />
+                <Link name="Lorem" path="#" className={styles.link} />
             </ul>
         </Info>
     );

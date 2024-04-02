@@ -10,7 +10,7 @@ export const Footer = (): JSX.Element => {
         <footer className={styles.footer}>
             {location.pathname !== '/contacts' && <ContactSection />}
             <div className={styles.footerContainer}>
-                <Info title={'Версия'} className={styles.version}>
+                <Info title={'Lorem'} className={styles.version}>
                     <p className={styles.copyright}>©</p>
                 </Info>
                 <Social className={styles.social} />

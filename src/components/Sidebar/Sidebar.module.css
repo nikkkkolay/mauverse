@@ -31,6 +31,10 @@
     padding-top: 5vh;
 }
 
+.routes span {
+    display: block;
+}
+
 .link {
     line-height: 1.4;
     font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
@@ -67,8 +71,11 @@
     width: 100%;
 }
 
-
 @media screen and (max-width: 780px) {
+    .sidebar {
+        width: 100%;
+    }
+
     .link::after {
         left: 90%;
     }

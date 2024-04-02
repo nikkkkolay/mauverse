@@ -4,7 +4,7 @@ import { Container, BigButtonRow, Button } from '../../components';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutSection.module.css';
 
-const textAnimation = {
+const variants = {
     hidden: {
         top: '60px',
     },
@@ -43,7 +43,7 @@ export const AboutSection = (): JSX.Element => {
                 <motion.div className={styles.col} ref={columnViewArea}>
                     {text.split(' ').map((p, i) => (
                         <motion.span className={styles.text} key={p + i}>
-                            <motion.span variants={textAnimation} initial="hidden" animate={controls} className={styles.textInner}>
+                            <motion.span variants={variants} initial="hidden" animate={controls} className={styles.textInner}>
                                 {p}
                             </motion.span>
                             {'\u00A0'}
