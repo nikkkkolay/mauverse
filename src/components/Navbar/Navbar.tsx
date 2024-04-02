@@ -13,14 +13,14 @@ export const Navbar = (): JSX.Element => {
 
     return (
         <nav className={styles.nav} ref={ref}>
-            <img className={styles.logo} src="" alt="Лого" />
+            <img className={styles.logo} src="" alt="Lorem" />
             <ul className={styles.routes}>
                 <MenuLink path="/" name="Lorem" />
                 <MenuLink path="/" name="Lorem" />
                 <MenuLink path="/" name="Lorem" />
             </ul>
             <ul className={classNames(styles.routes, styles.visible)}>
-                <MenuLink name="Меню" type="menu" onClick={active} />
+                <MenuLink name="Lorem" type="menu" onClick={active} />
             </ul>
             <Hamburger onClick={active} isInView={!isInView} />
         </nav>
