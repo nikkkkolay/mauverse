@@ -52,9 +52,10 @@
 
 .link::after {
     left: 100%;
-    top: 50%;
-    width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
-    height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    top: 30%;
+    line-height: 1;
+    bottom: 0;
+    font-size: 40px;
 }
 
 .overlay {

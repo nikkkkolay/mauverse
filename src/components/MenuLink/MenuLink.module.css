@@ -9,16 +9,14 @@
 .menu.link::after,
 .link.active::after,
 .link::after {
-    content: '•';
+    content: '\2022';
     position: absolute;
     left: 50%;
-    bottom: -5px;
+    bottom: -40%;
     color: inherit;
-    width: clamp(6px, 1.2vw, 8px);
-    height: clamp(6px, 1.2vw, 8px);
-    transform: translate(50%, -50%) scale(0) rotate(0.001deg);
     opacity: 0;
     transition: all ease 0.5s;
+    font-size: 30px;
 }
 
 .menu.link::after,
@@ -29,10 +27,8 @@
 }
 
 .menu.link::after {
-    left: -8px;
-    top: 40%;
-    width: 6px;
-    height: 6px;
+    left: -35%;
+    top: 0%;
 }
 
 .link a {
