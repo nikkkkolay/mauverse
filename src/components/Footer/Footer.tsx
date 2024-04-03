@@ -8,7 +8,7 @@ export const Footer = (): JSX.Element => {
 
     return (
         <footer className={styles.footer}>
-            {location.pathname !== '/contacts' && <ContactSection />}
+            {!location.pathname.includes('contacts') && <ContactSection />}
             <div className={styles.footerContainer}>
                 <Info title={'Lorem'} className={styles.version}>
                     <p className={styles.copyright}>©</p>
