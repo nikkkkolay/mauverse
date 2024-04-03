@@ -58,8 +58,8 @@ export const AboutSection = (): JSX.Element => {
                     </span>
                 </motion.div>
             </Container>
-            <BigButtonRow style={{ y: buttonTop, x: 15 }} classNames={styles.buttonFixed}>
-                <Button>
+            <BigButtonRow style={{ y: buttonTop, x: 15 }}>
+                <Button className={styles.buttonFixed}>
                     <p>Lorem</p>
                 </Button>
             </BigButtonRow>

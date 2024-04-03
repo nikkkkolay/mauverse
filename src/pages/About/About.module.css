@@ -12,3 +12,19 @@
     position: relative;
     padding-bottom: calc(var(--section-padding) / 2);
 }
+
+.row {
+    padding: calc(var(--section-padding) / 1.5) 0;
+}
+
+.decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: var(--element-primary-alpha);
+    color: var(--text-primary-gamma);
+    width: clamp(9em, 12vw, 11em);
+    height: clamp(9em, 12vw, 11em);
+    font-size: 1em;
+}
