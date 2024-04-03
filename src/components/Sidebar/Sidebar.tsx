@@ -7,11 +7,11 @@ import styles from './Sidebar.module.css';
 const variants = {
     hidden: (custom: number) => ({
         x: '60%',
-        transition: { delay: custom * 0.1, ease: [0.5, 0, 0.2, 1], duration: 0.7 },
+        transition: { delay: custom * 0.05, ease: [0.5, 0, 0.2, 1], duration: 0.7 },
     }),
     visible: (custom: number) => ({
         x: 0,
-        transition: { delay: custom * 0.1, ease: [0.5, 0, 0.2, 1], duration: 0.7 },
+        transition: { delay: custom * 0.05, ease: [0.5, 0, 0.2, 1], duration: 0.7 },
     }),
 };
 
