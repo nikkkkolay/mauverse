@@ -52,10 +52,9 @@
 
 .link::after {
     left: 100%;
-    top: 30%;
-    line-height: 1;
     bottom: 0;
-    font-size: 40px;
+    line-height: inherit;
+    font-size: inherit;
 }
 
 .overlay {
