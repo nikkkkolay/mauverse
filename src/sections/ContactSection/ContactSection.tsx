@@ -29,7 +29,7 @@ export const ContactSection = (): JSX.Element => {
             <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
-                        <img src="./plug.jpg" alt="logo" />
+                        <img src="/plug.jpg" alt="logo" />
                         <Title tag="h2">Lorem ipsum</Title>
                     </div>
                     <Title tag="h2">dolor sit consectetur</Title>
