@@ -13,17 +13,21 @@ export const AboutPage = (): JSX.Element => {
     // const buttonTop = useTransform(spring, [0, 1], ['-30%', '-100%']);
 
     return (
-        <section className={styles.sectionContainer}>
-            <Container className={styles.container}>
-                <div className={styles.titleContainer}>
-                    <Title tag="h1">
-                        Lorem ipsum dolor
-                        <div>sit consectetur</div>
-                    </Title>
-                    <BigButtonRow stripe className={styles.row}>
-                        <div className={styles.decoration}>Lorem</div>
-                    </BigButtonRow>
-                </div>
+        <section className={styles.about}>
+            <Container>
+                <Title tag="h1">
+                    Lorem ipsum dolor
+                    <div>sit consectetur</div>
+                </Title>
+                <BigButtonRow stripe className={styles.row}>
+                    <div className={styles.decoration}>Lorem</div>
+                </BigButtonRow>
+            </Container>
+            <Container>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sed commodi fuga, architecto consequatur eveniet laboriosam quasi excepturi facere placeat
+                    laudantium, unde rerum alias perferendis labore repellendus in minus ducimus
+                </p>
             </Container>
         </section>
     );

@@ -11,12 +11,14 @@
 .link::after {
     content: '\2022';
     position: absolute;
-    left: 50%;
-    bottom: -40%;
+    left: 0;
+    bottom: -30%;
     color: inherit;
     opacity: 0;
     transition: all ease 0.5s;
     font-size: 30px;
+    width: 100%;
+    text-align: center;
 }
 
 .menu.link::after,
@@ -27,7 +29,7 @@
 }
 
 .menu.link::after {
-    left: -15px;
+    left: -60%;
     top: 0;
     bottom: 0;
 }
