@@ -1,11 +1,10 @@
 import { useRef } from 'react';
 import { BigButtonRow, Container, Title } from '../../components';
-
-import styles from './About.module.css';
 import { useScroll, useTransform } from 'framer-motion';
 import { useMySpring } from '../../hooks/useMySpring';
+import styles from './AboutPage.module.css';
 
-export const About = (): JSX.Element => {
+export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end start'] });
 

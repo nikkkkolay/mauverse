@@ -1,4 +1,4 @@
-export { Main } from './Main/Main';
-export { Contacts } from './Contacts/Contacts';
-export { About } from './About/About';
+export { MainPage } from './MainPage/MainPage';
+export { ContactsPage } from './ContactsPage/ContactsPage';
+export { AboutPage } from './AboutPage/AboutPage';
 export { NotFound } from './NotFound/NotFound';

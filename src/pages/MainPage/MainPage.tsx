@@ -1,6 +1,6 @@
 import { AboutSection } from '../../sections';
 
-export const Main = (): JSX.Element => {
+export const MainPage = (): JSX.Element => {
     return (
         <>
             <AboutSection />

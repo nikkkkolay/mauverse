@@ -1,9 +1,9 @@
 import { Container, Title, Form } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 
-import styles from './Contacts.module.css';
+import styles from './ContactsPage.module.css';
 
-export const Contacts = (): JSX.Element => {
+export const ContactsPage = (): JSX.Element => {
     return (
         <section className={styles.sectionContainer}>
             <Container className={styles.container}>
