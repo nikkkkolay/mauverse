@@ -51,7 +51,7 @@
 }
 
 .link::after {
-    left: 100%;
+    left: 50%;
     bottom: 0;
     line-height: inherit;
     font-size: inherit;
