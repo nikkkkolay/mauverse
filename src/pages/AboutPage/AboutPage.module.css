@@ -8,7 +8,7 @@
     width: 100%;
 }
 
-.row {
+.buttonRow {
     padding: calc(var(--section-padding) / 1.5) 0;
 }
 
@@ -17,9 +17,106 @@
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    background-color: var(--element-primary-alpha);
+    background-color: var(--element-primary-gamma);
     color: var(--text-primary-gamma);
     width: clamp(9em, 12vw, 11em);
     height: clamp(9em, 12vw, 11em);
     font-size: 1em;
+}
+
+.header {
+    padding-top: calc(var(--section-padding) / 2);
+    padding-bottom: calc(var(--section-padding) / 6);
+}
+
+.content {
+    padding-right: calc(var(--gap-padding) * 2);
+    padding-left: calc(var(--gap-padding) * 2);
+    padding-top: 0;
+}
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: var(--section-padding);
+}
+
+.intro .col {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 40%;
+    position: relative;
+}
+
+.intro .col .icon {
+    width: clamp(0.9em, 1.1vw, 1.1em);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.intro .col .icon g {
+    stroke: var(--text-primary-alpha);
+}
+
+.intro .col:first-child {
+    padding-right: calc(var(--gap-padding) * 2);
+    padding-left: calc(var(--gap-padding) * 4);
+}
+
+.intro .col:last-child {
+    width: 60%;
+}
+
+.intro .img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.special {
+    opacity: 0.8;
+    display: block;
+    color: var(--text-primary-delta);
+    font-weight: 500;
+}
+
+.outro {
+    padding-left: calc(var(--gap-padding) * 4);
+}
+
+@media screen and (max-width: 780px) {
+    .header {
+        padding-bottom: 0;
+    }
+
+    .content {
+        padding-left: calc(var(--gap-padding) * 2);
+    }
+
+    .intro {
+        padding-bottom: calc(var(--section-padding) / 2);
+    }
+
+    .outro {
+        padding-left: 0;
+    }
+
+    .intro .col,
+    .intro .col:last-child {
+        width: 100%;
+    }
+
+    .intro .col:first-child {
+        padding-left: 0;
+    }
+
+    .intro .col:last-child {
+        padding-top: calc(var(--section-padding) / 4);
+    }
+
+    .intro .col .icon {
+        top: calc(var(--section-padding) / -3);
+    }
 }

@@ -3,6 +3,7 @@ import { BigButtonRow, Container, Title } from '../../components';
 import { useScroll, useTransform } from 'framer-motion';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutPage.module.css';
+import { ArrowIcon } from './../../icons/ArrowIcon';
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
@@ -14,20 +15,33 @@ export const AboutPage = (): JSX.Element => {
 
     return (
         <section className={styles.about}>
-            <Container>
+            <Container className={styles.header}>
                 <Title tag="h1">
                     Lorem ipsum dolor
                     <div>sit consectetur</div>
                 </Title>
-                <BigButtonRow stripe className={styles.row}>
+                <BigButtonRow stripe className={styles.buttonRow}>
                     <div className={styles.decoration}>Lorem</div>
                 </BigButtonRow>
             </Container>
-            <Container>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, sed commodi fuga, architecto consequatur eveniet laboriosam quasi excepturi facere placeat
-                    laudantium, unde rerum alias perferendis labore repellendus in minus ducimus
-                </p>
+            <Container className={styles.content}>
+                <div className={styles.intro}>
+                    <div className={styles.col}>
+                        <ArrowIcon className={styles.icon} />
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus in eius beatae nemo
+                            cupiditate sit numquam. Inventore doloremque eveniet tempora nemo.
+                        </p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
+                        <p className={styles.special}>Lorem ...</p>
+                    </div>
+                    <div className={styles.col}>
+                        <img className={styles.img} src="/plug.jpg" alt="plug" />
+                    </div>
+                </div>
+                <div className={styles.outro}>
+                    <Title tag="h3">Lorem ipsum dolor</Title>
+                </div>
             </Container>
         </section>
     );
