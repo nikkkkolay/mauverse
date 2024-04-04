@@ -8,6 +8,13 @@
     padding: var(--gap-padding) calc(var(--gap-padding) * 1.5);
 }
 
+li.colorWhite::after,
+li.colorWhite {
+    color: var(--text-primary-gamma);
+    transition: all 0.2s ease;
+    transition-delay: 0.2s;
+}
+
 .routes {
     display: flex;
     gap: 10px;

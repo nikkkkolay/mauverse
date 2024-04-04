@@ -6,7 +6,8 @@ import { useSidebar } from '../../store/useSidebar';
 import styles from './Navbar.module.css';
 
 export const Navbar = (): JSX.Element => {
-    const active = useSidebar(state => state.setActive);
+    const setActive = useSidebar(state => state.setActive);
+    const isActive = useSidebar(state => state.isActive);
 
     const ref = useRef(null);
     const isInView = useInView(ref);
@@ -20,9 +21,9 @@ export const Navbar = (): JSX.Element => {
                 <MenuLink path="/" name="Lorem" />
             </ul>
             <ul className={classNames(styles.routes, styles.visible)}>
-                <MenuLink name="Lorem" type="menu" onClick={active} />
+                <MenuLink name="Lorem" type="menu" onClick={setActive} className={isActive ? styles.colorWhite : ''} />
             </ul>
-            <Hamburger onClick={active} isInView={!isInView} />
+            <Hamburger onClick={setActive} isInView={!isInView} />
         </nav>
     );
 };

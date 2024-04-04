@@ -27,8 +27,9 @@
 }
 
 .menu.link::after {
-    left: -35%;
-    top: 0%;
+    left: -15px;
+    top: 0;
+    bottom: 0;
 }
 
 .link a {
