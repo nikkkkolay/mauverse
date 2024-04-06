@@ -4,7 +4,6 @@ import { useScroll, useTransform } from 'framer-motion';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutPage.module.css';
 import { ArrowIcon } from './../../icons/ArrowIcon';
-
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end start'] });
@@ -30,7 +29,7 @@ export const AboutPage = (): JSX.Element => {
                         <ArrowIcon className={styles.icon} />
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus in eius beatae nemo
-                            cupiditate sit numquam. Inventore doloremque eveniet tempora nemo.
+                            cupiditate sit numquam. doloremque eveniet tempora nemo.
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
                         <p className={styles.special}>Lorem ...</p>
