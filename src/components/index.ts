@@ -1,5 +1,4 @@
 export { Button } from './Button/Button';
-
 export { Container } from './Container/Container';
 export { Layout } from './Layout/Layout';
 export { Overlay } from './Overlay/Overlay';
@@ -10,6 +9,7 @@ export { Hamburger } from './Hamburger/Hamburger';
 export { Sidebar } from './Sidebar/Sidebar';
 export { ParallaxText } from './ParallaxText/ParallaxText';
 export { ListItem } from './ListItem/ListItem';
+export { Link } from './link/Link';
 export { Title } from './Title/Title';
 export { Form } from './Form/Form';
 export { Info } from './Info/Info';
