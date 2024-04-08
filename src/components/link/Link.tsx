@@ -22,7 +22,7 @@ export const Link = ({ href, className, children }: Props): JSX.Element => {
                 variants={listVariants}
                 style={{
                     position: 'absolute',
-                    bottom: '-3px',
+                    bottom: '0',
                     height: '1px',
                     background: '#455ce9',
                 }}

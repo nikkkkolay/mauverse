@@ -23,7 +23,7 @@ export const ListItem = ({ name, path, className }: Props): JSX.Element => {
                     variants={listVariants}
                     style={{
                         position: 'absolute',
-                        bottom: '0',
+                        bottom: '-8px',
                         height: '1px',
                         background: '#ffffff',
                     }}
