@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import { BigButtonRow, Container, Title, Link } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import styles from './AboutPage.module.css';
 import { ArrowIcon } from './../../icons/ArrowIcon';
+import styles from './AboutPage.module.css';
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
