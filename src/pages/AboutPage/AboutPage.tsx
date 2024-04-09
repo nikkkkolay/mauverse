@@ -32,7 +32,7 @@ export const AboutPage = (): JSX.Element => {
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
     const introImgTransform = useTransform(scrollYIntroImgProgress.scrollYProgress, [0, 1], [-250, 0]);
     const introTextTransform = useTransform(scrollYIntroTextProgress.scrollYProgress, [0, 1], [0, 500]);
-    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 120]);
+    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 300]);
     const skitImgTransform = useTransform(scrollYSkitProgress.scrollYProgress, [0, 1], [-250, 0]);
 
     return (
