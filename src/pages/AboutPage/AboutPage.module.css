@@ -76,7 +76,7 @@
 }
 
 .intro .col .img {
-    height: 140%;
+    min-height: 120%;
 }
 
 .img {
@@ -208,6 +208,8 @@
 
     .intro .col:first-child {
         padding-left: 0;
+        padding-bottom: calc(var(--gap-padding) * 2);
+        transform: unset !important;
     }
 
     .intro .col .icon {

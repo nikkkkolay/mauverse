@@ -3,19 +3,37 @@ import { BigButtonRow, Container, Title, Link } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowIcon } from './../../icons/ArrowIcon';
 import styles from './AboutPage.module.css';
+import { useMySpring } from '../../hooks/useMySpring';
+
+const variantsProgress = {
+    hidden: (custom: number) => ({
+        opacity: 0,
+        // transition: { delay: custom * 0.5, repeat: Infinity, repeatDelay: 2 },
+    }),
+    visible: (custom: number) => ({
+        opacity: 1,
+        transition: { delay: custom, repeat: Infinity, repeatDelay: 1.5 },
+    }),
+};
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
-    const skitViewArea = useRef<HTMLDivElement>(null);
     const introViewArea = useRef<HTMLDivElement>(null);
+    const skitViewArea = useRef<HTMLDivElement>(null);
+    const svgRef = useRef<SVGAElement>(null);
 
     const scrollYSectionProgress = useScroll({ target: sectionViewArea, offset: ['start start', 'end end'] });
+    const scrollYIntroImgProgress = useScroll({ target: introViewArea, offset: ['start end', 'end start'] });
+    const scrollYIntroTextProgress = useScroll({ target: sectionViewArea, offset: ['start start', 'end start'] });
     const scrollYSkitProgress = useScroll({ target: skitViewArea, offset: ['start end', 'end start'] });
-    const scrollYIntroProgress = useScroll({ target: introViewArea, offset: ['start end', 'end start'] });
+
+    const springArrowRotate = useMySpring(scrollYSectionProgress.scrollYProgress);
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
-    const skitImgTransform = useTransform(scrollYSkitProgress.scrollYProgress, [0, 1], [-250, -50]);
-    const introImgTransform = useTransform(scrollYIntroProgress.scrollYProgress, [0, 1], [0, 0]);
+    const introImgTransform = useTransform(scrollYIntroImgProgress.scrollYProgress, [0, 1], [-250, 0]);
+    const introTextTransform = useTransform(scrollYIntroTextProgress.scrollYProgress, [0, 1], [0, 500]);
+    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 120]);
+    const skitImgTransform = useTransform(scrollYSkitProgress.scrollYProgress, [0, 1], [-250, 0]);
 
     return (
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
@@ -31,22 +49,37 @@ export const AboutPage = (): JSX.Element => {
 
             <Container className={styles.content}>
                 <div className={styles.intro} ref={introViewArea}>
-                    <div className={styles.col}>
-                        <ArrowIcon className={styles.icon} />
+                    <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
+                        <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus in eius beatae nemo
                             cupiditate sit numquam. doloremque <Link href="#">eveniet</Link> tempora.
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
-                        <p className={styles.special}>Lorem ...</p>
-                    </div>
+                        <p className={styles.special}>
+                            engine{' '}
+                            {['.', '.', '.'].map((dot, i) => (
+                                <motion.span key={i} custom={i} variants={variantsProgress} initial={'hidden'} animate={'visible'}>
+                                    {dot}
+                                </motion.span>
+                            ))}
+                        </p>
+                    </motion.div>
                     <div className={styles.col}>
                         <motion.img className={styles.img} src="/plug.jpg" alt="plug" style={{ y: introImgTransform, x: 0 }} />
                     </div>
                 </div>
 
                 <div className={styles.outro}>
-                    <Title tag="h3">Lorem ipsum dolor</Title>
+                    <Title tag="h3">
+                        Lorem ipsum dolor{' '}
+                        {/* {['.', '.', '.'].map((dot, i) => (
+                            <motion.span key={i} custom={i} variants={variantsProgress} initial={'hidden'} animate={'visible'}>
+                                {dot}
+                            </motion.span>
+                        ))} */}
+                    </Title>
+
                     <div className={styles.row}>
                         <div className={styles.col}>
                             <div className={styles.stripe}>
