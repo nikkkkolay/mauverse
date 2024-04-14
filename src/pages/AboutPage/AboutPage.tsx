@@ -1,20 +1,9 @@
 import { useRef } from 'react';
-import { BigButtonRow, Container, Title, Link } from '../../components';
+import { BigButtonRow, Container, Title, Link, LoadingDots } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowIcon } from './../../icons/ArrowIcon';
 import styles from './AboutPage.module.css';
 import { useMySpring } from '../../hooks/useMySpring';
-
-const variantsProgress = {
-    hidden: (custom: number) => ({
-        opacity: 0,
-        // transition: { delay: custom * 0.5, repeat: Infinity, repeatDelay: 2 },
-    }),
-    visible: (custom: number) => ({
-        opacity: 1,
-        transition: { delay: custom, repeat: Infinity, repeatDelay: 1.5 },
-    }),
-};
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
@@ -57,12 +46,7 @@ export const AboutPage = (): JSX.Element => {
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
                         <p className={styles.special}>
-                            engine{' '}
-                            {['.', '.', '.'].map((dot, i) => (
-                                <motion.span key={i} custom={i} variants={variantsProgress} initial={'hidden'} animate={'visible'}>
-                                    {dot}
-                                </motion.span>
-                            ))}
+                            engine <LoadingDots />
                         </p>
                     </motion.div>
                     <div className={styles.col}>
@@ -72,12 +56,7 @@ export const AboutPage = (): JSX.Element => {
 
                 <div className={styles.outro}>
                     <Title tag="h3">
-                        Lorem ipsum dolor{' '}
-                        {/* {['.', '.', '.'].map((dot, i) => (
-                            <motion.span key={i} custom={i} variants={variantsProgress} initial={'hidden'} animate={'visible'}>
-                                {dot}
-                            </motion.span>
-                        ))} */}
+                        Lorem ipsum dolor <LoadingDots />
                     </Title>
 
                     <div className={styles.row}>
