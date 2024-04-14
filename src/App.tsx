@@ -1,7 +1,7 @@
+import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';
-import { useEffect } from 'react';
 import { useSidebar } from './store/useSidebar';
 
 const App = (): JSX.Element => {

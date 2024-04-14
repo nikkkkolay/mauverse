@@ -2,13 +2,12 @@ import { create } from 'zustand';
 
 interface SidebarStore {
     isActive: boolean;
-    setActive: () => void;
+    setActive: (state: boolean) => void;
 }
 
 export const useSidebar = create<SidebarStore>((set, get) => ({
     isActive: false,
-    setActive: () => {
-        const { isActive } = get();
-        set({ isActive: !isActive });
+    setActive: (state: boolean) => {
+        set({ isActive: state });
     },
 }));

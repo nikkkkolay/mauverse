@@ -35,26 +35,23 @@
     display: block;
 }
 
-.link {
+a.link {
+    position: relative;
+    padding: 0;
+    width: 100%;
     line-height: 1.4;
     font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
 }
 
-.link a {
-    padding: 0;
-}
-
-.link.active::after,
-.link:hover::after {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.link::after {
-    left: 50%;
-    bottom: 0;
+a.link.active::after,
+a.link:hover::after {
     line-height: inherit;
     font-size: inherit;
+    opacity: 1;
+    transform: scale(1);
+    left: 100%;
+    bottom: 0;
+    width: fit-content;
 }
 
 .overlay {

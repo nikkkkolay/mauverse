@@ -1,18 +1,22 @@
 .link {
-    position: relative;
     list-style: none;
     cursor: pointer;
-    color: inherit;
     user-select: none;
 }
 
-.menu.link::after,
-.link.active::after,
-.link::after {
+.link a {
+    position: relative;
+    display: inline-block;
+    font-weight: 400;
+    color: inherit;
+    padding: var(--gap-padding) var(--gap-padding);
+}
+
+.link a::after {
     content: '\2022';
     position: absolute;
     left: 0;
-    bottom: -30%;
+    bottom: -35%;
     color: inherit;
     opacity: 0;
     transition: all ease 0.5s;
@@ -21,24 +25,12 @@
     text-align: center;
 }
 
-.menu.link::after,
-.link.active::after,
-.link:hover::after {
+.link a.active::after,
+.link a:hover::after {
     opacity: 1;
     transform: scale(1);
-}
-
-.menu.link::after {
-    left: -60%;
-    top: 0;
-    bottom: 0;
-}
-
-.link a {
-    display: inline-block;
-    font-weight: 400;
-    color: inherit;
-    padding: var(--gap-padding) var(--gap-padding);
+    left: 0;
+    bottom: -35%;
 }
 
 @media screen and (max-width: 780px) {

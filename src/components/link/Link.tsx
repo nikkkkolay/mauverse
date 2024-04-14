@@ -18,7 +18,7 @@ export const Link = ({ href, className, children }: Props): JSX.Element => {
     return (
         <motion.a className={classnames(styles.link, className)} whileHover="visible" initial="hidden" exit="hidden" href={href} target="__blank">
             {children}
-            <motion.div
+            <motion.span
                 variants={listVariants}
                 style={{
                     position: 'absolute',
@@ -26,7 +26,7 @@ export const Link = ({ href, className, children }: Props): JSX.Element => {
                     height: '1px',
                     background: '#455ce9',
                 }}
-            ></motion.div>
+            ></motion.span>
         </motion.a>
     );
 };

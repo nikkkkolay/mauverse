@@ -4,14 +4,14 @@ import styles from './Hamburger.module.css';
 import { useSidebar } from '../../store/useSidebar';
 
 interface Props {
-    onClick: () => void;
     isInView?: boolean;
 }
 
-export const Hamburger = ({ onClick, isInView }: Props): JSX.Element => {
-    const isOpen = useSidebar(state => state.isActive);
+export const Hamburger = ({ isInView }: Props): JSX.Element => {
+    const isActive = useSidebar(state => state.isActive);
+    const setActive = useSidebar(state => state.setActive);
     return (
-        <Button onClick={onClick} isInView={isInView} className={classnames(styles.hamburger, { [styles.active]: isOpen })}>
+        <Button onClick={() => setActive(!isActive)} isInView={isInView} className={classnames(styles.hamburger, { [styles.active]: isActive })}>
             <div className={styles.bars}></div>
         </Button>
     );
