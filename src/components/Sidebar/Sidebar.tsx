@@ -28,7 +28,7 @@ export const Sidebar = (): JSX.Element => {
                 onClick={active}
             ></motion.div>
 
-            <motion.div className={styles.sidebar} animate={{ x: isOpen ? 0 : '100%' }} transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7 }}>
+            <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '100%' }} transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7 }}>
                 <div className={styles.sidebarInner}>
                     <p className={styles.nav}>lorem</p>
                     <ul className={styles.routes}>

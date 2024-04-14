@@ -1,0 +1,17 @@
+.preloader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background: var(--bg-primary-gamma);
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 100000;
+	height: 100vh;
+}
+
+.title {
+	color: var(--text-primary-alpha);
+}
