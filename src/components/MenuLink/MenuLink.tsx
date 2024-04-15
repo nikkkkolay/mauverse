@@ -12,12 +12,12 @@ interface Props {
 
 export const MenuLink = ({ className, onClick, name, path }: Props): JSX.Element => {
     return (
-        <ParallaxElement as="li" onClick={onClick} className={styles.link}>
+        <ParallaxElement as="li" onClick={onClick} className={styles.list}>
             <NavLink
                 to={{
                     pathname: path,
                 }}
-                className={({ isActive }) => classnames(className, { [styles.active]: isActive })}
+                className={({ isActive }) => classnames(className, styles.link, { [styles.active]: isActive }, { [styles.sidebarActive]: isActive && className })}
             >
                 {name}
             </NavLink>

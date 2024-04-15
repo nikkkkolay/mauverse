@@ -1,10 +1,10 @@
-.link {
+.list {
     list-style: none;
     cursor: pointer;
     user-select: none;
 }
 
-.link a {
+.link {
     position: relative;
     display: inline-block;
     font-weight: 400;
@@ -12,29 +12,48 @@
     padding: var(--gap-padding) var(--gap-padding);
 }
 
-.link a::after {
+.link::after {
     content: '\2022';
     position: absolute;
-    left: 0;
+    left: 50%;
     bottom: -35%;
+    transform: translateX(-50%);
     color: inherit;
     opacity: 0;
-    transition: all ease 0.5s;
+    transition: opacity ease 0.5s;
     font-size: 30px;
-    width: 100%;
-    text-align: center;
+    width: fit-content;
 }
 
-.link a.active::after,
-.link a:hover::after {
+.link.active::after,
+.link:hover::after {
     opacity: 1;
-    transform: scale(1);
-    left: 0;
+    left: 50%;
     bottom: -35%;
+    transform: translateX(-50%);
+}
+
+.link.sidebarActive::after,
+.link.sidebarActive:hover::after {
+    line-height: inherit;
+    font-size: inherit;
+    opacity: 1;
+    left: -10%;
+    bottom: 0%;
+    width: fit-content;
 }
 
 @media screen and (max-width: 780px) {
-    .link a {
+    .list {
+        width: 100%;
+    }
+
+    .link {
         padding: calc(var(--gap-padding) / 2) calc(var(--gap-padding) / 2);
+    }
+
+    .link.sidebarActive::after,
+    .link.sidebarActive:hover::after {
+        left: 100%;
     }
 }

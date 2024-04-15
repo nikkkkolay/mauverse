@@ -35,7 +35,7 @@
     display: block;
 }
 
-a.link {
+.link {
     position: relative;
     padding: 0;
     width: 100%;
@@ -43,14 +43,18 @@ a.link {
     font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
 }
 
-a.link.active::after,
-a.link:hover::after {
+.link::after {
+    left: -10%;
+    bottom: 0%;
+    font-size: inherit;
+}
+
+.link:hover::after {
     line-height: inherit;
     font-size: inherit;
     opacity: 1;
-    transform: scale(1);
-    left: 100%;
-    bottom: 0;
+    left: -10%;
+    bottom: 0%;
     width: fit-content;
 }
 
@@ -71,5 +75,13 @@ a.link:hover::after {
 @media screen and (max-width: 780px) {
     .sidebar {
         width: 100%;
+    }
+
+    .link::after {
+        left: 100%;
+    }
+
+    .link:hover::after {
+        left: 100%;
     }
 }
