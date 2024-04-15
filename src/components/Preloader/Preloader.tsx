@@ -23,13 +23,7 @@ export const Preloader = (): JSX.Element => {
     return (
         <motion.div className={styles.preloader} initial={{ y: 0 }} animate={{ y: loading ? 0 : '-100%' }} transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7 }}>
             <Title tag={'h3'} className={styles.title}>
-                Lorem
-            </Title>
-            <Title tag={'h3'} className={styles.title}>
-                Ipsum
-            </Title>
-            <Title tag={'h3'} className={styles.title}>
-                Dolor
+                {pathname}
             </Title>
         </motion.div>
     );

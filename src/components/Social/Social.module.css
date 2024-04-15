@@ -8,6 +8,7 @@
 
 .link {
     font-size: 0.95em;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 780px) {
