@@ -6,7 +6,12 @@
     background-color: var(--bg-primary-beta);
     z-index: 300;
     will-change: transform;
-    overflow: scroll;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0;
 }
 
 .nav {
