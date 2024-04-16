@@ -7,25 +7,23 @@ export const Layout = (): JSX.Element => {
     let location = useLocation();
 
     return (
-        <>
-            <Preloader />
-            <SmoothScroll>
-                <header
-                    className={classnames(styles.header, {
-                        [styles.headerHeight]: location.pathname === '/',
-                        [styles.fillBlack]: location.pathname.includes('contacts'),
-                        [styles.fillWhite]: location.pathname.includes('about'),
-                    })}
-                >
-                    <Navbar />
-                    {location.pathname === '/' && <Overlay />}
-                </header>
-                <main className={styles.main}>
-                    <Outlet />
-                </main>
-                <Footer />
-                <Sidebar />
-            </SmoothScroll>
-        </>
+        <SmoothScroll>
+            {/* <Preloader /> */}
+            <header
+                className={classnames(styles.header, {
+                    [styles.headerHeight]: location.pathname === '/',
+                    [styles.fillBlack]: location.pathname.includes('contacts'),
+                    [styles.fillWhite]: location.pathname.includes('about'),
+                })}
+            >
+                <Navbar />
+                {location.pathname === '/' && <Overlay />}
+            </header>
+            <main className={styles.main}>
+                <Outlet />
+            </main>
+            <Footer />
+            <Sidebar />
+        </SmoothScroll>
     );
 };

@@ -21,11 +21,15 @@ const variants = {
 export const Sidebar = (): JSX.Element => {
     const isOpen = useSidebar(state => state.isActive);
     const setActive = useSidebar(state => state.setActive);
-    let location = useLocation();
+    const location = useLocation();
 
     useEffect(() => {
         setActive(false);
     }, [location]);
+
+    useEffect(() => {
+        document.body.classList.toggle('overflow', isOpen);
+    }, [isOpen]);
 
     return (
         <>

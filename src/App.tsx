@@ -1,15 +1,23 @@
-import { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useEffect, useLayoutEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';
-import { useSidebar } from './store/useSidebar';
+import { useLayoutLoading } from './store/useLayoutLoading';
 
 const App = (): JSX.Element => {
-    const isOpen = useSidebar(state => state.isActive);
+    const loading = useLayoutLoading(state => state.loading);
+    const setLoading = useLayoutLoading(state => state.setLoading);
+
+    const { pathname } = useLocation();
 
     useEffect(() => {
-        document.body.classList.toggle('overflow', isOpen);
-    }, [isOpen]);
+        document.body.classList.toggle('overflow', loading);
+    }, [loading]);
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0);
+        setLoading();
+    }, [pathname]);
 
     return (
         <Routes>

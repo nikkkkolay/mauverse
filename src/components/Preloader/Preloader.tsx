@@ -1,27 +1,23 @@
-import { useEffect, useLayoutEffect } from 'react';
-import styles from './Preloader.module.css';
+import { useEffect } from 'react';
 import { Title } from '..';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
-import { useLayoutLoading } from '../../store/useLayoutLoading';
+import styles from './Preloader.module.css';
 
 export const Preloader = (): JSX.Element => {
-    const loading = useLayoutLoading(state => state.loading);
-    const setLoading = useLayoutLoading(state => state.setLoading);
+    const controls = useAnimationControls();
+    const location = useLocation();
 
     const { pathname } = useLocation();
 
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0);
-        setLoading();
-    }, [pathname]);
-
     useEffect(() => {
-        document.body.classList.toggle('overflow', loading);
-    }, [loading]);
+        controls.start({
+            y: ['100%', '0%', '-100%'],
+        });
+    }, [location]);
 
     return (
-        <motion.div className={styles.preloader} initial={{ y: 0 }} animate={{ y: loading ? 0 : '-100%' }} transition={{ ease: [0.5, 0, 0.2, 1], duration: 0.7 }}>
+        <motion.div className={styles.preloader} animate={controls} transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1.5 }}>
             <Title tag={'h3'} className={styles.title}>
                 {pathname}
             </Title>
