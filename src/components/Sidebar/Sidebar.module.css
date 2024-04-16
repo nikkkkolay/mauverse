@@ -36,25 +36,26 @@
 }
 
 .link {
+    position: relative;
+    padding: 0;
+    width: 100%;
     line-height: 1.4;
     font-size: calc(clamp(3.25em, 5vw, 4em) * 0.875);
 }
 
-.link a {
-    padding: 0;
-}
-
-.link.active::after,
-.link:hover::after {
-    opacity: 1;
-    transform: scale(1);
-}
-
 .link::after {
-    left: 50%;
-    bottom: 0;
+    left: -10%;
+    bottom: 0%;
+    font-size: inherit;
+}
+
+.link:hover::after {
     line-height: inherit;
     font-size: inherit;
+    opacity: 1;
+    left: -10%;
+    bottom: 0%;
+    width: fit-content;
 }
 
 .overlay {
@@ -74,5 +75,13 @@
 @media screen and (max-width: 780px) {
     .sidebar {
         width: 100%;
+    }
+
+    .link::after {
+        left: 100%;
+    }
+
+    .link:hover::after {
+        left: 100%;
     }
 }
