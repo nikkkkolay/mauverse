@@ -17,5 +17,5 @@ export { BigButtonRow } from './BigButtonRow/BigButtonRow';
 export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Social } from './Social/Social';
 export { LoadingDots } from './LoadingDots/LoadingDots ';
-export { Preloader } from './Preloader/Preloader';
+export { PageTransition } from './PageTransition/PageTransition';
 export { Footer } from './Footer/Footer';

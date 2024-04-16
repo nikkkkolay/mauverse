@@ -8,7 +8,7 @@ const App = (): JSX.Element => {
     const loading = useLayoutLoading(state => state.loading);
     const setLoading = useLayoutLoading(state => state.setLoading);
 
-    const { pathname } = useLocation();
+    const location = useLocation();
 
     useEffect(() => {
         document.body.classList.toggle('overflow', loading);
@@ -17,11 +17,11 @@ const App = (): JSX.Element => {
     useLayoutEffect(() => {
         window.scrollTo(0, 0);
         setLoading();
-    }, [pathname]);
+    }, [location.pathname]);
 
     return (
         <Routes>
-            <Route element={<Layout />}>
+            <Route element={<Layout key={location.pathname} />}>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/contacts" element={<ContactsPage />} />
                 <Route path="/about" element={<AboutPage />} />
