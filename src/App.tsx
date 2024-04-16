@@ -21,7 +21,7 @@ const App = (): JSX.Element => {
 
     return (
         <Routes>
-            <Route element={<Layout key={location.pathname} />}>
+            <Route element={<Layout />}>
                 <Route path="/" element={<MainPage />} />
                 <Route path="/contacts" element={<ContactsPage />} />
                 <Route path="/about" element={<AboutPage />} />
