@@ -3,10 +3,10 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';
+import { AnimatePresence } from 'framer-motion';
 
 const App = (): JSX.Element => {
     const loading = useLayoutLoading(state => state.loading);
-    const setLoading = useLayoutLoading(state => state.setLoading);
 
     const location = useLocation();
 
@@ -14,20 +14,17 @@ const App = (): JSX.Element => {
         document.body.classList.toggle('overflow', loading);
     }, [loading]);
 
-    useLayoutEffect(() => {
-        window.scrollTo(0, 0);
-        setLoading();
-    }, [location.pathname]);
-
     return (
-        <Routes>
-            <Route element={<Layout />}>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/contacts" element={<ContactsPage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="*" element={<NotFound />} />
-            </Route>
-        </Routes>
+        <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+                <Route element={<Layout />}>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/contacts" element={<ContactsPage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="*" element={<NotFound />} />
+                </Route>
+            </Routes>
+        </AnimatePresence>
     );
 };
 

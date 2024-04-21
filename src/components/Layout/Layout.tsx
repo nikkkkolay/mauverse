@@ -2,13 +2,13 @@ import { Outlet, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 import { Footer, Navbar, Overlay, PageTransition, Sidebar, SmoothScroll } from '../';
 import styles from './Layout.module.css';
+import { Suspense } from 'react';
 
 export const Layout = (): JSX.Element => {
     const location = useLocation();
 
     return (
-        <>
-            <PageTransition />
+        <PageTransition>
             <SmoothScroll>
                 <header
                     className={classnames(styles.header, {
@@ -26,6 +26,6 @@ export const Layout = (): JSX.Element => {
                 <Footer />
                 <Sidebar />
             </SmoothScroll>
-        </>
+        </PageTransition>
     );
 };

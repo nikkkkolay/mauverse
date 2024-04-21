@@ -2,21 +2,57 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import { Title } from '..';
 import styles from './PageTransition.module.css';
+import { ReactNode, useEffect } from 'react';
+import { useLayoutLoading } from '../../store/useLayoutLoading';
 
-export const PageTransition = (): JSX.Element => {
+interface Props {
+    children?: ReactNode;
+}
+
+export const PageTransition = ({ children }: Props): JSX.Element => {
     const { pathname } = useLocation();
+    const setLoading = useLayoutLoading(state => state.setLoading);
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+        setLoading();
+    }, [pathname]);
 
     return (
-        <motion.div
-            className={styles.preloader}
-            animate={{
-                y: ['100%', '0%', '-100%'],
-            }}
-            transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1.5 }}
-        >
-            <Title tag={'h3'} className={styles.title}>
-                {pathname}
-            </Title>
-        </motion.div>
+        <>
+            {children}
+            <motion.div
+                className={styles.transitionContainer}
+                animate={{
+                    top: 0,
+                }}
+                initial={{ top: '100%' }}
+                exit={{ top: 0 }}
+                transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+            >
+                <motion.div
+                    className={styles.slideIn}
+                    animate={{
+                        scaleY: 0,
+                    }}
+                    initial={{ scaleY: 0 }}
+                    exit={{ scaleY: 1 }}
+                    transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+                />
+
+                <Title tag={'h3'} className={styles.title}>
+                    {pathname}
+                </Title>
+                <motion.div
+                    className={styles.slideOut}
+                    animate={{
+                        scaleY: 0,
+                    }}
+                    initial={{ scaleY: 1 }}
+                    exit={{ scaleY: 0 }}
+                    transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+                ></motion.div>
+            </motion.div>
+        </>
     );
 };
