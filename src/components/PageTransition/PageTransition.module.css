@@ -27,21 +27,18 @@
     width: 150%;
     position: absolute;
     background: var(--bg-primary-beta);
-    height: 400%;
-    top: 100%;
+    height: 120%;
     left: 50%;
     border-radius: 50%;
     transform: translate(-50%, -85%);
 }
 
-.transitionContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 9999;
+.slideIn::before {
+    top: 85%;
+}
+
+.slideOut::before {
+    top: 100%;
 }
 
 .title {

@@ -36,6 +36,6 @@
 
 @media screen and (max-width: 780px) {
     .container {
-        padding-bottom: calc(var(--section-padding) / 3);
+        padding-bottom: calc(var(--section-padding) / 2);
     }
 }
