@@ -19,8 +19,8 @@
     bottom: -35%;
     transform: translateX(-50%);
     color: inherit;
-    opacity: 0;
-    transition: opacity ease 0.2s;
+    transform: translateX(-50%) scale(0);
+    transition: transform ease 0.2s;
     font-size: 30px;
     width: fit-content;
 }
@@ -30,7 +30,7 @@
     opacity: 1;
     left: 50%;
     bottom: -35%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) scale(1);
 }
 
 .link.sidebarActive::after,

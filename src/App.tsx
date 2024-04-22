@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';

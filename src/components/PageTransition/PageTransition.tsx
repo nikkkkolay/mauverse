@@ -24,10 +24,10 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
             <motion.div
                 className={styles.transitionContainer}
                 animate={{
-                    top: 0,
+                    height: 0,
                 }}
-                initial={{ top: '100%' }}
-                exit={{ top: 0 }}
+                initial={{ height: '100%' }}
+                exit={{ height: 0 }}
                 transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
             >
                 <motion.div
@@ -38,11 +38,10 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
                     initial={{ scaleY: 0 }}
                     exit={{ scaleY: 1 }}
                     transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
-                />
-
-                <Title tag={'h3'} className={styles.title}>
+                ></motion.div>
+                {/* <Title tag={'h3'} className={styles.title}>
                     {pathname}
-                </Title>
+                </Title> */}
                 <motion.div
                     className={styles.slideOut}
                     animate={{
