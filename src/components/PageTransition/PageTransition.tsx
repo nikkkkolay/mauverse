@@ -22,13 +22,13 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
         <>
             {children}
             <motion.div
-                className={styles.transitionContainer}
-                animate={{
-                    height: 0,
-                }}
-                initial={{ height: '100%' }}
-                exit={{ height: 0 }}
-                transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+            // className={styles.transitionContainer}
+            // animate={{
+            //     height: 0,
+            // }}
+            // initial={{ height: '100%' }}
+            // exit={{ height: 0 }}
+            // transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
             >
                 <motion.div
                     className={styles.slideIn}

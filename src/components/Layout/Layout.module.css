@@ -4,11 +4,13 @@
     align-items: center;
     position: relative;
     width: 100%;
-    background-color: var(--bg-primary-alpha);
+    background-color: var(--bg-primary-gamma);
+    color: var(--text-primary-alpha);
 }
 
 .header.fillBlack {
     background-color: var(--bg-secondary-alpha);
+    color: var(--text-primary-gamma);
 }
 
 .header.fillWhite {
@@ -21,6 +23,8 @@
     align-items: center;
     min-height: 110vh;
     overflow: hidden;
+    background-color: var(--bg-primary-alpha);
+    color: var(--text-primary-gamma);
 }
 
 .main {

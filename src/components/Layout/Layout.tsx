@@ -12,8 +12,8 @@ export const Layout = (): JSX.Element => {
                 <header
                     className={classnames(styles.header, {
                         [styles.headerHeight]: location.pathname === '/',
-                        [styles.fillBlack]: location.pathname.includes('contacts'),
-                        [styles.fillWhite]: location.pathname.includes('about'),
+                        [styles.fillBlack]: location.pathname === '/contacts',
+                        [styles.fillWhite]: location.pathname === '/about',
                     })}
                 >
                     <Navbar />

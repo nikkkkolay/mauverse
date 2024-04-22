@@ -18,7 +18,7 @@ body {
     font-weight: 400;
     font-size: clamp(16px, 1.2vw, 19px);
     color: var(--text-primary-gamma);
-    /* background-color: var(--bg-secondary-alpha); */
+    background-color: var(--bg-secondary-alpha);
 
     margin: 0;
     padding: 0;
