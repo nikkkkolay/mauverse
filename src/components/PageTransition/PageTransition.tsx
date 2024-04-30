@@ -29,7 +29,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
                 }}
                 initial={{ scaleY: 0 }}
                 exit={{ scaleY: 1 }}
-                transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+                transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
             ></motion.div>
 
             <motion.div
@@ -39,7 +39,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
                 }}
                 initial={{ scaleY: 1 }}
                 exit={{ scaleY: 0 }}
-                transition={{ ease: [0.5, 0.5, 0.3, 1], duration: 1 }}
+                transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
             ></motion.div>
         </>
     );
