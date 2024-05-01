@@ -1,12 +1,15 @@
 import { create } from 'zustand';
 
-interface SidebarStore {
+interface LayoutStore {
     loading: boolean;
+    pathname: string;
     setLoading: () => void;
+    setPathname: (pathname: string) => void;
 }
 
-export const useLayoutLoading = create<SidebarStore>((set, get) => ({
+export const useLayoutLoading = create<LayoutStore>(set => ({
     loading: false,
+    pathname: '',
     setLoading: () => {
         set({ loading: true });
 
@@ -16,5 +19,8 @@ export const useLayoutLoading = create<SidebarStore>((set, get) => ({
                 clearTimeout(timer);
             };
         }, 1200);
+    },
+    setPathname: (pathname: string) => {
+        set({ pathname: pathname });
     },
 }));

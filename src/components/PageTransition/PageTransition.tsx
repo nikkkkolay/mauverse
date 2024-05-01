@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Title } from '..';
@@ -11,9 +11,9 @@ interface Props {
 }
 
 export const PageTransition = ({ children }: Props): JSX.Element => {
-    const [path, setPath] = useState<string>();
-    const { pathname } = useLocation();
-    const setLoading = useLayoutLoading(state => state.setLoading);
+    const { setLoading, pathname } = useLayoutLoading(state => state);
+
+    const location = useLocation();
 
     const transition = {
         duration: 0.75,
@@ -63,26 +63,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
         },
     };
 
-    const titleVariants = {
-        initial: {
-            opacity: 1,
-        },
-        enter: {
-            opacity: 1,
-            transition: transition,
-            transitionEnd: {
-                opacity: 0,
-            },
-        },
-        exit: {
-            opacity: 1,
-            transition: transition,
-        },
-    };
-
     useEffect(() => {
-        const path = routs.find(rout => rout.path === pathname);
-        setPath(path?.name);
         window.scrollTo(0, 0);
         setLoading();
     }, [pathname]);
@@ -92,9 +73,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
             {children}
             <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
                 <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
-                {/* <motion.span variants={titleVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideText}> */}
-                <Title tag="h2">{path}</Title>
-                {/* </motion.span> */}
+                <Title tag="h2">{pathname}</Title>
                 <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
             </motion.div>
         </>
