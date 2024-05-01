@@ -1,19 +1,88 @@
-import { motion } from 'framer-motion';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { Title } from '..';
-import styles from './PageTransition.module.css';
-import { ReactNode, useEffect } from 'react';
 import { useLayoutLoading } from '../../store/useLayoutLoading';
+import { routs } from '../../routs';
+import styles from './PageTransition.module.css';
 
 interface Props {
-    children?: ReactNode;
+    children?: JSX.Element;
 }
 
 export const PageTransition = ({ children }: Props): JSX.Element => {
+    const [path, setPath] = useState<string>();
     const { pathname } = useLocation();
     const setLoading = useLayoutLoading(state => state.setLoading);
 
+    const transition = {
+        duration: 0.75,
+        delay: 0.5,
+        ease: [0.33, 1, 0.68, 1],
+    };
+
+    const slideVariants = {
+        initial: {
+            top: 0,
+        },
+        enter: {
+            top: '-100vh',
+            transition: transition,
+            transitionEnd: {
+                top: '100vh',
+            },
+        },
+        exit: {
+            top: 0,
+            transition: transition,
+        },
+    };
+
+    const slideTopVariants = {
+        enter: {
+            height: 0,
+            transition: transition,
+        },
+        exit: {
+            height: '10%',
+            transition: transition,
+        },
+    };
+
+    const slideBottomVariants = {
+        initial: {
+            height: '10%',
+        },
+        enter: {
+            height: 0,
+            transition: transition,
+        },
+        exit: {
+            height: 0,
+            transition: transition,
+        },
+    };
+
+    const titleVariants = {
+        initial: {
+            opacity: 1,
+        },
+        enter: {
+            opacity: 1,
+            transition: transition,
+            transitionEnd: {
+                opacity: 0,
+            },
+        },
+        exit: {
+            opacity: 1,
+            transition: transition,
+        },
+    };
+
     useEffect(() => {
+        const path = routs.find(rout => rout.path === pathname);
+        setPath(path?.name);
         window.scrollTo(0, 0);
         setLoading();
     }, [pathname]);
@@ -21,26 +90,13 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
     return (
         <>
             {children}
-
-            <motion.div
-                className={styles.slideIn}
-                animate={{
-                    scaleY: 0,
-                }}
-                initial={{ scaleY: 0 }}
-                exit={{ scaleY: 1 }}
-                transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
-            ></motion.div>
-
-            <motion.div
-                className={styles.slideOut}
-                animate={{
-                    scaleY: 0,
-                }}
-                initial={{ scaleY: 1 }}
-                exit={{ scaleY: 0 }}
-                transition={{ ease: [0.76, 0, 0.24, 1], duration: 1 }}
-            ></motion.div>
+            <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
+                <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
+                {/* <motion.span variants={titleVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideText}> */}
+                <Title tag="h2">{path}</Title>
+                {/* </motion.span> */}
+                <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
+            </motion.div>
         </>
     );
 };
