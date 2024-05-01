@@ -10,8 +10,8 @@
 }
 
 .container {
-    padding-top: calc(var(--gap-padding) * 4);
-    padding-bottom: calc(var(--gap-padding) * 4);
+    padding-top: calc(var(--gap-padding) * 5);
+    padding-bottom: calc(var(--gap-padding) * 5);
 }
 
 .titleContainer {
