@@ -10,28 +10,29 @@ import styles from './Sidebar.module.css';
 
 const transition = {
     ease: [0.76, 0, 0.24, 1],
-    duration: 0.7,
+    duration: 0.8,
+    delay: 0.2,
 };
 
 const linkVariants = {
     hidden: (custom: number) => ({
         x: '60%',
-        transition: { delay: custom * 0.05, ease: [0.76, 0, 0.24, 1], duration: 0.7 },
+        transition: { delay: custom * 0.05, ease: [0.76, 0, 0.24, 1], duration: 0.8 },
     }),
     visible: (custom: number) => ({
         x: 0,
-        transition: { delay: custom * 0.05, ease: [0.76, 0, 0.24, 1], duration: 0.7 },
+        transition: { delay: custom * 0.05, ease: [0.76, 0, 0.24, 1], duration: 0.8 },
     }),
 };
 
 const roundedVariants = {
     visible: {
-        width: ['0%', '30%', '0%'],
-        transition: { duration: 0.7 },
+        width: ['30%', '0%'],
+        transition: transition,
     },
     hidden: {
-        width: ['0%', '30%', '0%'],
-        transition: { duration: 0.7 },
+        width: ['0%', '30%'],
+        transition: transition,
     },
 };
 
@@ -57,7 +58,7 @@ export const Sidebar = (): JSX.Element => {
                 onClick={() => setActive(false)}
             ></motion.div>
 
-            <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '100%' }} transition={transition}>
+            <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '130%' }} transition={transition}>
                 <motion.div className={styles.sidebarRounded} variants={roundedVariants} animate={isOpen ? 'visible' : 'hidden'} initial={{ width: '0%' }} />
                 <div className={styles.sidebarInner}>
                     <p className={styles.nav}>lorem</p>
