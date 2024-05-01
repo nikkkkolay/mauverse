@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { Footer, Navbar, Overlay, PageTransition, Sidebar, SmoothScroll } from '../';
+import { Footer, Navbar, Overlay, PageTransition, Sidebar, SmoothScroll, ScrollToTop } from '../';
 import styles from './Layout.module.css';
 
 export const Layout = (): JSX.Element => {
@@ -9,6 +9,8 @@ export const Layout = (): JSX.Element => {
     return (
         <PageTransition>
             <SmoothScroll>
+                <ScrollToTop />
+
                 <header
                     className={classnames(styles.header, {
                         [styles.headerHeight]: location.pathname === '/',
