@@ -6,7 +6,6 @@
     background-color: var(--bg-primary-beta);
     z-index: 300;
     will-change: transform;
-    overflow-y: scroll;
     scrollbar-width: none;
 }
 
@@ -29,6 +28,24 @@
     padding: 15vh 7.5vw 10vh 7.5vw;
     position: relative;
     will-change: transform;
+}
+
+.sidebarRounded {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+.sidebarRounded::after {
+    content: '';
+    position: absolute;
+    background: var(--bg-primary-beta);
+    height: 140%;
+    width: 200%;
+    border-radius: 50%;
+    transform: translate(0%, -15%);
 }
 
 .routes {
