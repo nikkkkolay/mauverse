@@ -1,9 +1,7 @@
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Title } from '..';
 import { useLayoutLoading } from '../../store/useLayoutLoading';
-import { routs } from '../../routs';
 import styles from './PageTransition.module.css';
 
 interface Props {
@@ -12,8 +10,6 @@ interface Props {
 
 export const PageTransition = ({ children }: Props): JSX.Element => {
     const { setLoading, pathname } = useLayoutLoading(state => state);
-
-    const location = useLocation();
 
     const transition = {
         duration: 0.75,

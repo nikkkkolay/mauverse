@@ -43,7 +43,3 @@
 .slideTop::after {
 	transform: translate(-50%, -50%);
 }
-
-.slideText {
-	position: relative;
-}
