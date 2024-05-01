@@ -62,7 +62,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
     useEffect(() => {
         window.scrollTo(0, 0);
         setLoading();
-    }, [pathname]);
+    }, []);
 
     return (
         <>
