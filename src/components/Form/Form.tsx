@@ -45,7 +45,7 @@ export const Form = (): JSX.Element => {
                     name="email"
                     rules={{
                         required: { value: true, message: '* Это обязательно поле' },
-                        pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: '* Не верный формат почты' },
+                        pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: '* Неверный формат почты' },
                     }}
                     render={() => <input className={styles.input} type="email" placeholder="Lorem, ipsum." {...register('email')} />}
                 />
@@ -67,7 +67,7 @@ export const Form = (): JSX.Element => {
                 {errors.text && <span className={styles.error}>{errors.text.message}</span>}
             </div>
 
-            <BigButtonRow stripe>
+            <BigButtonRow stripe className={styles.row}>
                 <Button fill>Lorem</Button>
             </BigButtonRow>
         </form>

@@ -48,3 +48,10 @@
     width: 80%;
     height: 60%;
 }
+
+@media screen and (max-width: 780px) {
+    .form .row {
+        padding: calc(var(--section-padding) / 2) 0;
+    }
+
+}

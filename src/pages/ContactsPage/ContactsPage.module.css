@@ -72,6 +72,11 @@
 }
 
 @media screen and (max-width: 780px) {
+
+    .titleContainer {
+        padding-bottom: calc(var(--section-padding) / 3);
+    }
+
     .container {
         padding-bottom: calc(var(--section-padding) / 2);
     }
@@ -84,6 +89,7 @@
     .col:first-child {
         order: 2;
         width: 100%;
+        padding-right: 0;
     }
 
     .col:last-child {
