@@ -3,6 +3,7 @@ import { motion, useAnimation, useInView, useScroll, useTransform, spring } from
 import { Container, BigButtonRow, Button } from '../../components';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutSection.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const variants = {
     hidden: {
@@ -22,6 +23,7 @@ export const AboutSection = (): JSX.Element => {
 
     const controls = useAnimation();
     const isInView = useInView(columnViewArea);
+    const navigate = useNavigate();
 
     const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end start'] });
 
@@ -59,7 +61,7 @@ export const AboutSection = (): JSX.Element => {
                 </motion.div>
             </Container>
             <BigButtonRow style={{ y: buttonTop, x: 15 }}>
-                <Button className={styles.buttonFixed} fill>
+                <Button className={styles.buttonFixed} fill onClick={() => navigate('/about')}>
                     <p>Lorem</p>
                 </Button>
             </BigButtonRow>
