@@ -41,14 +41,14 @@
 
 .col:first-child {
     padding-right: calc(var(--gap-padding) * 4);
-    width: 70%;
+    width: 80%;
 }
 
 .col:last-child {
     display: flex;
     flex-direction: column;
     gap: 2.5em;
-    width: 30%;
+    width: 20%;
 }
 
 .social ul {

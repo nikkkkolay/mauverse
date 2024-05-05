@@ -50,7 +50,7 @@ export const NewsSection = () => {
                             whileInView={{
                                 x: 0,
                                 opacity: 1,
-                                transition: { ease: 'linear', duration: 0.3, delay: 0.2 },
+                                transition: { ease: 'linear', duration: 0.3, delay: 0.3 },
                             }}
                         >
                             <div className={styles.row}>

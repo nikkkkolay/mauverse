@@ -1,9 +1,9 @@
-import { PropsWithChildren, useEffect, useRef } from 'react';
+import { PropsWithChildren, useRef } from 'react';
 import { motion, useAnimation, useMotionValueEvent, useScroll, useTransform } from 'framer-motion';
-import styles from './SmoothScroll.module.css';
+import styles from './ScrollProgress.module.css';
 import { useMySpring } from '../../hooks/useMySpring';
 
-export const SmoothScroll = ({ children }: PropsWithChildren): JSX.Element => {
+export const ScrollProgress = ({ children }: PropsWithChildren): JSX.Element => {
     const scrollRef = useRef<HTMLDivElement>(null);
 
     const controls = useAnimation();
