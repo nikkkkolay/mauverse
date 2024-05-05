@@ -59,7 +59,7 @@ export const AboutSection = (): JSX.Element => {
                 </motion.div>
             </Container>
             <BigButtonRow style={{ y: buttonTop, x: 15 }}>
-                <Button className={styles.buttonFixed}>
+                <Button className={styles.buttonFixed} fill>
                     <p>Lorem</p>
                 </Button>
             </BigButtonRow>

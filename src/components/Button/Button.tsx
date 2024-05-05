@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import styles from './Button.module.css';
 
 type Tag = 'a' | 'li' | 'button' | 'div';
-type Type = 'primary' | 'secondary';
+type Type = 'primary' | 'secondary' | 'tertiary';
 
 interface Props {
     type?: Type;
@@ -25,7 +25,7 @@ export const Button = ({ className, onClick, isInView = true, children, fill, as
             fill={fill}
             href={href}
             as={as}
-            className={classnames(styles.button, { [styles.secondary]: type === 'secondary' }, className)}
+            className={classnames(styles.button, { [styles.secondary]: type === 'secondary', [styles.tertiary]: type === 'tertiary' }, className)}
         >
             <ParallaxElement as="div" className={styles.wrapper}>
                 {children}

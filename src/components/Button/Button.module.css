@@ -23,6 +23,24 @@
     box-shadow: inset 0px 0px 0px 1px var(--text-primary-delta);
 }
 
+.tertiary {
+    position: relative;
+    border-radius: 2.125em;
+    padding: 0 2.5em;
+    font-size: 1em;
+    width: 100%;
+    max-width: 14em;
+    height: 4.25em;
+    background-color: var(--element-primary-delta);
+    color: var(--text-primary-alpha);
+    box-shadow: inset 0px 0px 0px 1px var(--text-primary-beta);
+}
+
+.tertiary:hover {
+    color: var(--text-primary-gamma);
+    transition: all 0.5s ease;
+}
+
 .wrapper {
     display: flex;
     align-items: center;

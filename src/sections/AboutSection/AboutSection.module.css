@@ -1,7 +1,6 @@
 .aboutSection {
     position: relative;
     z-index: 10;
-    background-color: var(--bg-primary-gamma);
 }
 
 .container {
@@ -12,7 +11,7 @@
 
 .buttonFixed {
     z-index: 10000;
-    right: 18%;
+    right: 13%;
     top: unset;
 }
 

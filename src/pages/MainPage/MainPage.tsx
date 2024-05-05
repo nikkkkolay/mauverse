@@ -1,5 +1,10 @@
-import { AboutSection } from '../../sections';
+import { AboutSection, NewsSection } from '../../sections';
 
 export const MainPage = (): JSX.Element => {
-    return <AboutSection />;
+    return (
+        <>
+            <AboutSection />
+            <NewsSection />
+        </>
+    );
 };
