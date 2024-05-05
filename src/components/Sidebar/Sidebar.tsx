@@ -10,18 +10,18 @@ import styles from './Sidebar.module.css';
 
 const transition = {
     ease: [0.76, 0, 0.24, 1],
-    duration: 1.2,
+    duration: 1,
     delay: 0.2,
 };
 
 const linkVariants = {
     hidden: (custom: number) => ({
         x: '60%',
-        transition: { delay: custom * 0.13, ease: [0.76, 0, 0.24, 1], duration: 1 },
+        transition: { delay: custom * 0.1, ease: [0.76, 0, 0.24, 1], duration: 1 },
     }),
     visible: (custom: number) => ({
         x: 0,
-        transition: { delay: custom * 0.13, ease: [0.76, 0, 0.24, 1], duration: 1 },
+        transition: { delay: custom * 0.1, ease: [0.76, 0, 0.24, 1], duration: 1 },
     }),
 };
 
