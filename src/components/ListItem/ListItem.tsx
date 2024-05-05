@@ -1,4 +1,4 @@
-import { ParallaxElement } from '..';
+import { MagneticElement } from '..';
 import { motion } from 'framer-motion';
 import styles from './ListItem.module.css';
 import classnames from 'classnames';
@@ -16,7 +16,7 @@ const listVariants = {
 
 export const ListItem = ({ name, path, className }: Props): JSX.Element => {
     return (
-        <ParallaxElement as="li" className={classnames(styles.link, className)}>
+        <MagneticElement as="li" className={classnames(styles.link, className)}>
             <motion.a whileHover="visible" initial="hidden" exit="hidden" href={path}>
                 {name}
                 <motion.div
@@ -29,6 +29,6 @@ export const ListItem = ({ name, path, className }: Props): JSX.Element => {
                     }}
                 ></motion.div>
             </motion.a>
-        </ParallaxElement>
+        </MagneticElement>
     );
 };

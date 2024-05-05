@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { PropsWithChildren } from 'react';
 import { motion, useAnimation } from 'framer-motion';
-import styles from './ParallaxElement.module.css';
+import styles from './MagneticElement.module.css';
 import classnames from 'classnames';
 
 type Tag = 'a' | 'li' | 'button' | 'div';
@@ -15,7 +15,7 @@ interface Props {
     fill?: boolean;
 }
 
-export const ParallaxElement = ({ className, isInView, onClick, children, as, href, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const MagneticElement = ({ className, isInView, onClick, children, as, href, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const fillControls = useAnimation();
 

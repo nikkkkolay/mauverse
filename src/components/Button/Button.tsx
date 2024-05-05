@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { ParallaxElement } from '..';
+import { MagneticElement } from '..';
 import classnames from 'classnames';
 import styles from './Button.module.css';
 
@@ -18,7 +18,7 @@ interface Props {
 
 export const Button = ({ className, onClick, isInView = true, children, fill, as, href, type, ...props }: PropsWithChildren<Props>): JSX.Element => {
     return (
-        <ParallaxElement
+        <MagneticElement
             {...props}
             onClick={onClick}
             isInView={isInView}
@@ -27,9 +27,9 @@ export const Button = ({ className, onClick, isInView = true, children, fill, as
             as={as}
             className={classnames(styles.button, { [styles.secondary]: type === 'secondary', [styles.tertiary]: type === 'tertiary' }, className)}
         >
-            <ParallaxElement as="div" className={styles.wrapper}>
+            <MagneticElement as="div" className={styles.wrapper}>
                 {children}
-            </ParallaxElement>
-        </ParallaxElement>
+            </MagneticElement>
+        </MagneticElement>
     );
 };

@@ -1,14 +1,14 @@
 import { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform, useMotionValue, useVelocity, useAnimationFrame } from 'framer-motion';
 import { wrap } from '@motionone/utils';
-import styles from './ParallaxText.module.css';
+import styles from './Ticker.module.css';
 
 interface Props {
     children: string;
     baseVelocity: number;
 }
 
-export const ParallaxText = ({ children, baseVelocity = 100 }: Props): JSX.Element => {
+export const Ticker = ({ children, baseVelocity = 100 }: Props): JSX.Element => {
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
     const scrollVelocity = useVelocity(scrollY);

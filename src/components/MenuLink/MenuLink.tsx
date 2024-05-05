@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
-import { ParallaxElement } from '..';
+import { MagneticElement } from '..';
 import styles from './MenuLink.module.css';
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 
 export const MenuLink = ({ className, onClick, name, path }: Props): JSX.Element => {
     return (
-        <ParallaxElement as="li" onClick={onClick} className={styles.list}>
+        <MagneticElement as="li" onClick={onClick} className={styles.list}>
             <NavLink
                 to={{
                     pathname: path,
@@ -21,6 +21,6 @@ export const MenuLink = ({ className, onClick, name, path }: Props): JSX.Element
             >
                 {name}
             </NavLink>
-        </ParallaxElement>
+        </MagneticElement>
     );
 };

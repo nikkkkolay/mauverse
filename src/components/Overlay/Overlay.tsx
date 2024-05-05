@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import classnames from 'classnames';
-import { ParallaxText } from '..';
+import { Ticker } from '..';
 import { LabelIcon } from './LabelIcon';
 import { ArrowIcon } from '../../icons';
 import styles from './Overlay.module.css';
@@ -42,7 +42,7 @@ export const Overlay = (): JSX.Element => {
                     </div>
                 </div>
                 <div className={classnames(styles.row, styles.name)}>
-                    <ParallaxText baseVelocity={5}>Hello WOrld -</ParallaxText>
+                    <Ticker baseVelocity={5}>Hello WOrld -</Ticker>
                 </div>
             </div>
         </div>
