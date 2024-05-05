@@ -16,6 +16,12 @@
     font-size: 0.8em;
 }
 
+.item .error {
+    position: static;
+    color: #FFFF00;
+    opacity: initial;
+}
+
 .item label {
     font-size: 1.5em;
 }

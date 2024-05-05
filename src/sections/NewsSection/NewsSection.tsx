@@ -17,7 +17,6 @@ export const NewsSection = () => {
                         <motion.a
                             href=""
                             whileHover={{
-                                x: '1%',
                                 color: '#797979',
                                 transition: { duration: 0.3 },
                             }}
@@ -42,7 +41,6 @@ export const NewsSection = () => {
                         <motion.a
                             href=""
                             whileHover={{
-                                x: '0.5%',
                                 color: '#797979',
                                 transition: { duration: 0.1 },
                             }}
