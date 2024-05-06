@@ -23,7 +23,13 @@ export const ScrollProgress = ({ children }: PropsWithChildren): JSX.Element => 
             <motion.div className={styles.scrollRoot} ref={scrollRef}>
                 {children}
                 <div className={styles.scroll}>
-                    <motion.div className={styles.thumb} style={{ y: scroll }} exit={{ opacity: 0 }} initial={{ opacity: 0 }} animate={controls}></motion.div>
+                    <motion.div
+                        className={styles.thumb}
+                        style={{ y: scroll }}
+                        exit={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}
+                        animate={controls}
+                    ></motion.div>
                 </div>
             </motion.div>
         </>

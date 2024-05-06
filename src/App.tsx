@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import { Layout, ScrollToTop } from './components';
+import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';
 import { routs } from './routs';
