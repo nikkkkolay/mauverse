@@ -6,11 +6,12 @@ export const ScrollToTop = () => {
 
     useEffect(() => {
         if (!location.hash) {
-            setTimeout(function () {
+            const timer = setTimeout(function () {
                 window.scrollTo(0, 0);
+                return () => {
+                    clearTimeout(timer);
+                };
             }, 1);
         }
     }, [pathname]);
-
-    return null;
 };
