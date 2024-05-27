@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { Footer, Navbar, Overlay, PageTransition, Sidebar, ScrollToTop } from '../';
+import { Footer, Navbar, Overlay, PageTransition, Sidebar, ScrollToTop, SmoothScroll } from '../';
 import styles from './Layout.module.css';
 
 export const Layout = (): JSX.Element => {
@@ -8,7 +8,7 @@ export const Layout = (): JSX.Element => {
 
     return (
         <PageTransition>
-            <>
+            <SmoothScroll>
                 <ScrollToTop />
 
                 <header
@@ -26,7 +26,7 @@ export const Layout = (): JSX.Element => {
                 </main>
                 <Footer />
                 <Sidebar />
-            </>
+            </SmoothScroll>
         </PageTransition>
     );
 };

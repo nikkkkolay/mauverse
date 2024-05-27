@@ -16,7 +16,7 @@ export const Overlay = (): JSX.Element => {
     const spring = useMySpring(scrollYProgress);
 
     const rotate = useTransform(spring, [0, 1], [0, 40]);
-    const parallax = useTransform(scrollYProgress, [0, 1], [0, 200]);
+    const y = useTransform(spring, [0, 1], [0, 200]);
 
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
@@ -25,7 +25,7 @@ export const Overlay = (): JSX.Element => {
 
     return (
         <div className={styles.overlay} ref={overlayViewArea}>
-            <motion.img className={styles.banner} src="./plug.jpg" style={{ y: parallax, x: '-50%' }} />
+            <motion.img className={styles.banner} src="./plug.jpg" style={{ top: y, x: '-50%' }} />
             <div className={styles.container}>
                 <div className={classnames(styles.row, styles.about)}>
                     <div className={styles.label}>

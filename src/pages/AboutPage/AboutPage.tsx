@@ -17,12 +17,15 @@ export const AboutPage = (): JSX.Element => {
     const scrollYSkitProgress = useScroll({ target: skitViewArea, offset: ['start end', 'end start'] });
 
     const springArrowRotate = useMySpring(scrollYSectionProgress.scrollYProgress);
+    const springIntroImg = useMySpring(scrollYIntroImgProgress.scrollYProgress);
+    const springText = useMySpring(scrollYIntroTextProgress.scrollYProgress);
+    const sprongSkitImg = useMySpring(scrollYSkitProgress.scrollYProgress);
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
-    const introImgTransform = useTransform(scrollYIntroImgProgress.scrollYProgress, [0, 1], [-250, 0]);
-    const introTextTransform = useTransform(scrollYIntroTextProgress.scrollYProgress, [0, 1], [0, 500]);
+    const introTextTransform = useTransform(springText, [0, 1], [0, 500]);
     const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 300]);
-    const skitImgTransform = useTransform(scrollYSkitProgress.scrollYProgress, [0, 1], [-250, 0]);
+    const introImgTransform = useTransform(springIntroImg, [0, 1], [-250, 0]);
+    const skitImgTransform = useTransform(sprongSkitImg, [0, 1], [-250, 0]);
 
     return (
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
@@ -41,8 +44,8 @@ export const AboutPage = (): JSX.Element => {
                     <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
                         <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus in eius beatae nemo
-                            cupiditate sit numquam. doloremque <Link href="#">eveniet</Link> tempora.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus
+                            in eius beatae nemo cupiditate sit numquam. doloremque <Link href="#">eveniet</Link> tempora.
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
                         <p className={styles.special}>
@@ -67,7 +70,8 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <Title tag="h4">Lorem</Title>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sequi corporis harum delectus culpa eveniet rem voluptatem vero deleniti nemo!
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sequi corporis harum delectus culpa eveniet rem
+                                voluptatem vero deleniti nemo!
                             </p>
                         </div>
                         <div className={styles.col}>
@@ -77,8 +81,8 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <Title tag="h4">Ipsum</Title>
                             <p>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed nostrum aliquam quidem tenetur, autem pariatur assumenda. Id nostrum eius in corrupti
-                                pariatur quod, nam velit nesciunt quisquam minima? Mollitia, quaerat?
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed nostrum aliquam quidem tenetur, autem pariatur
+                                assumenda. Id nostrum eius in corrupti pariatur quod, nam velit nesciunt quisquam minima? Mollitia, quaerat?
                             </p>
                         </div>
                         <div className={styles.col}>
@@ -88,8 +92,8 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <Title tag="h4">Dolor</Title>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita possimus in accusantium, iure corporis, debitis deleniti unde magnam
-                                laboriosam molestias velit sequi esse tempore?
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita possimus in accusantium, iure corporis,
+                                debitis deleniti unde magnam laboriosam molestias velit sequi esse tempore?
                             </p>
                         </div>
                     </div>
@@ -107,9 +111,9 @@ export const AboutPage = (): JSX.Element => {
                                 <ArrowIcon className={styles.icon} />
                                 <Title tag="h3">Ipsum</Title>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore necessitatibus, voluptate tenetur recusandae accusantium quod quam
-                                    deserunt fugit similique iste laboriosam magnam distinctio ex est ad dignissimos corrupti impedit soluta excepturi nihil magni, odio repellat
-                                    id.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore necessitatibus, voluptate tenetur
+                                    recusandae accusantium quod quam deserunt fugit similique iste laboriosam magnam distinctio ex est ad dignissimos
+                                    corrupti impedit soluta excepturi nihil magni, odio repellat id.
                                 </p>
                             </div>
                         </div>
