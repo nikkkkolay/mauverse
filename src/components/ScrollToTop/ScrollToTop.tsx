@@ -14,4 +14,6 @@ export const ScrollToTop = () => {
             }, 1);
         }
     }, [pathname]);
+
+    return null;
 };
