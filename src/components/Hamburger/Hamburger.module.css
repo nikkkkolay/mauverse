@@ -2,11 +2,9 @@
     position: fixed;
     right: calc(var(--gap-padding) * 2);
     top: var(--gap-padding);
-    z-index: 200;
+    z-index: 500;
     width: clamp(4em, 5vw, 5em);
     height: clamp(4em, 5vw, 5em);
-    opacity: 0;
-    visibility: hidden;
     box-shadow: inset 0px 0px 0px 1px var(--text-primary-delta);
     background-color: var(--bg-primary-beta);
 }
