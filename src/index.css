@@ -16,7 +16,7 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.2;
     font-weight: 400;
-    font-size: clamp(16px, 1.2vw, 19px);
+    font-size: clamp(16px, 1.2vw, 18px);
     color: var(--text-primary-gamma);
     background-color: var(--bg-secondary-alpha);
 

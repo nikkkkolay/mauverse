@@ -6,7 +6,9 @@ export const ScrollToTop = () => {
 
     useEffect(() => {
         if (!location.hash) {
-            window.scrollTo(0, 0);
+            setTimeout(function () {
+                window.scrollTo(0, 0);
+            }, 1);
         }
     }, [pathname]);
 
