@@ -16,12 +16,12 @@ const transition = {
 
 const linkVariants = {
     hidden: (custom: number) => ({
-        x: '60%',
-        transition: { delay: custom * 0.1, ease: [0.76, 0, 0.24, 1], duration: 1 },
+        x: '30%',
+        transition: { delay: custom * 0.2, ease: [0.76, 0, 0.24, 1], duration: 1 },
     }),
     visible: (custom: number) => ({
         x: 0,
-        transition: { delay: custom * 0.1, ease: [0.76, 0, 0.24, 1], duration: 1 },
+        transition: { delay: custom * 0.2, ease: [0.76, 0, 0.24, 1], duration: 1 },
     }),
 };
 
