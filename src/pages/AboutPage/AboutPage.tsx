@@ -23,7 +23,7 @@ export const AboutPage = (): JSX.Element => {
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
     const introTextTransform = useTransform(springText, [0, 1], [0, 500]);
-    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 300]);
+    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 200]);
     const introImgTransform = useTransform(springIntroImg, [0, 1], [-250, 0]);
     const skitImgTransform = useTransform(sprongSkitImg, [0, 1], [-250, 0]);
 
