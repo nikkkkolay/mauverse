@@ -19,13 +19,13 @@ export const AboutPage = (): JSX.Element => {
     const springArrowRotate = useMySpring(scrollYSectionProgress.scrollYProgress);
     const springIntroImg = useMySpring(scrollYIntroImgProgress.scrollYProgress);
     const springText = useMySpring(scrollYIntroTextProgress.scrollYProgress);
-    const sprongSkitImg = useMySpring(scrollYSkitProgress.scrollYProgress);
+    const springSkitImg = useMySpring(scrollYSkitProgress.scrollYProgress);
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
     const introTextTransform = useTransform(springText, [0, 1], [0, 500]);
     const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 200]);
     const introImgTransform = useTransform(springIntroImg, [0, 1], [-250, 0]);
-    const skitImgTransform = useTransform(sprongSkitImg, [0, 1], [-250, 0]);
+    const skitImgTransform = useTransform(springSkitImg, [0, 1], [-250, 0]);
 
     return (
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
