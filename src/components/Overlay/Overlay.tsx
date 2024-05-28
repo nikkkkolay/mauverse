@@ -25,9 +25,21 @@ export const Overlay = (): JSX.Element => {
 
     return (
         <div className={styles.overlay} ref={overlayViewArea}>
-            <motion.img className={styles.banner} src="./plug.jpg" style={{ top: y, x: '-50%' }} />
+            <motion.img
+                className={styles.banner}
+                src="./plug.jpg"
+                style={{ top: y, x: '-50%' }}
+                initial={{ y: 150 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.75, delay: 4.1, ease: [0.33, 1, 0.68, 1] }}
+            />
             <div className={styles.container}>
-                <div className={classnames(styles.row, styles.about)}>
+                <motion.div
+                    className={classnames(styles.row, styles.about)}
+                    initial={{ y: 150 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.8, delay: 4.2, ease: [0.33, 1, 0.68, 1] }}
+                >
                     <div className={styles.label}>
                         <div className={styles.wrapper}>
                             <p>Lorem.</p>
@@ -40,10 +52,15 @@ export const Overlay = (): JSX.Element => {
                             <span>Lorem</span>Lorem, ipsum dolor.
                         </h1>
                     </div>
-                </div>
-                <div className={classnames(styles.row, styles.name)}>
+                </motion.div>
+                <motion.div
+                    className={classnames(styles.row, styles.name)}
+                    initial={{ y: 100 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.8, delay: 4.15, ease: [0.33, 1, 0.68, 1] }}
+                >
                     <Ticker baseVelocity={5}>Hello WOrld -</Ticker>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

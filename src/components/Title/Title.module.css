@@ -1,5 +1,6 @@
 .hTag {
     font-size: clamp(2.5rem, 5vw, 5.5rem);
+    line-height: 1.1;
 }
 
 .h2 {

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Container, Title, Form, Social, Info, ListItem } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 
@@ -7,15 +8,25 @@ export const ContactsPage = (): JSX.Element => {
     return (
         <section className={styles.sectionContainer}>
             <Container className={styles.container}>
-                <div className={styles.titleContainer}>
+                <motion.div
+                    className={styles.titleContainer}
+                    initial={{ y: 100 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
+                >
                     <div className={styles.imageContainer}>
                         <img src="./plug.jpg" alt="logo" />
                         <Title tag="h1"> Lorem ipsum</Title>
                     </div>
                     <Title tag="h2">dolor sit amet consectetur</Title>
                     <ArrowIcon className={styles.arrow} />
-                </div>
-                <div className={styles.row}>
+                </motion.div>
+                <motion.div
+                    className={styles.row}
+                    initial={{ y: 100 }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
+                >
                     <div className={styles.col}>
                         <Form />
                     </div>
@@ -30,7 +41,7 @@ export const ContactsPage = (): JSX.Element => {
                         </Info>
                         <Social className={styles.social} />
                     </div>
-                </div>
+                </motion.div>
             </Container>
         </section>
     );

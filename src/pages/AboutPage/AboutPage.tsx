@@ -2,8 +2,8 @@ import { useRef } from 'react';
 import { BigButtonRow, Container, Title, Link, LoadingDots } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowIcon } from './../../icons/ArrowIcon';
-import styles from './AboutPage.module.css';
 import { useMySpring } from '../../hooks/useMySpring';
+import styles from './AboutPage.module.css';
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
@@ -29,7 +29,12 @@ export const AboutPage = (): JSX.Element => {
 
     return (
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
-            <Container className={styles.header}>
+            <Container
+                className={styles.header}
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
+            >
                 <Title tag="h1">
                     Lorem ipsum dolor
                     <div>sit consectetur</div>
@@ -39,7 +44,12 @@ export const AboutPage = (): JSX.Element => {
                 </BigButtonRow>
             </Container>
 
-            <Container className={styles.content}>
+            <Container
+                className={styles.content}
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.8, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
+            >
                 <div className={styles.intro} ref={introViewArea}>
                     <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
                         <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />

@@ -6,7 +6,12 @@ export const NotFound = (): JSX.Element => {
     const navigate = useNavigate();
     return (
         <section className={styles.sectionContainer}>
-            <Container className={styles.header}>
+            <Container
+                className={styles.header}
+                initial={{ y: 100 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
+            >
                 <Title tag="h1">
                     404 Lorem ipsum
                     <div>sit consectetur</div>
