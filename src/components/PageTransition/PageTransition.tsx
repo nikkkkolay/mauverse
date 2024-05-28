@@ -17,7 +17,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     const transition = {
         duration: 0.75,
-        delay: pageReloaded ? 4 : 0.5,
+        delay: location.pathname === '/' ? 4 : 0.5,
         ease: [0.33, 1, 0.68, 1],
     };
 
@@ -65,17 +65,6 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     useEffect(() => {
         setLoading();
-
-        const handlePageReload = () => {
-            setPageReload(true);
-        };
-
-        window.addEventListener('pagehide', handlePageReload);
-        console.log('Page reloaded:', pageReloaded);
-
-        // return () => {
-        //     window.removeEventListener('pagehide', handlePageReload);
-        // };
     }, []);
 
     return (
@@ -83,7 +72,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
             {children}
             <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
                 <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
-                {location.pathname === '/' && pageReloaded ? <Greetings /> : <Title tag="h2">{pathname}</Title>}
+                {location.pathname === '/' ? <Greetings /> : <Title tag="h2">{pathname}</Title>}
                 <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
             </motion.div>
         </>
