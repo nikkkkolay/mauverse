@@ -31,7 +31,7 @@ export const AboutPage = (): JSX.Element => {
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
             <Container
                 className={styles.header}
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
             >
@@ -46,7 +46,7 @@ export const AboutPage = (): JSX.Element => {
 
             <Container
                 className={styles.content}
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.8, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
             >

@@ -29,14 +29,14 @@ export const Overlay = (): JSX.Element => {
                 className={styles.banner}
                 src="./plug.jpg"
                 style={{ top: y, x: '-50%' }}
-                initial={{ y: 150 }}
+                initial={{ y: 200 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.75, delay: 4.1, ease: [0.33, 1, 0.68, 1] }}
             />
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
-                    initial={{ y: 150 }}
+                    initial={{ y: 200 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 4.2, ease: [0.33, 1, 0.68, 1] }}
                 >
@@ -55,7 +55,7 @@ export const Overlay = (): JSX.Element => {
                 </motion.div>
                 <motion.div
                     className={classnames(styles.row, styles.name)}
-                    initial={{ y: 100 }}
+                    initial={{ y: 200 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 4.15, ease: [0.33, 1, 0.68, 1] }}
                 >

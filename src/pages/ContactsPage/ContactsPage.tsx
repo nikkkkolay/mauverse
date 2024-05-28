@@ -10,7 +10,7 @@ export const ContactsPage = (): JSX.Element => {
             <Container className={styles.container}>
                 <motion.div
                     className={styles.titleContainer}
-                    initial={{ y: 100 }}
+                    initial={{ y: 150 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
                 >
@@ -23,7 +23,7 @@ export const ContactsPage = (): JSX.Element => {
                 </motion.div>
                 <motion.div
                     className={styles.row}
-                    initial={{ y: 100 }}
+                    initial={{ y: 150 }}
                     animate={{ y: 0 }}
                     transition={{ duration: 0.8, delay: 0.55, ease: [0.33, 1, 0.68, 1] }}
                 >

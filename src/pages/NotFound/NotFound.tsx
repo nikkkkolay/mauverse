@@ -8,7 +8,7 @@ export const NotFound = (): JSX.Element => {
         <section className={styles.sectionContainer}>
             <Container
                 className={styles.header}
-                initial={{ y: 100 }}
+                initial={{ y: 150 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
             >
