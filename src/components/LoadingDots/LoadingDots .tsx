@@ -8,13 +8,28 @@ const dotVariants = {
 export const LoadingDots = () => {
     return (
         <>
-            <motion.span variants={dotVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}>
+            <motion.span
+                variants={dotVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse' }}
+            >
                 .
             </motion.span>
-            <motion.span variants={dotVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse', delay: 0.2 }}>
+            <motion.span
+                variants={dotVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse', delay: 0.2 }}
+            >
                 .
             </motion.span>
-            <motion.span variants={dotVariants} initial="hidden" animate="visible" transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse', delay: 0.4 }}>
+            <motion.span
+                variants={dotVariants}
+                initial="hidden"
+                animate="visible"
+                transition={{ duration: 0.5, repeat: Infinity, repeatType: 'reverse', delay: 0.4 }}
+            >
                 .
             </motion.span>
         </>

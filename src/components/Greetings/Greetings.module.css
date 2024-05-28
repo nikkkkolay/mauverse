@@ -1,0 +1,14 @@
+.greeting {
+	position: relative;
+	width: 100%;
+	height: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.title {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: clamp(2.5rem, 5vw, 5.5rem);
+	line-height: 1;
+}

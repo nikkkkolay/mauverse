@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useLayoutEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Title } from '..';
+import { Greetings, Title } from '..';
 import { useLayoutLoading } from '../../store/useLayoutLoading';
 import styles from './PageTransition.module.css';
 
@@ -9,11 +10,14 @@ interface Props {
 }
 
 export const PageTransition = ({ children }: Props): JSX.Element => {
+    const location = useLocation();
+
     const { setLoading, pathname } = useLayoutLoading(state => state);
+    const [pageReloaded, setPageReload] = useState(false);
 
     const transition = {
         duration: 0.75,
-        delay: 0.5,
+        delay: pageReloaded ? 4 : 0.5,
         ease: [0.33, 1, 0.68, 1],
     };
 
@@ -61,6 +65,17 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     useEffect(() => {
         setLoading();
+
+        const handlePageReload = () => {
+            setPageReload(true);
+        };
+
+        window.addEventListener('pagehide', handlePageReload);
+        console.log('Page reloaded:', pageReloaded);
+
+        // return () => {
+        //     window.removeEventListener('pagehide', handlePageReload);
+        // };
     }, []);
 
     return (
@@ -68,7 +83,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
             {children}
             <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
                 <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
-                <Title tag="h2">{pathname}</Title>
+                {location.pathname === '/' && pageReloaded ? <Greetings /> : <Title tag="h2">{pathname}</Title>}
                 <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
             </motion.div>
         </>
