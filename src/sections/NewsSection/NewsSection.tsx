@@ -28,10 +28,13 @@ export const NewsSection = () => {
                             }}
                         >
                             <div className={styles.row}>
-                                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur magnam </h3>
+                                <h3>
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur
+                                    magnam{' '}
+                                </h3>
                                 <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur magnam reiciendis reprehenderit
-                                    nam.
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur
+                                    magnam reiciendis reprehenderit nam.
                                 </p>
                             </div>
                             <span className={styles.date}>12.01.1999</span>

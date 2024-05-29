@@ -11,7 +11,7 @@ export const Greetings = () => {
                     scale: [0, 1, 1],
                 }}
                 transition={{
-                    duration: 1,
+                    duration: 0.8,
                     delay: 1,
                 }}
                 className={styles.title}
@@ -25,7 +25,7 @@ export const Greetings = () => {
                     scale: [0, 1, 1],
                 }}
                 transition={{
-                    duration: 1,
+                    duration: 0.8,
                     delay: 2,
                 }}
                 className={styles.title}
@@ -39,7 +39,7 @@ export const Greetings = () => {
                     scale: [0, 1, 1],
                 }}
                 transition={{
-                    duration: 1,
+                    duration: 0.8,
                     delay: 3,
                 }}
                 className={styles.title}

@@ -1,4 +1,4 @@
-import { useEffect, useState, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Greetings, Title } from '..';
@@ -11,13 +11,12 @@ interface Props {
 
 export const PageTransition = ({ children }: Props): JSX.Element => {
     const location = useLocation();
-
-    const { setLoading, pathname } = useLayoutLoading(state => state);
-    const [pageReloaded, setPageReload] = useState(false);
+    const { setLoading, reloadedChecker, pathname, reloaded } = useLayoutLoading(state => state);
+    const mainPageReloaded = location.pathname === '/' && reloaded;
 
     const transition = {
         duration: 0.75,
-        delay: location.pathname === '/' ? 4 : 0.5,
+        delay: mainPageReloaded ? 4 : 0.5,
         ease: [0.33, 1, 0.68, 1],
     };
 
@@ -65,6 +64,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     useEffect(() => {
         setLoading();
+        reloadedChecker();
     }, []);
 
     return (
@@ -72,7 +72,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
             {children}
             <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
                 <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
-                {location.pathname === '/' ? <Greetings /> : <Title tag="h2">{pathname}</Title>}
+                {location.pathname === '/' && pathname === 'Home' ? <Greetings /> : <Title tag="h2">{pathname}</Title>}
                 <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
             </motion.div>
         </>
