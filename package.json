@@ -19,7 +19,17 @@
         "react-hook-form": "^7.51.4",
         "react-router-dom": "^6.20.1",
         "resize-observer-polyfill": "^1.5.1",
-        "zustand": "^4.5.2"
+        "zustand": "^4.5.2",
+        "@emotion/styled": "^11.11.5",
+        "@mui/icons-material": "^5.15.15",
+        "@mui/material": "^5.15.15",
+        "axios": "^1.6.8",
+        "ra-data-json-server": "^4.16.16",
+        "ra-data-simple-rest": "^4.16.16",
+        "ra-i18n-polyglot": "^4.16.16",
+        "ra-input-rich-text": "^4.16.16",
+        "ra-language-russian": "^4.14.2",
+        "react-admin": "^4.16.16"
     },
     "devDependencies": {
         "@types/react": "^18.2.15",

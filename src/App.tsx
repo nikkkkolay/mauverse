@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Layout } from './components';
-import { MainPage, NotFound, ContactsPage, AboutPage } from './pages';
+import { MainPage, NotFound, ContactsPage, AboutPage, AdminPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';
 import { routs } from './routs';
 
@@ -28,6 +28,7 @@ const App = (): JSX.Element => {
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="*" element={<NotFound />} />
                 </Route>
+                <Route path="/admin/*" element={<AdminPage />} />
             </Routes>
         </AnimatePresence>
     );

@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView, useScroll, useTransform, spring } from 'framer-motion';
+import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
 import { Container, BigButtonRow, Button } from '../../components';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutSection.module.css';

@@ -5,7 +5,7 @@ interface SidebarStore {
     setActive: (state: boolean) => void;
 }
 
-export const useSidebar = create<SidebarStore>((set, get) => ({
+export const useSidebar = create<SidebarStore>(set => ({
     isActive: false,
     setActive: (state: boolean) => {
         set({ isActive: state });

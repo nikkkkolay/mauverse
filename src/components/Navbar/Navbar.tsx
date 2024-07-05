@@ -5,7 +5,7 @@ import { useSidebar } from '../../store/useSidebar';
 import { routs } from '../../routs';
 import styles from './Navbar.module.css';
 
-export const Navbar = forwardRef((props, ref: any): JSX.Element => {
+export const Navbar = forwardRef((_props, ref: any): JSX.Element => {
     const isActive = useSidebar(state => state.isActive);
     const setActive = useSidebar(state => state.setActive);
 
