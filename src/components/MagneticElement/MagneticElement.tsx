@@ -65,6 +65,7 @@ export const MagneticElement = ({ className, isInView, onClick, children, as, hr
                     {...props}
                     className={classnames(className, { [styles.changedColor]: fill })}
                     onMouseMove={event => handleMouseMove(event)}
+                    onClickCapture={handleMouseLeave}
                     onMouseLeave={handleMouseLeave}
                     animate={{ x, y }}
                     whileTap={{ scale: 0.9 }}
@@ -81,6 +82,7 @@ export const MagneticElement = ({ className, isInView, onClick, children, as, hr
                     onMouseLeave={handleMouseLeave}
                     animate={{ x, y }}
                     onClick={onClick}
+                    onClickCapture={handleMouseLeave}
                     whileTap={{ scale: 0.9 }}
                 >
                     {children}
@@ -94,6 +96,7 @@ export const MagneticElement = ({ className, isInView, onClick, children, as, hr
                     onMouseEnter={onMouseEnter}
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
+                    onClickCapture={handleMouseLeave}
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}
                     href={href}
@@ -112,6 +115,7 @@ export const MagneticElement = ({ className, isInView, onClick, children, as, hr
                     onMouseEnter={onMouseEnter}
                     onMouseMove={event => handleMouseMove(event)}
                     onMouseLeave={handleMouseLeave}
+                    onClickCapture={handleMouseLeave}
                     animate={{ x, y, scale: isInView ? 1 : 0, visibility: 'visible', opacity: isInView ? 1 : 0 }}
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}

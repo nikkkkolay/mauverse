@@ -21,6 +21,7 @@ export const NewsSection = () => {
                                 transition: { duration: 0.3 },
                             }}
                             initial={{ x: '5%', opacity: 0 }}
+                            viewport={{ once: true }}
                             whileInView={{
                                 x: 0,
                                 opacity: 1,
@@ -48,6 +49,7 @@ export const NewsSection = () => {
                                 transition: { duration: 0.1 },
                             }}
                             initial={{ x: '5%', opacity: 0 }}
+                            viewport={{ once: true }}
                             whileInView={{
                                 x: 0,
                                 opacity: 1,

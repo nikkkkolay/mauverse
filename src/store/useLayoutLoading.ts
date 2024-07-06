@@ -21,7 +21,7 @@ export const useLayoutLoading = create<LayoutStore>(set => ({
             return () => {
                 clearTimeout(timer);
             };
-        }, 1200);
+        }, 1500);
     },
     setPathname: (pathname: string) => {
         set({ pathname: pathname });

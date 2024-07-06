@@ -17,7 +17,9 @@ export const MenuLink = ({ className, onClick, name, path }: Props): JSX.Element
                 to={{
                     pathname: path,
                 }}
-                className={({ isActive }) => classnames(className, styles.link, { [styles.active]: isActive }, { [styles.sidebarActive]: isActive && className })}
+                className={({ isActive }) =>
+                    classnames(className, styles.link, { [styles.active]: isActive }, { [styles.sidebarActive]: isActive && className })
+                }
             >
                 {name}
             </NavLink>

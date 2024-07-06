@@ -1,15 +1,6 @@
-import {
-    RichTextInput,
-    RichTextInputToolbar,
-    LevelSelect,
-    FormatButtons,
-    ListButtons,
-    LinkButtons,
-    QuoteButtons,
-    ClearButtons,
-} from 'ra-input-rich-text';
+import { RichTextInput, RichTextInputToolbar, LevelSelect, FormatButtons, ListButtons, LinkButtons, ClearButtons } from 'ra-input-rich-text';
 
-export const MyRichTextInput = ({ ...props }: any) => (
+export const MyRichTextInput = ({ ...props }) => (
     <RichTextInput
         toolbar={
             <RichTextInputToolbar>
@@ -17,7 +8,6 @@ export const MyRichTextInput = ({ ...props }: any) => (
                 <FormatButtons />
                 <ListButtons />
                 <LinkButtons />
-                <QuoteButtons />
                 <ClearButtons />
             </RichTextInputToolbar>
         }

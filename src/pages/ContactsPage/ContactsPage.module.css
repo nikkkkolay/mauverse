@@ -8,6 +8,10 @@
     width: 100%;
 }
 
+.container {
+    padding-top: calc(var(--section-padding) / 2);
+}
+
 .titleContainer {
     position: relative;
     padding-bottom: calc(var(--section-padding) / 2);

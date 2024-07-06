@@ -14,9 +14,6 @@ export const PostEdit = (props: any) => {
                         <Grid item md={2}>
                             <DateInput source="published_at" label="Дата публикации" validate={[required()]} />
                         </Grid>
-                        <Grid item md={2}>
-                            <DateTimeInput source="active_date" label="Дата начала активности" />
-                        </Grid>
                         <Grid item xs={12}>
                             <TextInput source="title" label="Заголовок" validate={[required()]} fullWidth />
                         </Grid>

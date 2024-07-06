@@ -11,7 +11,6 @@ import styles from './Overlay.module.css';
 export const Overlay = (): JSX.Element => {
     const svgRef = useRef<SVGAElement>(null);
     const overlayViewArea = useRef<HTMLDivElement>(null);
-    const { reloaded } = useLayoutLoading(state => state);
 
     const { scrollYProgress } = useScroll({ target: overlayViewArea, offset: ['start start', 'end start'] });
 
@@ -31,16 +30,16 @@ export const Overlay = (): JSX.Element => {
                 className={styles.banner}
                 src="./plug.jpg"
                 style={{ top: y, x: '-50%' }}
-                initial={{ y: 200 }}
+                initial={{ y: 0 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 0.75, delay: reloaded ? 4.1 : 0.5, ease: [0.33, 1, 0.68, 1] }}
+                transition={{ duration: 0.75, delay: 0.5, ease: [0.33, 1, 0.68, 1] }}
             />
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
-                    initial={{ y: 200 }}
+                    initial={{ y: -50 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.8, delay: reloaded ? 4.2 : 0.55, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.label}>
                         <div className={styles.wrapper}>
@@ -57,9 +56,9 @@ export const Overlay = (): JSX.Element => {
                 </motion.div>
                 <motion.div
                     className={classnames(styles.row, styles.name)}
-                    initial={{ y: 200 }}
+                    initial={{ y: -50 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.8, delay: reloaded ? 4.15 : 0.55, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <Ticker baseVelocity={5}>Hello WOrld -</Ticker>
                 </motion.div>

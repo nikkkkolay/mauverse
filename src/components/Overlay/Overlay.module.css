@@ -51,7 +51,7 @@
     position: static;
     z-index: 10000;
     order: 2;
-    padding-bottom: calc(var(--gap-padding) * 2);
+    padding-bottom: calc(var(--gap-padding) * 3);
 }
 
 .about .col {

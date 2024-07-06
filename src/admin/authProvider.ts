@@ -1,23 +1,20 @@
 const authProvider = {
-    login: ({ username, password }: any) => {
+    login: async ({ username, password }: any) => {
         const request = new Request(`${import.meta.env.VITE_JSON_SERVER_URL}/login`, {
             method: 'POST',
             body: JSON.stringify({ email: username, password: password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),
         });
-        return fetch(request)
-            .then(response => {
-                if (response.status < 200 || response.status >= 300) {
-                    throw new Error(response.statusText);
-                }
-                return response.json();
-            })
-            .then(auth => {
-                localStorage.setItem('auth', JSON.stringify(auth));
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
+        try {
+            const response = await fetch(request);
+            if (response.status < 200 || response.status >= 300) {
+                throw new Error(response.statusText);
+            }
+            const auth = await response.json();
+            localStorage.setItem('auth', JSON.stringify(auth));
+        } catch (error: any) {
+            throw new Error(error);
+        }
     },
     logout: () => {
         localStorage.removeItem('auth');
@@ -28,14 +25,14 @@ const authProvider = {
     },
     getIdentity: () => {
         try {
-            const auth = JSON.parse(localStorage.getItem('auth'));
+            const auth = JSON.parse(localStorage.getItem('auth') as string);
             return Promise.resolve({ id: auth.user.id, fullName: auth.user.fullName });
         } catch (error) {
             return Promise.reject(error);
         }
     },
     getPermissions: () => Promise.resolve(''),
-    checkError: error => {
+    checkError: (error: any) => {
         const status = error.status;
         if (status === 401 || status === 403) {
             localStorage.removeItem('auth');

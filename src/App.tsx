@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage, AdminPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';
@@ -20,17 +19,15 @@ const App = (): JSX.Element => {
     }, [location.pathname]);
 
     return (
-        <AnimatePresence mode="wait">
-            <Routes location={location} key={location.pathname}>
-                <Route element={<Layout />}>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/contacts" element={<ContactsPage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="*" element={<NotFound />} />
-                </Route>
-                <Route path="/admin/*" element={<AdminPage />} />
-            </Routes>
-        </AnimatePresence>
+        <Routes>
+            <Route element={<Layout />}>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/contacts" element={<ContactsPage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="*" element={<NotFound />} />
+            </Route>
+            <Route path="/admin/*" element={<AdminPage />} />
+        </Routes>
     );
 };
 

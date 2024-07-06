@@ -50,34 +50,19 @@ export const Sidebar = (): JSX.Element => {
     }, [isOpen]);
 
     return (
-        <>
-            <motion.div
-                className={classnames(styles.overlay, { [styles.overlayActive]: isOpen })}
-                animate={{ opacity: isOpen ? 0.1 : 0, backgroundColor: '#19191c' }}
-                transition={transition}
-                onClick={() => setActive(false)}
-            ></motion.div>
-
-            <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '130%' }} transition={transition}>
-                <motion.div
-                    className={styles.sidebarRounded}
-                    variants={roundedVariants}
-                    animate={isOpen ? 'visible' : 'hidden'}
-                    initial={{ width: '0%' }}
-                />
-                <div className={styles.sidebarInner}>
-                    <p className={styles.nav}>lorem</p>
-                    <ul className={styles.routes}>
-                        {routs &&
-                            routs.map((rout: { path: string; name: string; id: number }) => (
-                                <motion.span custom={rout.id} key={rout.id} variants={linkVariants} animate={isOpen ? 'visible' : 'hidden'}>
-                                    <MenuLink path={rout.path} name={rout.name} className={styles.link} />
-                                </motion.span>
-                            ))}
-                    </ul>
-                    <Social />
-                </div>
-            </motion.div>
-        </>
+        <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '130%' }} transition={transition}>
+            <div className={styles.sidebarInner}>
+                <p className={styles.nav}>lorem</p>
+                <ul className={styles.routes}>
+                    {routs &&
+                        routs.map((rout: { path: string; name: string; id: number }) => (
+                            <motion.span custom={rout.id} key={rout.id} variants={linkVariants} animate={isOpen ? 'visible' : 'hidden'}>
+                                <MenuLink path={rout.path} name={rout.name} className={styles.link} />
+                            </motion.span>
+                        ))}
+                </ul>
+                <Social />
+            </div>
+        </motion.div>
     );
 };
