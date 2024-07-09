@@ -16,7 +16,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     const transition = {
         duration: 0.75,
-        delay: mainPageReloaded ? 4.1 : 0.5,
+        delay: mainPageReloaded ? 4.1 : 1,
         ease: [0.33, 1, 0.68, 1],
     };
 
