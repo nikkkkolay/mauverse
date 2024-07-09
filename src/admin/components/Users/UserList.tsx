@@ -1,16 +1,20 @@
-import { List, Datagrid, TextField, EditButton, EmailField, DeleteButton } from 'react-admin';
+import { Box } from '@mui/material';
+import { List, Datagrid, TextField, EditButton, EmailField, DeleteButton, WithRecord } from 'react-admin';
 
-export const UserList = (props: any) => {
-    console.log(props);
-
+export const UserList = () => {
     return (
-        <List {...props} title="Список пользователей" exporter={false}>
+        <List title="Список пользователей" exporter={false}>
             <Datagrid>
-                <TextField source="id" />
                 <TextField source="fullName" label="Имя" />
                 <EmailField source="email" label="Почта" />
-                <EditButton />
-                <DeleteButton />
+                <WithRecord
+                    render={record => (
+                        <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
+                            <EditButton disabled={record.userId === 1} />
+                            <DeleteButton disabled={record.userId === 1} />
+                        </Box>
+                    )}
+                />
             </Datagrid>
         </List>
     );
