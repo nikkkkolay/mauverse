@@ -60,7 +60,7 @@ export const AboutSection = (): JSX.Element => {
                     </span>
                 </motion.div>
             </Container>
-            <BigButtonRow style={{ y: buttonTop, x: 15 }}>
+            <BigButtonRow style={{ y: buttonTop, x: -15 }}>
                 <Button className={styles.buttonFixed} fill onClick={() => navigate('/about')}>
                     <p>Lorem</p>
                 </Button>

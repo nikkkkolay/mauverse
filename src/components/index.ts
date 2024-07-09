@@ -18,7 +18,6 @@ export { ScrollProgress } from './ScrollProgress/ScrollProgress';
 export { Social } from './Social/Social';
 export { LoadingDots } from './LoadingDots/LoadingDots ';
 export { PageTransition } from './PageTransition/PageTransition';
-export { ScrollToTop } from './ScrollToTop/ScrollToTop';
 export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Greetings } from './Greetings/Greetings';
 export { Footer } from './Footer/Footer';

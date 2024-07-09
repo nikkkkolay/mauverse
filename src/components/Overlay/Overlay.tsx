@@ -5,7 +5,6 @@ import { Ticker } from '..';
 import { LabelIcon } from './LabelIcon';
 import { ArrowIcon } from '../../icons';
 import { useMySpring } from '../../hooks/useMySpring';
-import { useLayoutLoading } from '../../store/useLayoutLoading';
 import styles from './Overlay.module.css';
 
 export const Overlay = (): JSX.Element => {
