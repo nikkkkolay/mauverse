@@ -12,3 +12,9 @@
 	font-size: clamp(2.5rem, 5vw, 5.5rem);
 	line-height: 1;
 }
+
+@media screen and (max-width: 780px) {
+	.title {
+		top: calc(var(--vh, 1vh) * -4);
+	}
+}
