@@ -13,7 +13,7 @@ const authProvider = {
             const auth = await response.json();
             localStorage.setItem('auth', JSON.stringify(auth));
         } catch (error: any) {
-            throw new Error(error);
+            throw new Error('Неправильный логин или пароль');
         }
     },
     logout: () => {
