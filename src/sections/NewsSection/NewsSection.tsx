@@ -1,9 +1,12 @@
 import { useRef } from 'react';
-import { motion } from 'framer-motion';
 import { Button, Container } from '../../components';
+import { useFetch } from '../../store/useFetch';
 import styles from './NewsSection.module.css';
+import { NewsItem } from './../../components/NewsItem/NewsItem';
 
 export const NewsSection = () => {
+    const { posts, getPosts } = useFetch(state => state);
+
     const ref = useRef(null);
 
     return (
@@ -13,56 +16,8 @@ export const NewsSection = () => {
                     <span className={styles.title}>Lorem</span>
                 </div>
                 <ul className={styles.newsList}>
-                    <li className={styles.newsItem} ref={ref}>
-                        <motion.a
-                            href=""
-                            whileHover={{
-                                color: '#797979',
-                                transition: { duration: 0.3 },
-                            }}
-                            initial={{ x: '5%', opacity: 0 }}
-                            viewport={{ once: true }}
-                            whileInView={{
-                                x: 0,
-                                opacity: 1,
-                                transition: { ease: 'linear', duration: 0.3, delay: 0.1 },
-                            }}
-                        >
-                            <div className={styles.row}>
-                                <h3>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur
-                                    magnam{' '}
-                                </h3>
-                                <p>
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit ea praesentium ex doloribus quod dolorem pariatur
-                                    magnam reiciendis reprehenderit nam.
-                                </p>
-                            </div>
-                            <span className={styles.date}>12.01.1999</span>
-                        </motion.a>
-                    </li>
-                    <li className={styles.newsItem} ref={ref}>
-                        <motion.a
-                            href=""
-                            whileHover={{
-                                color: '#797979',
-                                transition: { duration: 0.1 },
-                            }}
-                            initial={{ x: '5%', opacity: 0 }}
-                            viewport={{ once: true }}
-                            whileInView={{
-                                x: 0,
-                                opacity: 1,
-                                transition: { ease: 'linear', duration: 0.3, delay: 0.3 },
-                            }}
-                        >
-                            <div className={styles.row}>
-                                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                                <p>Lorem ipsum, dolor sit amet</p>
-                            </div>
-                            <span className={styles.date}>12.01.1999</span>
-                        </motion.a>
-                    </li>
+                    <NewsItem />
+                    <NewsItem />
                 </ul>
                 <Button className={styles.button} as="button" type="tertiary">
                     Lorem, ipsum

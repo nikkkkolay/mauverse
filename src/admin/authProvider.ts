@@ -1,6 +1,8 @@
+import { API_URL } from './../../http';
+
 const authProvider = {
     login: async ({ username, password }: any) => {
-        const request = new Request(`${import.meta.env.VITE_JSON_SERVER_URL}/login`, {
+        const request = new Request(`${API_URL}/login`, {
             method: 'POST',
             body: JSON.stringify({ email: username, password: password }),
             headers: new Headers({ 'Content-Type': 'application/json' }),

@@ -1,6 +1,8 @@
 import restProvider from 'ra-data-json-server';
 import { withLifecycleCallbacks, fetchUtils } from 'react-admin';
 
+import { API_URL } from './../../http';
+
 // Функция для создания HTTP клиента с авторизацией
 export const httpClient = (url: string, options: any = {}) => {
     if (!options.headers) {
@@ -13,7 +15,7 @@ export const httpClient = (url: string, options: any = {}) => {
 };
 
 // Конфигурация dataProvider с использованием withLifecycleCallbacks
-const myDataProvider = withLifecycleCallbacks(restProvider(import.meta.env.VITE_JSON_SERVER_URL, httpClient), [
+const myDataProvider = withLifecycleCallbacks(restProvider(API_URL, httpClient), [
     {
         resource: 'posts',
         beforeSave: async params => {

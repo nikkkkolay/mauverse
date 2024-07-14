@@ -1,4 +1,5 @@
 export { Button } from './Button/Button';
+export { NewsItem } from './NewsItem/NewsItem';
 export { Container } from './Container/Container';
 export { Layout } from './Layout/Layout';
 export { Overlay } from './Overlay/Overlay';
