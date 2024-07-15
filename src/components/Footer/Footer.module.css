@@ -16,12 +16,24 @@
     background-color: var(--bg-secondary-alpha);
 }
 
+.footer404 {
+    background-color: var(--bg-primary-gamma);
+}
+
 .social {
     order: 2;
 }
 
+.social404 {
+    color: var(--text-primary-alpha)
+}
+
 .version {
     order: 1;
+}
+
+.version404 {
+    color: var(--text-primary-alpha)
 }
 
 @media screen and (max-width: 780px) {
