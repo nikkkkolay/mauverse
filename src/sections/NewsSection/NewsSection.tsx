@@ -20,7 +20,7 @@ export const NewsSection = (): JSX.Element => {
     }, [news, newsCount]);
 
     const setMoreNews = () => {
-        setNewsCount(prevCount => prevCount + 3);
+        setNewsCount(prevCount => prevCount + 2);
     };
 
     return (

@@ -15,7 +15,7 @@ export const useFetch = create<FetchStore>(set => ({
     news: [],
     newsItem: null,
     hasErrors: false,
-    fetching: true,
+    fetching: false,
 
     getAllNews: async () => {
         set({ fetching: true });
