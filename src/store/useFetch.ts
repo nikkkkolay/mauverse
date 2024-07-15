@@ -31,11 +31,12 @@ export const useFetch = create<FetchStore>(set => ({
     },
 
     getNews: async (id: string) => {
+        set({ fetching: true });
         try {
             const response = await api.get(`/posts/${id}`);
-            set({ newsItem: response.data, hasErrors: false });
+            set({ newsItem: response.data, hasErrors: false, fetching: false });
         } catch {
-            set({ newsItem: null, hasErrors: true });
+            set({ newsItem: null, hasErrors: true, fetching: false });
         }
     },
 }));

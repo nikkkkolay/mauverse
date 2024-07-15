@@ -1,0 +1,5 @@
+.richInput ol,
+.richInput ul {
+	margin: revert;
+	padding: revert;
+}

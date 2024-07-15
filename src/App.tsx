@@ -25,8 +25,8 @@ const App = (): JSX.Element => {
                 <Route path="/contacts" element={<ContactsPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/news/:id" element={<NewsPage />} />
-                <Route path="*" element={<Navigate replace to="/404" />} />
                 <Route path="/404" element={<NotFound />} />
+                <Route path="*" element={<Navigate replace to="/404" />} />
             </Route>
             <Route path="/admin/*" element={<AdminPage />} />
         </Routes>

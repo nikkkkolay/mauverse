@@ -42,7 +42,7 @@
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
     padding-top: calc(var(--section-padding) / 3);
 }
 
