@@ -1,8 +1,10 @@
-import { motion } from 'framer-motion';
-import styles from './NewsItem.module.css';
 import { useRef } from 'react';
+import { motion } from 'framer-motion';
+import { format } from '@formkit/tempo';
+import { INews } from './NewsItem.props';
+import styles from './NewsItem.module.css';
 
-export const NewsItem = () => {
+export const NewsItem = (props: INews): JSX.Element => {
     const ref = useRef(null);
 
     return (
@@ -22,10 +24,10 @@ export const NewsItem = () => {
                 }}
             >
                 <div className={styles.row}>
-                    <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                    <p>Lorem ipsum, dolor sit amet</p>
+                    <h3>{props.title}</h3>
+                    <p>{props.announcement}</p>
                 </div>
-                <span className={styles.date}>12.01.1999</span>
+                <span className={styles.date}>{format(props.published_at, 'D MMMM, YYYY')}</span>
             </motion.a>
         </li>
     );

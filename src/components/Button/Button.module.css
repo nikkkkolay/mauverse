@@ -41,6 +41,11 @@
     transition: all 0.2s ease;
 }
 
+.tertiary:focus:hover,
+.tertiary div:focus:hover {
+    color: var(--text-primary-alpha);
+}
+
 .wrapper {
     display: flex;
     align-items: center;

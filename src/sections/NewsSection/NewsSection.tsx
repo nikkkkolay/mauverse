@@ -1,27 +1,62 @@
-import { useRef } from 'react';
-import { Button, Container } from '../../components';
+import { useEffect, useState } from 'react';
+import { Button, Container, LoadingDots, NewsItem } from '../../components';
 import { useFetch } from '../../store/useFetch';
+import { INews } from '../../components/NewsItem/NewsItem.props';
 import styles from './NewsSection.module.css';
-import { NewsItem } from './../../components/NewsItem/NewsItem';
 
-export const NewsSection = () => {
-    const { posts, getPosts } = useFetch(state => state);
+export const NewsSection = (): JSX.Element => {
+    const [slice, setSlice] = useState<INews[]>([]);
+    const [newsCount, setNewsCount] = useState<number>(2);
+    const { news, hasErrors, fetching, getNews } = useFetch(state => state);
 
-    const ref = useRef(null);
+    useEffect(() => {
+        getNews();
+    }, [getNews]);
+
+    useEffect(() => {
+        setSlice(news.slice(0, newsCount));
+    }, [news, newsCount]);
+
+    const setMoreNews = () => {
+        setNewsCount(prevCount => prevCount + 3);
+    };
 
     return (
         <section className={styles.section}>
             <Container className={styles.container}>
                 <div className={styles.titleContainer}>
-                    <span className={styles.title}>Lorem</span>
+                    <span className={styles.title}>Новости</span>
                 </div>
-                <ul className={styles.newsList}>
-                    <NewsItem />
-                    <NewsItem />
-                </ul>
-                <Button className={styles.button} as="button" type="tertiary">
-                    Lorem, ipsum
-                </Button>
+                {fetching && (
+                    <div className={styles.row}>
+                        <h3>
+                            Загрузка <LoadingDots />
+                        </h3>
+                    </div>
+                )}
+                {hasErrors && (
+                    <div className={styles.row}>
+                        <h3>Ошибка на сервере попробуйте позже!</h3>
+                    </div>
+                )}
+                {!news.length && !hasErrors && !fetching && (
+                    <div className={styles.row}>
+                        <h3>Скоро здесь будут новости!</h3>
+                    </div>
+                )}
+                {slice.length > 0 && !fetching && (
+                    <ul className={styles.newsList}>
+                        {slice.map(news => (
+                            <NewsItem key={news.id} {...news} />
+                        ))}
+                    </ul>
+                )}
+                {news.length > slice.length && (
+                    <Button className={styles.button} as="button" type="tertiary" onClick={setMoreNews}>
+                        Еще новости&nbsp;
+                        <LoadingDots />
+                    </Button>
+                )}
             </Container>
         </section>
     );

@@ -1,21 +1,29 @@
 import { create } from 'zustand';
 import { api } from '../../http';
+import { INews } from '../components/NewsItem/NewsItem.props';
 
 interface FetchStore {
-    posts: [];
+    news: INews[] | [];
+    hasErrors: boolean;
+    fetching: boolean;
+    getNews: () => void;
 }
 
 export const useFetch = create<FetchStore>(set => ({
-    posts: [],
+    news: [],
+    hasErrors: false,
+    fetching: true,
 
-    getPosts: async () => {
+    getNews: async () => {
+        set({ fetching: true });
         try {
-            const response = await api.get(`/posts`);
-            console.log(response);
+            const response = await api.get(`/posts?active_ne=false`);
 
-            // set({ hasErrors: false, updateDate: response.data[0].download, loading: false });
-        } catch (err) {
-            // set({ hasErrors: true, loading: false, schedule: [], availableDates: [], range: {} });
+            const sortData = response.data.sort((a: INews, b: INews) => new Date(b.published_at).valueOf() - new Date(a.published_at).valueOf());
+
+            set({ news: sortData, hasErrors: false, fetching: false });
+        } catch {
+            set({ news: [], hasErrors: true, fetching: false });
         }
     },
 }));
