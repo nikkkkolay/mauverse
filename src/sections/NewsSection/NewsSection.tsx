@@ -7,11 +7,13 @@ import styles from './NewsSection.module.css';
 export const NewsSection = (): JSX.Element => {
     const [slice, setSlice] = useState<INews[]>([]);
     const [newsCount, setNewsCount] = useState<number>(2);
-    const { news, hasErrors, fetching, getNews } = useFetch(state => state);
+    const { news, hasErrors, fetching, getAllNews } = useFetch(state => state);
 
     useEffect(() => {
-        getNews();
-    }, [getNews]);
+        if (news.length === 0) {
+            getAllNews();
+        }
+    }, [getAllNews]);
 
     useEffect(() => {
         setSlice(news.slice(0, newsCount));
@@ -39,7 +41,7 @@ export const NewsSection = (): JSX.Element => {
                         <h3>Ошибка на сервере попробуйте позже!</h3>
                     </div>
                 )}
-                {!news.length && !hasErrors && !fetching && (
+                {news.length === 0 && !hasErrors && !fetching && (
                     <div className={styles.row}>
                         <h3>Скоро здесь будут новости!</h3>
                     </div>

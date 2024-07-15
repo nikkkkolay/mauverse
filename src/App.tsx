@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { Layout } from './components';
-import { MainPage, NotFound, ContactsPage, AboutPage, AdminPage } from './pages';
+import { MainPage, NotFound, ContactsPage, AboutPage, AdminPage, NewsPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';
 import { routs } from './routs';
 
@@ -24,7 +24,9 @@ const App = (): JSX.Element => {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/contacts" element={<ContactsPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/news/:id" element={<NewsPage />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path="/404" element={<NotFound />} />
             </Route>
             <Route path="/admin/*" element={<AdminPage />} />
         </Routes>
