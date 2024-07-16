@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { useParams, useNavigate } from 'react-router-dom';
 import JsxParser from 'react-jsx-parser';
 import { format } from '@formkit/tempo';
@@ -23,13 +22,13 @@ export const NewsPage = () => {
     }, [newsItem, hasErrors]);
 
     return (
-        <motion.section className={styles.news}>
-            <Container className={styles.header} initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.75, ease: [0.33, 1, 0.68, 1] }}>
+        <section className={styles.news}>
+            <Container className={styles.header} initial={{ y: 200 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
                 {!fetching ? (
                     <>
                         <Title tag="h1">{newsItem?.title}</Title>
                         <BigButtonRow stripe className={styles.buttonRow}>
-                            <div className={styles.decoration}>{newsItem && format(newsItem.published_at, 'D MMMM, YYYY')}</div>
+                            <div className={styles.decoration}>{newsItem && format(newsItem.published_at, 'D MMMM, YYYY г.')}</div>
                         </BigButtonRow>
                     </>
                 ) : (
@@ -39,7 +38,7 @@ export const NewsPage = () => {
                 )}
             </Container>
 
-            <Container className={styles.content} initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}>
+            <Container className={styles.content} initial={{ y: 200 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
                 {newsItem?.pictures && <img className={styles.firstImage} src={newsItem?.pictures[0].src} alt={newsItem?.title} />}
                 <JsxParser jsx={newsItem?.body} />
                 {newsItem?.pictures && (
@@ -58,6 +57,6 @@ export const NewsPage = () => {
                     </Fancybox>
                 )}
             </Container>
-        </motion.section>
+        </section>
     );
 };

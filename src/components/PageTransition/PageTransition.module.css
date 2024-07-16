@@ -12,12 +12,21 @@
 	bottom: 0;
 }
 
+.slideTop,
 .slideBottom {
 	width: 100%;
 	position: absolute;
+}
+
+.slideTop {
+	top: 0;
+}
+
+.slideBottom {
 	bottom: 0;
 }
 
+.slideTop::after,
 .slideBottom::after {
 	content: '';
 	width: 150%;
@@ -26,11 +35,9 @@
 	height: 400%;
 	left: 50%;
 	border-radius: 50%;
-}
-
-.slideBottom::after {
 	transform: translate(-50%, -50%);
 }
+
 
 @media screen and (max-width: 780px) {
 	.title {

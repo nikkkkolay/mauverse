@@ -10,9 +10,9 @@ export const ContactsPage = (): JSX.Element => {
             <Container className={styles.container}>
                 <motion.div
                     className={styles.titleContainer}
-                    initial={{ y: -50 }}
+                    initial={{ y: 250 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 0.75, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.imageContainer}>
                         <img src="./plug.jpg" alt="logo" />
@@ -21,7 +21,7 @@ export const ContactsPage = (): JSX.Element => {
                     <Title tag="h2">dolor sit amet consectetur</Title>
                     <ArrowIcon className={styles.arrow} />
                 </motion.div>
-                <motion.div className={styles.row} initial={{ y: -50 }} animate={{ y: 0 }} transition={{ duration: 0.8, ease: [0.33, 1, 0.68, 1] }}>
+                <motion.div className={styles.row} initial={{ y: 250 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
                     <div className={styles.col}>
                         <Form />
                     </div>

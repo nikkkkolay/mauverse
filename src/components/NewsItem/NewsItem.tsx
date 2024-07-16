@@ -28,7 +28,7 @@ export const NewsItem = (props: INews): JSX.Element => {
                         <h3>{props.title}</h3>
                         <p>{props.announcement}</p>
                     </div>
-                    <span className={styles.date}>{format(props.published_at, 'D MMMM, YYYY')}</span>
+                    <span className={styles.date}>{format(props.published_at, 'D MMMM YYYY')}</span>
                 </motion.div>
             </Link>
         </li>

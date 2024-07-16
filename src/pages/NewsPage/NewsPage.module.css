@@ -52,6 +52,7 @@
 .content p {
 	padding: revert;
 	margin: revert;
+	font-weight: 300;
 }
 
 .content li p,

@@ -16,7 +16,7 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
 
     const transition = {
         duration: 0.75,
-        delay: mainPageReloaded ? 4.1 : 1,
+        delay: mainPageReloaded ? 2 : 1,
         ease: [0.33, 1, 0.68, 1],
     };
 
@@ -33,6 +33,17 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
         },
         exit: {
             top: 0,
+            transition: transition,
+        },
+    };
+
+    const slideTopVariants = {
+        enter: {
+            height: 0,
+            transition: transition,
+        },
+        exit: {
+            height: '10%',
             transition: transition,
         },
     };
@@ -60,13 +71,10 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
         <>
             {children}
             <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
-                {location.pathname === '/' && pathname === 'Home' ? (
-                    <Greetings />
-                ) : (
-                    <Title tag="h2" className={styles.title}>
-                        {pathname}
-                    </Title>
-                )}
+                <motion.div variants={slideTopVariants} animate={'enter'} exit={'exit'} className={styles.slideTop} />
+                <Title tag="h2" className={styles.title}>
+                    {pathname}
+                </Title>
                 <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
             </motion.div>
         </>

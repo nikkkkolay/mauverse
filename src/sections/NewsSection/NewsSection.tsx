@@ -55,7 +55,7 @@ export const NewsSection = (): JSX.Element => {
                 )}
                 {news.length > slice.length && (
                     <Button className={styles.button} as="button" type="tertiary" onClick={setMoreNews}>
-                        Еще новости&nbsp;
+                        Ещё новости&nbsp;
                         <LoadingDots />
                     </Button>
                 )}
