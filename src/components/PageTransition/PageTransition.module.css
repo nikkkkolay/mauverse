@@ -8,7 +8,7 @@
 	left: 0;
 	position: fixed;
 	z-index: 500;
-	background: var(--bg-primary-beta);
+	background: var(--bg-primary-delta);
 	bottom: 0;
 }
 
@@ -31,7 +31,7 @@
 	content: '';
 	width: 150%;
 	position: absolute;
-	background: var(--bg-primary-beta);
+	background: var(--bg-primary-delta);
 	height: 400%;
 	left: 50%;
 	border-radius: 50%;
