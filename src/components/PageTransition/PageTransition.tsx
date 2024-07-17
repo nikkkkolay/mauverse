@@ -67,17 +67,15 @@ export const PageTransition = ({ children }: Props): JSX.Element => {
     return (
         <>
             {children}
-            {!location.pathname.includes('admin') && (
-                <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
-                    <motion.div variants={slideTopVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideTop} />
+            <motion.div variants={slideVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slide}>
+                <motion.div variants={slideTopVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideTop} />
 
-                    <Title tag="h2" className={styles.title}>
-                        {pathname?.name}
-                    </Title>
+                <Title tag="h2" className={styles.title}>
+                    {pathname?.name}
+                </Title>
 
-                    <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
-                </motion.div>
-            )}
+                <motion.div variants={slideBottomVariants} initial={'initial'} animate={'enter'} exit={'exit'} className={styles.slideBottom} />
+            </motion.div>
         </>
     );
 };
