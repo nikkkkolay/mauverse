@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import { MenuLink, Social } from '..';
 import { useSidebar } from '../../store/useSidebar';
-import { routs } from '../../routs';
+import { publicRoutes } from '../../routs';
 import styles from './Sidebar.module.css';
 
 const transition = {
@@ -51,8 +51,8 @@ export const Sidebar = (): JSX.Element => {
                 <div className={styles.sidebarInner}>
                     <p className={styles.nav}>lorem</p>
                     <ul className={styles.routes}>
-                        {routs &&
-                            routs.map((rout: { path: string; name: string; id: number }) => (
+                        {publicRoutes &&
+                            publicRoutes.map((rout: { path: string; name: string; id: number }) => (
                                 <motion.span custom={rout.id} key={rout.id} variants={linkVariants} animate={isOpen ? 'visible' : 'hidden'}>
                                     <MenuLink path={rout.path} name={rout.name} className={styles.link} />
                                 </motion.span>

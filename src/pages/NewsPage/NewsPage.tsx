@@ -23,7 +23,12 @@ export const NewsPage = () => {
 
     return (
         <section className={styles.news}>
-            <Container className={styles.header} initial={{ y: 200 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
+            <Container
+                className={styles.header}
+                initial={{ y: 200 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+            >
                 {!fetching ? (
                     <>
                         <Title tag="h1">{newsItem?.title}</Title>
@@ -38,7 +43,12 @@ export const NewsPage = () => {
                 )}
             </Container>
 
-            <Container className={styles.content} initial={{ y: 200 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
+            <Container
+                className={styles.content}
+                initial={{ y: 200 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+            >
                 {newsItem?.pictures && <img className={styles.firstImage} src={newsItem?.pictures[0].src} alt={newsItem?.title} />}
                 <JsxParser jsx={newsItem?.body} />
                 {newsItem?.pictures && (

@@ -3,16 +3,16 @@ import { create } from 'zustand';
 interface LayoutStore {
     loading: boolean;
     reloaded: boolean;
-    pathname: string;
+    pathname: any;
     setLoading: () => void;
     reloadedChecker: () => void;
-    setPathname: (pathname: string) => void;
+    setPathname: (pathname: { path: string; name: string; greeting: boolean }) => void;
 }
 
 export const useLayoutLoading = create<LayoutStore>(set => ({
     loading: false,
     reloaded: true,
-    pathname: '',
+    pathname: null,
     setLoading: () => {
         set({ loading: true });
 
@@ -23,7 +23,7 @@ export const useLayoutLoading = create<LayoutStore>(set => ({
             };
         }, 1500);
     },
-    setPathname: (pathname: string) => {
+    setPathname: pathname => {
         set({ pathname: pathname });
     },
     reloadedChecker: () => {

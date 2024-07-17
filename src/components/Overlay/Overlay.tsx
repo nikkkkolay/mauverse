@@ -29,14 +29,14 @@ export const Overlay = (): JSX.Element => {
                 style={{ x: '-50%' }}
                 initial={{ y: 250 }}
                 animate={{ y: 0 }}
-                transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}
+                transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
             />
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
                     initial={{ y: 250 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.label}>
                         <div className={styles.wrapper}>

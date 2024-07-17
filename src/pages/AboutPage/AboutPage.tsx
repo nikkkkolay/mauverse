@@ -29,7 +29,12 @@ export const AboutPage = (): JSX.Element => {
 
     return (
         <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
-            <Container className={styles.header} initial={{ y: 250 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
+            <Container
+                className={styles.header}
+                initial={{ y: 250 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+            >
                 <Title tag="h1">
                     Lorem ipsum dolor
                     <div>sit consectetur</div>
@@ -39,13 +44,18 @@ export const AboutPage = (): JSX.Element => {
                 </BigButtonRow>
             </Container>
 
-            <Container className={styles.content} initial={{ y: 250 }} animate={{ y: 0 }} transition={{ duration: 2, ease: [0.33, 1, 0.68, 1] }}>
+            <Container
+                className={styles.content}
+                initial={{ y: 250 }}
+                animate={{ y: 0 }}
+                transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
+            >
                 <div className={styles.intro} ref={introViewArea}>
                     <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
                         <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere minus
-                            in eius beatae nemo cupiditate sit numquam. doloremque <Link href="#">eveniet</Link> tempora.
+                            in eius beatae nemo cupiditate sit numquam. doloremque tempora.
                         </p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere</p>
                         <p className={styles.special}>

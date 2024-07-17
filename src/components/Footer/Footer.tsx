@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import classnames from 'classnames';
 import { ContactSection } from '../../sections';
 import { Social, Info } from '../index';
+
 import styles from './Footer.module.css';
 
 export const Footer = (): JSX.Element => {
