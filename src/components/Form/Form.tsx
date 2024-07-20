@@ -1,10 +1,12 @@
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
 import { BigButtonRow, Button } from '../../components';
 import styles from './Form.module.css';
+import { useFetch } from '../../store/useFetch';
+import { LoadingDots } from './../LoadingDots/LoadingDots ';
 
-interface Inputs {
+export interface IInputForm {
     username: string;
-    email: string;
+    from: string;
     text: string;
 }
 
@@ -14,10 +16,12 @@ export const Form = (): JSX.Element => {
         handleSubmit,
         control,
         formState: { errors },
-    } = useForm<Inputs>();
+    } = useForm<IInputForm>();
 
-    const onSubmit: SubmitHandler<Inputs> = data => {
-        console.log(data);
+    const { fetching, mailSendingError, mailSent, sendEmail } = useFetch(state => state);
+
+    const onSubmit: SubmitHandler<IInputForm> = data => {
+        if (data) sendEmail(data);
     };
 
     return (
@@ -42,14 +46,14 @@ export const Form = (): JSX.Element => {
                 <label>Lorem, ipsum.</label>
                 <Controller
                     control={control}
-                    name="email"
+                    name="from"
                     rules={{
                         required: { value: true, message: '* Это обязательно поле' },
                         pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, message: '* Неверный формат почты' },
                     }}
-                    render={() => <input className={styles.input} type="email" placeholder="Lorem, ipsum." {...register('email')} />}
+                    render={() => <input className={styles.input} type="email" placeholder="Lorem, ipsum." {...register('from')} />}
                 />
-                {errors.email && <span className={styles.error}>{errors.email.message}</span>}
+                {errors.from && <span className={styles.error}>{errors.from.message}</span>}
             </div>
             <div className={styles.item}>
                 <span>03</span>
@@ -66,10 +70,15 @@ export const Form = (): JSX.Element => {
                 />
                 {errors.text && <span className={styles.error}>{errors.text.message}</span>}
             </div>
-
             <BigButtonRow stripe className={styles.row}>
-                <Button fill>Lorem</Button>
+                <Button fill>
+                    {!fetching ? 'Отправить' : 'Отправка'} &nbsp;{fetching && <LoadingDots />}
+                </Button>
             </BigButtonRow>
+            <div className={styles.fetchMessage}>
+                {mailSendingError && <p className={styles.fetchError}>Сервис временно недоступен!</p>}
+                {mailSent && <p className={styles.fetchOk}>Сообщение успешно отправлено!</p>}
+            </div>
         </form>
     );
 };

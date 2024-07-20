@@ -49,6 +49,18 @@
     height: 60%;
 }
 
+.fetchMessage {
+    margin-top: 20px;
+}
+
+.fetchError {
+    color: #ff0040;
+}
+
+.fetchOk {
+    color: #1eff00;
+}
+
 @media screen and (max-width: 780px) {
     .form .row {
         padding: calc(var(--section-padding) / 2) 0;
