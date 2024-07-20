@@ -2,21 +2,26 @@ import { PropsWithChildren } from 'react';
 import { MagneticElement } from '..';
 import classnames from 'classnames';
 import styles from './Button.module.css';
+import { IMagneticElement } from '../MagneticElement/MagneticElement';
 
-type Tag = 'a' | 'li' | 'button' | 'div';
 type Type = 'primary' | 'secondary' | 'tertiary';
 
-interface Props {
+interface IButton extends IMagneticElement {
     type?: Type;
-    className?: string;
-    onClick?: () => void;
-    isInView?: boolean;
-    fill?: boolean;
-    href?: string;
-    as?: Tag;
 }
 
-export const Button = ({ className, onClick, isInView = true, children, fill, as, href, type, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const Button = ({
+    className,
+    onClick,
+    isInView = true,
+    children,
+    fill,
+    as,
+    href,
+    type,
+    disabled,
+    ...props
+}: PropsWithChildren<IButton>): JSX.Element => {
     return (
         <MagneticElement
             {...props}
@@ -25,6 +30,7 @@ export const Button = ({ className, onClick, isInView = true, children, fill, as
             fill={fill}
             href={href}
             as={as}
+            disabled={disabled}
             className={classnames(styles.button, { [styles.secondary]: type === 'secondary', [styles.tertiary]: type === 'tertiary' }, className)}
         >
             <MagneticElement as="div" className={styles.wrapper}>

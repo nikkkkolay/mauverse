@@ -71,7 +71,7 @@ export const Form = (): JSX.Element => {
                 {errors.text && <span className={styles.error}>{errors.text.message}</span>}
             </div>
             <BigButtonRow stripe className={styles.row}>
-                <Button fill>
+                <Button fill disabled={mailSent}>
                     {!fetching ? 'Отправить' : 'Отправка'} &nbsp;{fetching && <LoadingDots />}
                 </Button>
             </BigButtonRow>

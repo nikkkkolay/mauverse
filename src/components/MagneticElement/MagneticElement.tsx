@@ -6,16 +6,27 @@ import classnames from 'classnames';
 
 type Tag = 'a' | 'li' | 'button' | 'div';
 
-interface Props {
+export interface IMagneticElement {
     className?: string;
     as?: Tag;
     href?: string;
     onClick?: () => void;
     isInView?: boolean;
     fill?: boolean;
+    disabled?: boolean;
 }
 
-export const MagneticElement = ({ className, isInView, onClick, children, as, href, fill, ...props }: PropsWithChildren<Props>): JSX.Element => {
+export const MagneticElement = ({
+    className,
+    isInView,
+    onClick,
+    children,
+    as,
+    href,
+    fill,
+    disabled,
+    ...props
+}: PropsWithChildren<IMagneticElement>): JSX.Element => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const fillControls = useAnimation();
 
@@ -120,6 +131,7 @@ export const MagneticElement = ({ className, isInView, onClick, children, as, hr
                     transition={{ duration: 0.2 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={onClick}
+                    disabled={disabled}
                 >
                     {children}
                     <motion.div className={classnames(styles.fill, { [styles.changedFill]: fill })} animate={fillControls}></motion.div>
