@@ -6,6 +6,8 @@
     background-color: var(--bg-primary-gamma);
     color: var(--text-primary-alpha);
     width: 100%;
+    position: relative;
+    top: -1px;
 }
 
 .buttonRow {

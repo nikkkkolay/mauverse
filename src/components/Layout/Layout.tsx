@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useInView } from 'framer-motion';
 import { Outlet, useLocation } from 'react-router-dom';
 import classnames from 'classnames';
-import { Footer, Navbar, Overlay, PageTransition, Sidebar, SmoothScroll, ScrollProgress, Hamburger } from '../';
+import { Footer, Navbar, Overlay, PageTransition, Sidebar, SmoothScroll, ScrollProgress, ScrollToTop, Hamburger } from '../';
 import styles from './Layout.module.css';
 import { useSidebar } from '../../store/useSidebar';
 
@@ -14,15 +14,12 @@ export const Layout = (): JSX.Element => {
 
     const isActive = useSidebar(state => state.isActive);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location.pathname]);
-
     return (
         <PageTransition>
             <>
                 <SmoothScroll>
                     <ScrollProgress>
+                        <ScrollToTop />
                         <header
                             className={classnames(styles.header, {
                                 [styles.headerHeight]: location.pathname === '/',

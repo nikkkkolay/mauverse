@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { BigButtonRow, Container, Title, Link, LoadingDots } from '../../components';
+import { BigButtonRow, Container, Title, LoadingDots } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowIcon } from './../../icons/ArrowIcon';
 import { useMySpring } from '../../hooks/useMySpring';

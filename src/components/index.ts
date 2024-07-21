@@ -21,5 +21,6 @@ export { LoadingDots } from './LoadingDots/LoadingDots ';
 export { PageTransition } from './PageTransition/PageTransition';
 export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Greetings } from './Greetings/Greetings';
+export { ScrollToTop } from './ScrollToTop/ScrollToTop';
 export { Fancybox } from './Fancybox/Fancybox';
 export { Footer } from './Footer/Footer';
