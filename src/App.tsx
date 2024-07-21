@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { Routes, Route, useLocation, Navigate, Outlet } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Layout } from './components';
 import { MainPage, NotFound, ContactsPage, AboutPage, AdminPage, NewsPage } from './pages';
 import { useLayoutLoading } from './store/useLayoutLoading';

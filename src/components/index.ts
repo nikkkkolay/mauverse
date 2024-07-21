@@ -23,4 +23,5 @@ export { SmoothScroll } from './SmoothScroll/SmoothScroll';
 export { Greetings } from './Greetings/Greetings';
 export { ScrollToTop } from './ScrollToTop/ScrollToTop';
 export { Fancybox } from './Fancybox/Fancybox';
+export { MetaHelmet } from './MetaHelmet/MetaHelmet';
 export { Footer } from './Footer/Footer';
