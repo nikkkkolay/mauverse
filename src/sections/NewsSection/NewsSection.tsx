@@ -36,7 +36,7 @@ export const NewsSection = (): JSX.Element => {
                         </h3>
                     </div>
                 )}
-                {hasErrors && (
+                {hasErrors && !fetching && (
                     <div className={styles.row}>
                         <h3>Ошибка на сервере попробуйте позже!</h3>
                     </div>
