@@ -16,6 +16,8 @@ export const Overlay = (): JSX.Element => {
     const spring = useMySpring(scrollYProgress);
 
     const rotate = useTransform(spring, [0, 1], [0, 40]);
+    const y = useTransform(spring, [0, 1], [0, 200]);
+
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
@@ -26,9 +28,7 @@ export const Overlay = (): JSX.Element => {
             <motion.img
                 className={styles.banner}
                 src="./plug.jpg"
-                style={{ x: '-50%' }}
-                initial={{ y: 250 }}
-                animate={{ y: 0 }}
+                style={{ x: '-50%', y: y }}
                 transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
             />
             <div className={styles.container}>

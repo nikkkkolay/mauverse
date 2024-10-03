@@ -72,7 +72,7 @@ export const Form = (): JSX.Element => {
             </div>
             <BigButtonRow stripe className={styles.row}>
                 <Button fill disabled={mailSent}>
-                    {!fetching ? 'Отправить' : 'Отправка'} &nbsp;{fetching && <LoadingDots />}
+                    {!fetching ? 'Отправить' : 'Отправка'} {fetching && <LoadingDots />}
                 </Button>
             </BigButtonRow>
             <div className={styles.fetchMessage}>
