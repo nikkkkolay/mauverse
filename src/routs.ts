@@ -1,14 +1,14 @@
 export const publicRoutes = [
-    { id: 0, path: '/', name: 'Home' },
-    { id: 1, path: '/about', name: 'About' },
-    { id: 2, path: '/contacts', name: 'Contacts' },
+    { id: 0, path: '/', name: 'Главная' },
+    { id: 1, path: '/about', name: 'О нас' },
+    { id: 2, path: '/contacts', name: 'Контакты' },
 ];
 
 export const transitionRoutes = [
-    { path: '/', name: 'Main' },
-    { path: '/about', name: 'About' },
-    { path: '/contacts', name: 'Contacts' },
-    { path: '/news', name: 'News' },
+    { path: '/', name: 'MAUverse' },
+    { path: '/about', name: 'О нас' },
+    { path: '/contacts', name: 'Контакты' },
+    { path: '/news', name: 'Новости' },
     { path: '/404', name: '404' },
 ];
 

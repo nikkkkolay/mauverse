@@ -11,16 +11,17 @@ export const Navbar = forwardRef((_props, ref: any): JSX.Element => {
 
     return (
         <nav className={styles.nav} ref={ref}>
-            <img className={styles.logo} src="" alt="Lorem" />
+            <img className={styles.logoFull} src="/logo_rus_full_H.svg" alt="Лого МАУ" />
+            <img className={styles.logoAbb} src="/logo_rus_abb_H.svg" alt="Лого МАУ" />
             <ul className={styles.routes}>
                 {publicRoutes &&
                     publicRoutes.map((rout: { path: string; name: string; id: number }) => (
                         <MenuLink key={rout.id} path={rout.path} name={rout.name} />
                     ))}
             </ul>
-            <ul className={classnames(styles.routes, styles.visible)}>
-                <li className={classnames({ [styles.colorWhite]: isActive })} onClick={() => setActive(!isActive)}>
-                    Menu
+            <ul className={classnames(styles.routes, { [styles.visible]: !isActive })}>
+                <li className={classnames(styles.menu, { [styles.colorWhite]: isActive })} onClick={() => setActive(!isActive)}>
+                    Меню
                 </li>
             </ul>
         </nav>

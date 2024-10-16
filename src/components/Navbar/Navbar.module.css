@@ -8,8 +8,21 @@
     padding: var(--gap-padding) calc(var(--gap-padding) * 1.5);
 }
 
+.logoFull {
+    display: initial;
+    max-width: 240px;
+}
+
+.logoAbb {
+    display: none;
+}
+
 .nav li {
     cursor: pointer;
+}
+
+.menu {
+    font-size: 1.1rem;
 }
 
 .nav li.colorWhite::after,
@@ -31,6 +44,16 @@
 @media screen and (max-width: 780px) {
     .nav {
         padding: calc(var(--gap-padding) * 2) var(--gap-padding);
+    }
+
+    .logoFull {
+        display: none;
+    }
+
+    .logoAbb {
+        display: initial;
+        max-width: 100px;
+        height: 25px;
     }
 
     .routes.visible {
