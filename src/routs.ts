@@ -1,12 +1,12 @@
 export const publicRoutes = [
     { id: 0, path: '/', name: 'Главная' },
-    { id: 1, path: '/about', name: 'О нас' },
+    { id: 1, path: '/about', name: 'О проекте' },
     { id: 2, path: '/contacts', name: 'Контакты' },
 ];
 
 export const transitionRoutes = [
     { path: '/', name: 'MAUverse' },
-    { path: '/about', name: 'О нас' },
+    { path: '/about', name: 'О проекте' },
     { path: '/contacts', name: 'Контакты' },
     { path: '/news', name: 'Новости' },
     { path: '/404', name: '404' },
