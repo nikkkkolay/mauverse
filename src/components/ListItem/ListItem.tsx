@@ -6,6 +6,7 @@ import classnames from 'classnames';
 interface Props {
     name: string;
     path: string;
+    blank?: boolean;
     className?: string;
 }
 
@@ -14,10 +15,10 @@ const listVariants = {
     hidden: { left: '50%', right: '50%' },
 };
 
-export const ListItem = ({ name, path, className }: Props): JSX.Element => {
+export const ListItem = ({ name, path, blank, className }: Props): JSX.Element => {
     return (
         <MagneticElement as="li" className={classnames(styles.link, className)}>
-            <motion.a whileHover="visible" initial="hidden" exit="hidden" href={path}>
+            <motion.a whileHover="visible" initial="hidden" exit="hidden" href={path} target={blank ? '_blank' : '_self'}>
                 {name}
                 <motion.div
                     variants={listVariants}

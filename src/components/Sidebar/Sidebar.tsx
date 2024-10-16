@@ -49,7 +49,7 @@ export const Sidebar = (): JSX.Element => {
 
             <motion.div className={styles.sidebar} initial={{ x: '100%' }} animate={{ x: isOpen ? 0 : '130%' }} transition={transition}>
                 <div className={styles.sidebarInner}>
-                    <p className={styles.nav}>lorem</p>
+                    <p className={styles.nav}>Навигация</p>
                     <ul className={styles.routes}>
                         {publicRoutes &&
                             publicRoutes.map((rout: { path: string; name: string; id: number }) => (
