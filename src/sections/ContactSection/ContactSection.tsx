@@ -30,7 +30,7 @@ export const ContactSection = (): JSX.Element => {
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
                         <img src="/logo.svg" alt="Логотип MAUverse" />
-                        <Title tag="h2">Написать</Title>
+                        <Title tag="h2">Напишите</Title>
                     </div>
                     <Title tag="h2">и оставьте обратную связь</Title>
                     <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />

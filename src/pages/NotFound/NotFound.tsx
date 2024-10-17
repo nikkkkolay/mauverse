@@ -8,12 +8,12 @@ export const NotFound = (): JSX.Element => {
         <section className={styles.sectionContainer}>
             <Container className={styles.header}>
                 <Title tag="h1">
-                    404 Lorem ipsum
-                    <div>sit consectetur</div>
+                    404 УПС!
+                    <div>такой страницы нет</div>
                 </Title>
                 <BigButtonRow stripe className={styles.buttonRow}>
                     <Button fill onClick={() => navigate('/')}>
-                        <p>Lorem</p>
+                        <p>На главную</p>
                     </Button>
                 </BigButtonRow>
             </Container>

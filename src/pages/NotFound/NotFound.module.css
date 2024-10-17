@@ -9,8 +9,8 @@
 }
 
 .header {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: calc(var(--section-padding) / 1.5);
+    padding-bottom: calc(var(--section-padding) / 3);
 }
 
 .buttonRow {
