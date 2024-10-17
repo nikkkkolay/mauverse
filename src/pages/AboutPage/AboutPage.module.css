@@ -14,16 +14,9 @@
     padding: calc(var(--section-padding) / 1.5) 0;
 }
 
-.decoration {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 100%;
-    background-color: var(--element-primary-gamma);
-    color: var(--text-primary-gamma);
-    width: clamp(9rem, 12vw, 11rem);
-    height: clamp(9rem, 12vw, 11rem);
-    font-size: 1em;
+.logo {
+    width: clamp(9rem, 12vw, 18rem);
+    height: clamp(9rem, 12vw, 18rem);
 }
 
 .header {

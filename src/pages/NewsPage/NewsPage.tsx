@@ -23,14 +23,7 @@ export const NewsPage = () => {
 
     return (
         <>
-            {newsItem && (
-                <MetaHelmet
-                    title={newsItem.title}
-                    description={newsItem.announcement}
-                    type="article"
-                    image={newsItem?.pictures && newsItem?.pictures[0].src}
-                />
-            )}
+            {newsItem && <MetaHelmet title={`MAUverse | ${newsItem.title}`} />}
             <section className={styles.news}>
                 <Container
                     className={styles.header}

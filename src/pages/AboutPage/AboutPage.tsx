@@ -29,7 +29,7 @@ export const AboutPage = (): JSX.Element => {
 
     return (
         <>
-            <MetaHelmet title={'About'} description={'About ipsum'} />
+            <MetaHelmet title={'MAUverse | О проекте'} />
             <motion.section className={styles.about} ref={sectionViewArea} style={{ backgroundColor: backgroundTransform }}>
                 <Container
                     className={styles.header}
@@ -38,11 +38,11 @@ export const AboutPage = (): JSX.Element => {
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <Title tag="h1">
-                        Lorem ipsum dolor
-                        <div>sit consectetur</div>
+                        Мобильное приложение
+                        <div>для студентов и преподавателей</div>
                     </Title>
                     <BigButtonRow stripe className={styles.buttonRow}>
-                        <div className={styles.decoration}>Lorem</div>
+                        <img className={styles.logo} src="./logo.svg" alt="Логотип MAUverse" />
                     </BigButtonRow>
                 </Container>
 
