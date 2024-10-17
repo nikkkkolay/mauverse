@@ -68,16 +68,18 @@
     flex-direction: column;
     justify-content: center;
     gap: 4px;
-    font-size: clamp(1.8rem, 3vw, 2.3rem);
+    font-size: clamp(1.8rem, 3vw, 2rem);
     line-height: 1.2;
     font-weight: 400;
-    padding-right: calc(var(--gap-padding) * 4.5);
+    padding-right: calc(var(--gap-padding) * 2.5);
 }
 
 .label {
     display: flex;
     align-items: center;
     z-index: 10000;
+    cursor: pointer;
+    color: var(--text-primary-gamma);
 }
 
 .label .wrapper {
@@ -91,11 +93,18 @@
 
 .label .wrapper p {
     display: inline-block;
+    transition: all .6s ease;
+    line-height: 1;
+    font-size: clamp(18px, 1.5vw, 20px);
+}
+
+.label:hover .wrapper p {
+    transform: translateX(20px);
 }
 
 .label .labelIcon {
     width: auto;
-    height: 6em;
+    height: 6.5em;
     fill: var(--element-primary-alpha);
 }
 

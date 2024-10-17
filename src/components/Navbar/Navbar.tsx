@@ -11,8 +11,10 @@ export const Navbar = forwardRef((_props, ref: any): JSX.Element => {
 
     return (
         <nav className={styles.nav} ref={ref}>
-            <img className={styles.logoFull} src="/logo_rus_full_H.svg" alt="Лого МАУ" />
-            <img className={styles.logoAbb} src="/logo_rus_abb_H.svg" alt="Лого МАУ" />
+            <a href="https://mauniver.ru" target="_blank">
+                <img className={styles.logoFull} src="/logo_rus_full_H.png" alt="Лого МАУ" />
+                <img className={styles.logoAbb} src="/logo_rus_abb_H.png" alt="Лого МАУ" />
+            </a>
             <ul className={styles.routes}>
                 {publicRoutes &&
                     publicRoutes.map((rout: { path: string; name: string; id: number }) => (

@@ -62,7 +62,7 @@ export const AboutSection = (): JSX.Element => {
             </Container>
             <BigButtonRow style={{ y: buttonTop, x: -15 }}>
                 <Button className={styles.buttonFixed} fill onClick={() => navigate('/about')}>
-                    <p>Lorem</p>
+                    О проекте
                 </Button>
             </BigButtonRow>
         </section>

@@ -38,16 +38,16 @@ export const Overlay = (): JSX.Element => {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
-                    <div className={styles.label}>
+                    <a className={styles.label} href="https://www.mauniver.ru/files/mauverse-v0.8.apk">
                         <div className={styles.wrapper}>
-                            <p>Lorem.</p>
+                            <p>{`Скачать >>>`}</p>
                         </div>
                         <LabelIcon className={styles.labelIcon} />
-                    </div>
+                    </a>
                     <div className={styles.col}>
                         <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
                         <h1>
-                            <span>Lorem</span>Lorem, ipsum dolor.
+                            <span> Платформа </span> для студентов и преподавателей
                         </h1>
                     </div>
                 </motion.div>
@@ -57,7 +57,7 @@ export const Overlay = (): JSX.Element => {
                     animate={{ y: 0 }}
                     transition={{ duration: 2.2, ease: [0.33, 1, 0.68, 1] }}
                 >
-                    <Ticker baseVelocity={5}>Hello WOrld -</Ticker>
+                    <Ticker baseVelocity={5}>MAUverse -</Ticker>
                 </motion.div>
             </div>
         </div>
