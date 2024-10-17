@@ -29,23 +29,23 @@ export const ContactSection = (): JSX.Element => {
             <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
                 <div className={styles.titleContainer}>
                     <div className={styles.imageContainer}>
-                        <img src="/plug.jpg" alt="logo" />
-                        <Title tag="h2">Lorem ipsum</Title>
+                        <img src="/logo.svg" alt="Логотип MAUverse" />
+                        <Title tag="h2">Написать</Title>
                     </div>
-                    <Title tag="h2">dolor sit consectetur</Title>
+                    <Title tag="h2">и оставьте обратную связь</Title>
                     <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
                 </div>
                 <BigButtonRow stripe style={{ right: toRight }}>
                     <Button fill onClick={() => navigate('/contacts')}>
-                        <p>Lorem</p>
+                        <p>Контакты</p>
                     </Button>
                 </BigButtonRow>
                 <div className={styles.row}>
-                    <Button type={'secondary'} as={'a'} href="mailto:lorem@lorem.lo" className={styles.link}>
-                        <p>lorem@lorem.lo</p>
+                    <Button type={'secondary'} as={'a'} href="mailto:mauverse@mauniver.ru" className={styles.link}>
+                        <p>mauverse@mauniver.ru</p>
                     </Button>
-                    <Button type={'secondary'} as={'a'} href="tel:88008888888" className={styles.link}>
-                        <p>8 800 888 88 88</p>
+                    <Button type={'secondary'} as={'a'} href="https://t.me/mauverse_feedback" className={styles.link}>
+                        <p>t.me/mauverse_feedback</p>
                     </Button>
                 </div>
             </Container>

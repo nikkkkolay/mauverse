@@ -15,7 +15,7 @@
 
 .titleContainer {
     position: relative;
-    padding-bottom: calc(var(--section-padding) / 3);
+    padding-bottom: calc(var(--section-padding) / 2);
 }
 
 .imageContainer {
@@ -25,8 +25,8 @@
 
 .imageContainer img {
     object-fit: cover;
-    min-width: clamp(2.5em, 4vw, 5em);
-    height: clamp(2.5em, 4vw, 5em);
+    min-width: clamp(3.2em, 4vw, 5em);
+    height: clamp(3.2em, 4vw, 5em);
     border-radius: 50%;
     align-self: center;
 }
@@ -66,9 +66,17 @@
     box-shadow: 0px 0px 20px 10px var(--bg-primary-beta);
 }
 
+.link {
+    max-width: 17em;
+}
+
 @media screen and (max-width: 780px) {
     .container {
         padding-top: calc(var(--section-padding) / 1.2);
+        padding-bottom: calc(var(--section-padding) / 3);
+    }
+
+    .titleContainer {
         padding-bottom: calc(var(--section-padding) / 3);
     }
 
