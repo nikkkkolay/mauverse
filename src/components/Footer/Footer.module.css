@@ -24,6 +24,10 @@
     order: 2;
 }
 
+.social p {
+    margin-bottom: 1em;
+}
+
 .social404 a {
     font-weight: 400;
     color: var(--text-primary-alpha)
@@ -31,6 +35,10 @@
 
 .version {
     order: 1;
+}
+
+.version p {
+    margin-bottom: 1em;
 }
 
 .version404 a {
