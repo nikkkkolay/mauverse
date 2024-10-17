@@ -63,7 +63,7 @@ export const AboutPage = (): JSX.Element => {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere
                             </p>
                             <p className={styles.special}>
-                                engine <LoadingDots />
+                                разработка <LoadingDots />
                             </p>
                         </motion.div>
                         <div className={styles.col}>
