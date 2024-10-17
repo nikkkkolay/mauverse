@@ -14,8 +14,8 @@ export const Footer = (): JSX.Element => {
             {location.pathname != '/contacts' && location.pathname != '/404' && <ContactSection />}
 
             <div className={classnames(styles.footerContainer, { [styles.footer404]: notFoundStyle })}>
-                <Info title={'Lorem'} className={classnames(styles.version, { [styles.version404]: notFoundStyle })}>
-                    <p className={styles.copyright}>©</p>
+                <Info title={'Версия'} className={classnames(styles.version, { [styles.version404]: notFoundStyle })}>
+                    <p className={styles.copyright}>МАУ © 2003–2024</p>
                 </Info>
                 <Social className={classnames(styles.social, { [styles.social404]: notFoundStyle })} />
             </div>
