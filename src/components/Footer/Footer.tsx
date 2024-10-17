@@ -15,7 +15,7 @@ export const Footer = (): JSX.Element => {
 
             <div className={classnames(styles.footerContainer, { [styles.footer404]: notFoundStyle })}>
                 <Info title={'Версия'} className={classnames(styles.version, { [styles.version404]: notFoundStyle })}>
-                    <p className={styles.copyright}>МАУ © 2003–2024</p>
+                    <p className={styles.copyright}>МАУ © 2024</p>
                 </Info>
                 <Social className={classnames(styles.social, { [styles.social404]: notFoundStyle })} />
             </div>
