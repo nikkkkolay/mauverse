@@ -7,7 +7,7 @@ import styles from './ContactsPage.module.css';
 export const ContactsPage = (): JSX.Element => {
     return (
         <>
-            <MetaHelmet title={'Contacts'} description={'Contacts ipsum'} />
+            <MetaHelmet title={'MAUverse | Контакты'} />
             <section className={styles.sectionContainer}>
                 <Container className={styles.container}>
                     <motion.div
@@ -17,10 +17,10 @@ export const ContactsPage = (): JSX.Element => {
                         transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                     >
                         <div className={styles.imageContainer}>
-                            <img src="./plug.jpg" alt="logo" />
-                            <Title tag="h1"> Lorem ipsum</Title>
+                            <img src="./logo.svg" alt="Логотип MAUverse" />
+                            <Title tag="h2">Напишите</Title>
                         </div>
-                        <Title tag="h2">dolor sit amet consectetur</Title>
+                        <Title tag="h2">и оставьте обратную связь</Title>
                         <ArrowIcon className={styles.arrow} />
                     </motion.div>
                     <motion.div
@@ -33,12 +33,11 @@ export const ContactsPage = (): JSX.Element => {
                             <Form />
                         </div>
                         <div className={styles.col}>
-                            <Info title={'Contacts'}>
+                            <Info title={'Контакты'}>
                                 <ul className={styles.links}>
-                                    <ListItem name="mail@mail.net" path="#" className={styles.link} />
-                                    <ListItem name="Dolor sit amet consectetur" path="#" className={styles.link} />
-                                    <ListItem name="Lorem ipsum amet" path="#" className={styles.link} />
-                                    <ListItem name="8 999 999 99" path="#" className={styles.link} />
+                                    <ListItem name="info@mauniver.ru" path="mailto:info@mauniver.ru" className={styles.link} blank />
+                                    <ListItem name="mauverse@mauniver.ru" path="mailto:mauverse@mauniver.ru" className={styles.link} blank />
+                                    <ListItem name="t.me/mauverse_feedback" path="https://t.me/mauverse_feedback" className={styles.link} blank />
                                 </ul>
                             </Info>
                             <Social className={styles.social} />

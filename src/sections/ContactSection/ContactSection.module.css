@@ -34,7 +34,7 @@
 .arrow {
     position: absolute;
     right: 0;
-    bottom: var(--section-padding);
+    bottom: calc(var(--section-padding) * 1.2);
     transform: rotate(90deg);
     width: clamp(0.9em, 1.1vw, 1.1em);
 }

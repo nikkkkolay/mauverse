@@ -18,6 +18,7 @@
 
 .footer404 {
     background-color: var(--bg-primary-gamma);
+    color: var(--text-primary-alpha);
 }
 
 .social {
