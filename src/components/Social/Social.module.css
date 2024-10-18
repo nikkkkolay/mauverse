@@ -6,7 +6,7 @@
     list-style-type: none;
 }
 
-.link {
+.link a {
     font-weight: 400;
     font-size: clamp(14px, 1.2vw, 16px);
 }
