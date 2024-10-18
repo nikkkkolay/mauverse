@@ -31,14 +31,14 @@ export const Overlay = (): JSX.Element => {
                 className={styles.banner}
                 src="./plug.jpg"
                 style={{ x: '-50%', y: y }}
-                transition={{ duration: 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
             />
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
                     initial={{ y: 250 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: reloaded ? 3.4 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <a className={styles.label} href="https://www.mauniver.ru/files/mauverse-v0.8.apk">
                         <div className={styles.wrapper}>
@@ -57,7 +57,7 @@ export const Overlay = (): JSX.Element => {
                     className={classnames(styles.row, styles.name)}
                     initial={{ y: 250 }}
                     animate={{ y: 0 }}
-                    transition={{ duration: reloaded ? 3.4 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <Ticker baseVelocity={5}>MAUverse -</Ticker>
                 </motion.div>
