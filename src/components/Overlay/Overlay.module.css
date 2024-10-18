@@ -111,8 +111,8 @@
 @media screen and (max-width: 780px) {
     .about {
         position: static;
-        padding-left: calc(var(--gap-padding) * 2);
-        padding-right: calc(var(--gap-padding) * 2);
+        padding-left: calc(var(--gap-padding) * 1.5);
+        padding-right: calc(var(--gap-padding) * 1.5);
         padding-bottom: calc(var(--vh, 1vh) * 4);
         order: 2;
     }

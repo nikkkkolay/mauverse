@@ -9,8 +9,8 @@
 
 @media screen and (max-width: 780px) {
     .container {
-        padding-left: calc(var(--gap-padding) * 2);
-        padding-right: calc(var(--gap-padding) * 2);
+        padding-left: calc(var(--gap-padding) * 1.5);
+        padding-right: calc(var(--gap-padding) * 1.5);
         padding-top: calc(var(--section-padding) / 1.5);
         padding-bottom: calc(var(--section-padding) / 1.5);
     }
