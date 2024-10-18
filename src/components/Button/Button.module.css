@@ -9,7 +9,7 @@
     width: clamp(9em, 12vw, 10em);
     height: clamp(9em, 12vw, 10em);
     position: relative;
-    font-size: 1.1em;
+    font-size: clamp(16px, 1.2vw, 18px);
 }
 
 .secondary {

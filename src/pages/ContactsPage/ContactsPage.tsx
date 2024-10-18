@@ -16,11 +16,14 @@ export const ContactsPage = (): JSX.Element => {
                         animate={{ y: 0 }}
                         transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                     >
-                        <div className={styles.imageContainer}>
-                            <img src="./logo.svg" alt="Логотип MAUverse" />
-                            <Title tag="h2">Напишите</Title>
-                        </div>
-                        <Title tag="h2">и оставьте обратную связь</Title>
+                        <Title tag="h1">
+                            <span>
+                                <img src="./logo.svg" alt="Логотип MAUverse" />
+                                Напиши нам
+                            </span>
+                            <span>и оставь обратную связь</span>
+                        </Title>
+
                         <ArrowIcon className={styles.arrow} />
                     </motion.div>
                     <motion.div

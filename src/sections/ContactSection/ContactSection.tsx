@@ -28,24 +28,26 @@ export const ContactSection = (): JSX.Element => {
             </motion.div>
             <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
                 <div className={styles.titleContainer}>
-                    <div className={styles.imageContainer}>
-                        <img src="/logo.svg" alt="Логотип MAUverse" />
-                        <Title tag="h2">Напишите</Title>
-                    </div>
-                    <Title tag="h2">и оставьте обратную связь</Title>
+                    <Title tag="h1">
+                        <span>
+                            <img src="./logo.svg" alt="Логотип MAUverse" />
+                            Напиши нам
+                        </span>
+                        <span>и оставь обратную связь</span>
+                    </Title>
                     <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
                 </div>
                 <BigButtonRow stripe style={{ right: toRight }}>
                     <Button fill onClick={() => navigate('/contacts')}>
-                        <p>Контакты</p>
+                        Написать
                     </Button>
                 </BigButtonRow>
                 <div className={styles.row}>
                     <Button type={'secondary'} as={'a'} href="mailto:mauverse@mauniver.ru" className={styles.link}>
-                        <p>mauverse@mauniver.ru</p>
+                        mauverse@mauniver.ru
                     </Button>
                     <Button type={'secondary'} as={'a'} href="https://t.me/mauverse_feedback" className={styles.link}>
-                        <p>t.me/mauverse_feedback</p>
+                        t.me/mauverse_feedback
                     </Button>
                 </div>
             </Container>

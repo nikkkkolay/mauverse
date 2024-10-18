@@ -25,7 +25,8 @@
     order: 2;
 }
 
-.social404 a {
+.social404 a,
+.version404 a {
     font-weight: 400;
     color: var(--text-primary-alpha)
 }
@@ -34,10 +35,10 @@
     order: 1;
 }
 
-.version404 a {
-    font-weight: 400;
-    color: var(--text-primary-alpha)
+.copyright {
+    font-size: clamp(14px, 1.2vw, 16px);
 }
+
 
 @media screen and (max-width: 780px) {
     .footerContainer {

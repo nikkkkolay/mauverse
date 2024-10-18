@@ -18,17 +18,16 @@
     padding-bottom: calc(var(--section-padding) / 2);
 }
 
-.imageContainer {
+.titleContainer span {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
 }
 
-.imageContainer img {
-    object-fit: cover;
-    min-width: clamp(3.2em, 4vw, 5em);
-    height: clamp(3.2em, 4vw, 5em);
-    border-radius: 50%;
-    align-self: center;
+.titleContainer img {
+    min-width: clamp(2.2rem, 5vw, 5rem);
+    height: clamp(2.2rem, 5vw, 5rem);
 }
 
 .arrow {
@@ -67,7 +66,7 @@
 }
 
 .link {
-    max-width: 17em;
+    max-width: 18em;
 }
 
 @media screen and (max-width: 780px) {

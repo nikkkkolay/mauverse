@@ -28,14 +28,14 @@ export const Form = (): JSX.Element => {
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
             <div className={styles.item}>
                 <span>01</span>
-                <label>Ваше Имя</label>
+                <label>Имя</label>
                 <Controller
                     control={control}
                     name="username"
                     rules={{
                         required: { value: true, message: '* Это обязательно поле' },
-                        minLength: { value: 2, message: '* Минимальная длина имени 2 символа' },
-                        maxLength: { value: 20, message: '* Максимальная длина имени 20 символов' },
+                        minLength: { value: 2, message: '* Минимальная длина 2 символа' },
+                        maxLength: { value: 20, message: '* Максимальная длина 20 символов' },
                     }}
                     render={() => <input className={styles.input} type="text" placeholder="Фамилия Имя Отчество" {...register('username')} />}
                 />
@@ -63,8 +63,8 @@ export const Form = (): JSX.Element => {
                     name="text"
                     rules={{
                         required: { value: true, message: '* Это обязательно поле' },
-                        minLength: { value: 6, message: '* Минимальная длина сообщения 6 символов' },
-                        maxLength: { value: 70, message: '* Максимальная длина сообщения 70 символов' },
+                        minLength: { value: 6, message: '* Минимальная длина 6 символов' },
+                        maxLength: { value: 70, message: '* Максимальная длина 70 символов' },
                     }}
                     render={() => (
                         <textarea className={styles.input} placeholder="Оставьте комментарий или дайте обратную связь" {...register('text')} />
