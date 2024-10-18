@@ -18,6 +18,10 @@
     padding-bottom: calc(var(--section-padding) / 2);
 }
 
+.title {
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+}
+
 .titleContainer span {
     display: flex;
     flex-wrap: wrap;
@@ -26,14 +30,14 @@
 }
 
 .titleContainer img {
-    min-width: clamp(2.2rem, 5vw, 5rem);
-    height: clamp(2.2rem, 5vw, 5rem);
+    min-width: clamp(2.4rem, 5vw, 5rem);
+    height: clamp(2.4rem, 5vw, 5rem);
 }
 
 .arrow {
     position: absolute;
     right: 0;
-    bottom: calc(var(--section-padding) * 1.2);
+    bottom: calc(var(--section-padding) /3);
     transform: rotate(90deg);
     width: clamp(0.9em, 1.1vw, 1.1em);
 }

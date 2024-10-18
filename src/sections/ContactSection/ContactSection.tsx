@@ -28,7 +28,7 @@ export const ContactSection = (): JSX.Element => {
             </motion.div>
             <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
                 <div className={styles.titleContainer}>
-                    <Title tag="h1">
+                    <Title tag="h3" className={styles.title}>
                         <span>
                             <img src="./logo.svg" alt="Логотип MAUverse" />
                             Напишите нам
