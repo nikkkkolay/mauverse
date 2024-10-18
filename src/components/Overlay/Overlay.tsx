@@ -59,7 +59,7 @@ export const Overlay = (): JSX.Element => {
                     animate={{ y: 0 }}
                     transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
-                    <Ticker baseVelocity={5}>MAUverse -</Ticker>
+                    <Ticker baseVelocity={5}>MAUverse —</Ticker>
                 </motion.div>
             </div>
         </div>
