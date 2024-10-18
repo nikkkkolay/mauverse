@@ -15,7 +15,7 @@ export const Ticker = ({ children, baseVelocity = 100 }: Props): JSX.Element => 
     const smoothVelocity = useSpring(scrollVelocity, { damping: 1000, stiffness: 400 });
     const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], { clamp: false });
     const x = useTransform(baseX, v => `${wrap(-20, -45, v)}%`);
-    const directionFactor = useRef<number>(1);
+    const directionFactor = useRef<number>(-1);
 
     useAnimationFrame((t, delta) => {
         t;
