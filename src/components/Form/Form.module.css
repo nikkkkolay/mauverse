@@ -42,7 +42,7 @@
 }
 
 .input::placeholder {
-    color: var(--text-primary-gamma);
+    color: var(--text-primary-beta);
 }
 
 .wrapper {
