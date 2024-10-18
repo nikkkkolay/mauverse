@@ -13,7 +13,7 @@ export const PageTransition = ({ children }: IPageTransition): JSX.Element => {
 
     const transition = {
         duration: 0.75,
-        delay: reloaded ? 3.2 : 1,
+        delay: reloaded ? 2 : 1,
         ease: [0.33, 1, 0.68, 1],
     };
 
