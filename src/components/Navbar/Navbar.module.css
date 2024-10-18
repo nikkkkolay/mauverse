@@ -54,7 +54,7 @@
 @media screen and (max-width: 780px) {
     .nav {
         padding: calc(var(--gap-padding) * 1.5) calc(var(--gap-padding) * 1.5);
-        height: 89px;
+        height: 70px;
     }
 
     .logoFull {
