@@ -18,10 +18,6 @@
     padding-bottom: calc(var(--section-padding) / 2);
 }
 
-.title {
-    font-size: clamp(2rem, 4vw, 4.5rem);
-}
-
 .titleContainer span {
     display: flex;
     flex-wrap: wrap;

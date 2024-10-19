@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, Ref } from 'react';
 import classnames from 'classnames';
 import { useLocation } from 'react-router-dom';
 import { MenuLink } from '..';
@@ -6,7 +6,7 @@ import { useSidebar } from '../../store/useSidebar';
 import { publicRoutes } from '../../routs';
 import styles from './Navbar.module.css';
 
-export const Navbar = forwardRef((_props, ref: any): JSX.Element => {
+export const Navbar = forwardRef((_props, ref: Ref<HTMLDivElement>): JSX.Element => {
     const location = useLocation();
     const isActive = useSidebar(state => state.isActive);
     const setActive = useSidebar(state => state.setActive);
