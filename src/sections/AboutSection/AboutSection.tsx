@@ -11,11 +11,11 @@ const variants = {
     },
     visible: {
         top: 0,
-        transition: { delay: 0.005, ease: 'linear', duration: 0.8 },
+        transition: { delay: 0.005, ease: 'linear', duration: 0.9 },
     },
 };
 
-const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ratione ut vel labore eveniet`;
+const text = `MAUverse — это инновационное мобильное приложение, которое стремится сделать образовательный процесс удобнее и эффективнее`;
 
 export const AboutSection = (): JSX.Element => {
     const columnViewArea = useRef<HTMLDivElement>(null);
@@ -27,7 +27,7 @@ export const AboutSection = (): JSX.Element => {
 
     const spring = useMySpring(scrollYProgress);
 
-    const buttonTop = useTransform(spring, [0, 1], ['-30%', '-100%']);
+    const buttonTop = useTransform(spring, [0, 1], ['-20%', '-100%']);
 
     return (
         <section className={styles.section} ref={sectionViewArea}>
@@ -43,10 +43,13 @@ export const AboutSection = (): JSX.Element => {
                     ))}
                 </motion.div>
                 <div className={styles.col}>
-                    <span className={styles.smallText}>Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio?</span>
+                    <span className={styles.smallText}>
+                        Приложение предназначено для студентов и преподавателей нашего университета и предоставляет все необходимые инструменты для
+                        успешной организации учебного процесса
+                    </span>
                 </div>
             </Container>
-            <BigButtonRow style={{ y: buttonTop, x: -15 }}>
+            <BigButtonRow style={{ y: buttonTop, x: -50 }}>
                 <Button className={styles.buttonFixed} fill onClick={() => navigate('/about')}>
                     О проекте
                 </Button>
