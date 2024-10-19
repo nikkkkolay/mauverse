@@ -18,8 +18,8 @@ export const LabelIcon = ({ className }: Props): JSX.Element => {
                 fill="#0064BE"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M242.952 66.4631L235.806 93.7137C235.395 95.2787 236.577 96.8086 238.194 96.8086H243.83L250.614 68.6296L242.952 66.4631Z"
                 fill="#0064BE"
             />
@@ -32,14 +32,14 @@ export const LabelIcon = ({ className }: Props): JSX.Element => {
                 fill="#0064BE"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M235.873 66.4631L243.83 96.8086H236.948C235.804 96.8086 234.809 96.0216 234.546 94.9069L228.364 68.7328L235.873 66.4631Z"
                 fill="#008CFA"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M208.585 37.8325L237.649 46.6L235.873 54.2034L207.585 45.8721C206.072 45.4262 205.359 43.6959 206.119 42.3142L208.585 37.8325Z"
                 fill="#0064BE"
             />
@@ -65,8 +65,8 @@ export const LabelIcon = ({ className }: Props): JSX.Element => {
                 fill="white"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M253.646 71.1223H225.355C224.485 71.1223 223.78 70.4173 223.78 69.5473V62.3704C223.78 61.5004 224.485 60.7954 225.355 60.7954H253.646C254.516 60.7954 255.221 61.5004 255.221 62.3704V69.5473C255.221 70.4173 254.515 71.1223 253.646 71.1223Z"
                 fill="#F9423B"
             />
