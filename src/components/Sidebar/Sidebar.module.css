@@ -56,7 +56,6 @@
 
 .routes span {
     display: block;
-    margin-bottom: 4px;
 }
 
 .link {
@@ -99,6 +98,10 @@
 @media screen and (max-width: 780px) {
     .sidebar {
         width: 100%;
+    }
+
+    .routes span {
+        margin-bottom: 4px;
     }
 
     .link::after {
