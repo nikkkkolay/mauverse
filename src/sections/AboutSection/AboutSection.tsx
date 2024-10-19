@@ -42,13 +42,9 @@ export const AboutSection = (): JSX.Element => {
                         </motion.span>
                     ))}
                 </motion.div>
-                <motion.div className={styles.col}>
-                    <span className={styles.smallText}>
-                        <motion.span transition={{ duration: 0.5 }} animate={{ top: isInView ? 0 : '30px' }} className={styles.smallTextInner}>
-                            Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio?
-                        </motion.span>
-                    </span>
-                </motion.div>
+                <div className={styles.col}>
+                    <span className={styles.smallText}>Lorem voluptas repellat corrupti quibusdam nesciunt mollitia commodi, fugiat optio?</span>
+                </div>
             </Container>
             <BigButtonRow style={{ y: buttonTop, x: -15 }}>
                 <Button className={styles.buttonFixed} fill onClick={() => navigate('/about')}>

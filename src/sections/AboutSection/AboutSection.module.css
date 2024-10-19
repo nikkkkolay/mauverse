@@ -37,11 +37,6 @@
     overflow: hidden;
 }
 
-.smallText {
-    position: relative;
-    overflow: hidden;
-}
-
 .smallTextInner {
     display: block;
     position: relative;

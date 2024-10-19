@@ -19,16 +19,16 @@ export const ContactSection = (): JSX.Element => {
     const height = useTransform(spring, [0, 1], [150, 0]);
     const toRight = useTransform(spring, [0, 1], ['30%', '10%']);
     const rotate = useTransform(spring, [0, 1], [40, 90]);
-    const parallax = useTransform(spring, [0, 1], [-150, 0]);
+    const offsetSection = useTransform(spring, [0, 1], [-100, 0]);
 
     return (
         <section className={styles.sectionContainer} ref={sectionViewArea}>
             <motion.div className={styles.footerMain} style={{ height: height }}>
                 <div className={styles.rounded}></div>
             </motion.div>
-            <Container className={styles.container} style={{ y: parallax }} ref={containerRef}>
+            <Container className={styles.container} style={{ y: offsetSection }} ref={containerRef}>
                 <div className={styles.titleContainer}>
-                    <Title tag="h3" className={styles.title}>
+                    <Title tag="h3">
                         <span>
                             <img src="./logo.svg" alt="Логотип MAUverse" />
                             Напишите
