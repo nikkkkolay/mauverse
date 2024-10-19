@@ -19,7 +19,7 @@ export const ContactsPage = (): JSX.Element => {
                         <Title tag="h1">
                             <span>
                                 <img src="./logo.svg" alt="Логотип MAUverse" />
-                                Напишите нам
+                                Напишите
                             </span>
                             <span>и оставь обратную связь</span>
                         </Title>

@@ -19,7 +19,7 @@
 }
 
 .title {
-    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    font-size: clamp(2rem, 4vw, 4.5rem);
 }
 
 .titleContainer span {
@@ -30,8 +30,8 @@
 }
 
 .titleContainer img {
-    min-width: clamp(2.4rem, 5vw, 5rem);
-    height: clamp(2.4rem, 5vw, 5rem);
+    min-width: clamp(2.2rem, 5vw, 5rem);
+    height: clamp(2.2rem, 5vw, 5rem);
 }
 
 .arrow {

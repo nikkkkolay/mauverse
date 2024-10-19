@@ -31,7 +31,7 @@ export const ContactSection = (): JSX.Element => {
                     <Title tag="h3" className={styles.title}>
                         <span>
                             <img src="./logo.svg" alt="Логотип MAUverse" />
-                            Напишите нам
+                            Напишите
                         </span>
                         <span>и оставь обратную связь</span>
                     </Title>
@@ -39,7 +39,7 @@ export const ContactSection = (): JSX.Element => {
                 </div>
                 <BigButtonRow stripe style={{ right: toRight }}>
                     <Button fill onClick={() => navigate('/contacts')}>
-                        Написать
+                        Контакты
                     </Button>
                 </BigButtonRow>
                 <div className={styles.row}>
