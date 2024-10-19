@@ -2,13 +2,12 @@ import { Admin, Resource } from 'react-admin';
 import polyglotI18nProvider from 'ra-i18n-polyglot';
 import russianMessages from 'ra-language-russian';
 import NewspaperIcon from '@mui/icons-material/Newspaper';
-import HistoryEduIcon from '@mui/icons-material/HistoryEdu';
 import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
 import myDataProvider from '../../admin/myDataProvider';
 import authProvider from '../../admin/authProvider';
 import styles from './AdminPage.module.css';
 
-import { PostList, PostCreate, PostEdit, DocsList, DocsCreate, DocsEdit, UserList, UserCreate, UserEdit } from '../../admin/components';
+import { PostList, PostCreate, PostEdit, UserList, UserCreate, UserEdit } from '../../admin/components';
 
 const i18nProvider = polyglotI18nProvider(() => russianMessages, 'ru');
 
@@ -17,14 +16,6 @@ export const AdminPage = () => {
         <div className={styles.adminContainer}>
             <Admin dataProvider={myDataProvider} basename="/admin" i18nProvider={i18nProvider} authProvider={authProvider}>
                 <Resource name="posts" list={PostList} create={PostCreate} edit={PostEdit} options={{ label: 'Новости' }} icon={NewspaperIcon} />
-                <Resource
-                    name="documents"
-                    list={DocsList}
-                    create={DocsCreate}
-                    edit={DocsEdit}
-                    options={{ label: 'Документы' }}
-                    icon={HistoryEduIcon}
-                />
                 <Resource
                     name="users"
                     list={UserList}
