@@ -11,7 +11,7 @@
 
 .buttonFixed {
     z-index: 10000;
-    right: 13%;
+    right: 1%;
     top: unset;
 }
 
@@ -38,17 +38,16 @@
     margin-right: 3px;
 }
 
-.smallTextInner {
-    display: block;
-    position: relative;
-    line-height: 1.4;
-}
-
 .textInner {
     display: block;
     position: relative;
     font-size: clamp(1.4rem, 3vw, 2.2rem);
-    line-height: 1.4;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.smallText {
+    line-height: 1.2;
 }
 
 @media screen and (max-width: 780px) {

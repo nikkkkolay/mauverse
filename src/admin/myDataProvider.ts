@@ -40,32 +40,6 @@ const myDataProvider = withLifecycleCallbacks(restProvider(API_URL, httpClient),
             return params; // Возвращаем параметры без изменений, если нет картинок
         },
     },
-    {
-        resource: 'documents',
-        beforeSave: async params => {
-            if (params.file.rawFile) {
-                const base64file = await Promise.resolve(convertFileToBase64(params.file));
-
-                const file = {
-                    src: base64file,
-                    title: params.title,
-                };
-
-                return {
-                    ...params,
-                    file,
-                };
-            }
-
-            return {
-                ...params,
-                file: {
-                    src: params.file.src,
-                    title: params.title,
-                },
-            };
-        },
-    },
 ]);
 
 // Функция для преобразования файла в base64

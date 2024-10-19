@@ -22,6 +22,9 @@
 	width: clamp(9rem, 12vw, 11rem);
 	height: clamp(9rem, 12vw, 11rem);
 	font-size: 1em;
+	text-align: center;
+	text-wrap: balance;
+	padding: 10px;
 }
 
 .header {
@@ -48,11 +51,24 @@
 }
 
 .content ul,
-.content ol,
+.content ol {
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 1.4rem 0;
+}
+
 .content p {
 	padding: revert;
 	margin: revert;
 	font-weight: 300;
+	padding: 0;
+	margin-top: 0;
+}
+
+.content ul,
+.content ol {
+	padding-left: 1.2rem;
 }
 
 .content li p,
@@ -90,12 +106,6 @@
 }
 
 @media screen and (max-width: 780px) {
-
-	.content ul,
-	.content ol,
-	.content p {
-		margin: 0 0 0.4rem 0;
-	}
 
 	.header {
 		padding-top: calc(var(--section-padding) / 2);

@@ -67,7 +67,7 @@ export const Form = (): JSX.Element => {
                         maxLength: { value: 70, message: '* Максимальная длина 70 символов' },
                     }}
                     render={() => (
-                        <textarea className={styles.input} placeholder="Оставьте комментарий или дайте обратную связь" {...register('text')} />
+                        <textarea className={styles.input} placeholder="Оставьте сообщение или дайте обратную связь" {...register('text')} />
                     )}
                 />
                 <span className={styles.error}>{errors.text && errors.text.message}</span>
