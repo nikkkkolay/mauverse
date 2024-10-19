@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { Container, BigButtonRow, Button } from '../../components';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutSection.module.css';
@@ -20,8 +20,6 @@ const text = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditii
 export const AboutSection = (): JSX.Element => {
     const columnViewArea = useRef<HTMLDivElement>(null);
     const sectionViewArea = useRef<HTMLDivElement>(null);
-
-    const controls = useAnimation();
     const isInView = useInView(columnViewArea);
     const navigate = useNavigate();
 
@@ -31,21 +29,13 @@ export const AboutSection = (): JSX.Element => {
 
     const buttonTop = useTransform(spring, [0, 1], ['-30%', '-100%']);
 
-    useEffect(() => {
-        if (isInView) {
-            controls.start('visible');
-        } else {
-            controls.set('hidden');
-        }
-    }, [controls, isInView]);
-
     return (
         <section className={styles.aboutSection} ref={sectionViewArea}>
             <Container className={styles.container}>
                 <motion.div className={styles.col} ref={columnViewArea}>
                     {text.split(' ').map((p, i) => (
                         <motion.span className={styles.text} key={p + i}>
-                            <motion.span variants={variants} initial="hidden" animate={controls} className={styles.textInner}>
+                            <motion.span variants={variants} initial="hidden" animate={isInView && 'visible'} className={styles.textInner}>
                                 {p}
                             </motion.span>
                             {'\u00A0'}
