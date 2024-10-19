@@ -11,7 +11,7 @@ const variants = {
     },
     visible: {
         top: 0,
-        transition: { delay: 0.005, ease: 'linear', duration: 0.5 },
+        transition: { delay: 0.005, ease: 'linear', duration: 0.8 },
     },
 };
 
@@ -30,7 +30,7 @@ export const AboutSection = (): JSX.Element => {
     const buttonTop = useTransform(spring, [0, 1], ['-30%', '-100%']);
 
     return (
-        <section className={styles.aboutSection} ref={sectionViewArea}>
+        <section className={styles.section} ref={sectionViewArea}>
             <Container className={styles.container}>
                 <motion.div className={styles.col} ref={columnViewArea}>
                     {text.split(' ').map((p, i) => (

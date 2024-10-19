@@ -36,7 +36,7 @@ export const Overlay = (): JSX.Element => {
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
-                    initial={{ y: 250 }}
+                    initial={{ y: 300 }}
                     animate={{ y: 0 }}
                     transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >
@@ -55,7 +55,7 @@ export const Overlay = (): JSX.Element => {
                 </motion.div>
                 <motion.div
                     className={classnames(styles.row, styles.name)}
-                    initial={{ y: 250 }}
+                    initial={{ y: 300 }}
                     animate={{ y: 0 }}
                     transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 >

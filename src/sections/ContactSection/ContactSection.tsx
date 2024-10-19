@@ -1,32 +1,24 @@
 import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useScroll, useTransform } from 'framer-motion';
 import { Container, Title, Button, BigButtonRow } from '../../components';
 import { ArrowIcon } from '../../icons/ArrowIcon';
 import styles from './ContactSection.module.css';
 import { useMySpring } from '../../hooks/useMySpring';
 
 export const ContactSection = (): JSX.Element => {
+    const navigate = useNavigate();
     const svgRef = useRef<SVGAElement>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
     const sectionViewArea = useRef<HTMLDivElement>(null);
 
-    const navigate = useNavigate();
     const { scrollYProgress } = useScroll({ target: sectionViewArea, offset: ['start end', 'end end'] });
-
     const spring = useMySpring(scrollYProgress);
-
-    const height = useTransform(spring, [0, 1], [150, 0]);
     const toRight = useTransform(spring, [0, 1], ['30%', '10%']);
     const rotate = useTransform(spring, [0, 1], [40, 90]);
-    const offsetSection = useTransform(spring, [0, 1], [-100, 0]);
 
     return (
-        <section className={styles.sectionContainer} ref={sectionViewArea}>
-            <motion.div className={styles.footerMain} style={{ height: height }}>
-                <div className={styles.rounded}></div>
-            </motion.div>
-            <Container className={styles.container} style={{ y: offsetSection }} ref={containerRef}>
+        <section className={styles.section} ref={sectionViewArea}>
+            <Container className={styles.container}>
                 <div className={styles.titleContainer}>
                     <Title tag="h3">
                         <span>
