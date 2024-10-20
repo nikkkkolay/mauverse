@@ -53,7 +53,7 @@ export const AboutPage = (): JSX.Element => {
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.intro} ref={introViewArea}>
-                        <motion.div className={styles.col}>
+                        <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
                             <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
                             <p>
                                 Mauverse было создано в рамках конкурса по разработке мобильных приложений, который проводился нашим университетом.
