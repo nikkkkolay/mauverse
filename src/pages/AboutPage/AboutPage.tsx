@@ -53,14 +53,18 @@ export const AboutPage = (): JSX.Element => {
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.intro} ref={introViewArea}>
-                        <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
+                        <motion.div className={styles.col}>
                             <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere
-                                minus in eius beatae nemo cupiditate sit numquam. doloremque tempora.
+                                Mauverse было создано в рамках конкурса по разработке мобильных приложений, который проводился нашим университетом.
+                                Команда разработчиков из студентов и преподавателей, приняв участие в конкурсе, начала работу над приложением, чтобы
+                                предложить инновационное решение для повседневных задач, с которыми сталкиваются студенты и сотрудники университета.
                             </p>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse odio placeat quas, dolore sunt aperiam expedita facere
+                                Приложение Mauverse ориентировано как на студентов, так и на преподавателей университета. Студенты смогут получать
+                                доступ к расписанию, информационным ресурсам и контактам преподавателей, а также отслеживать свою академическую
+                                успеваемость. Преподаватели получат доступ к аналогичным функциям, а также смогут управлять своими курсами и
+                                взаимодействовать с учебной группой через уведомления и встроенный мессенджер.
                             </p>
                             <p className={styles.special}>
                                 разработка <LoadingDots />
@@ -73,7 +77,7 @@ export const AboutPage = (): JSX.Element => {
 
                     <div className={styles.outro}>
                         <Title tag="h3">
-                            Lorem ipsum dolor <LoadingDots />
+                            Основной функционал <LoadingDots />
                         </Title>
 
                         <div className={styles.row}>
@@ -82,21 +86,18 @@ export const AboutPage = (): JSX.Element => {
                                     {' '}
                                     <ArrowIcon className={styles.icon} />
                                 </div>
-                                <Title tag="h4">Lorem</Title>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus sequi corporis harum delectus culpa eveniet
-                                    rem voluptatem vero deleniti nemo!
-                                </p>
+                                <Title tag="h4">Расписание</Title>
+                                <p>Студенты могут легко проверять расписание своей группы, а преподаватели — свое личное расписание.</p>
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
                                     {' '}
                                     <ArrowIcon className={styles.icon} />
                                 </div>
-                                <Title tag="h4">Ipsum</Title>
+                                <Title tag="h4">Интеграция ЭИОС</Title>
                                 <p>
-                                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed nostrum aliquam quidem tenetur, autem pariatur
-                                    assumenda. Id nostrum eius in corrupti pariatur quod, nam velit nesciunt quisquam minima? Mollitia, quaerat?
+                                    Приложение синхронизировано с Единой информационно-образовательной системой университета, через которую происходит
+                                    аутентификация, а также просмотр уведомлений по учебным курсам.
                                 </p>
                             </div>
                             <div className={styles.col}>
@@ -123,11 +124,16 @@ export const AboutPage = (): JSX.Element => {
                                 </div>
                                 <div className={styles.col}>
                                     <ArrowIcon className={styles.icon} />
-                                    <Title tag="h3">Ipsum</Title>
+                                    <Title tag="h3">
+                                        Планы на будущее <LoadingDots />
+                                    </Title>
                                     <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae dolore necessitatibus, voluptate tenetur
-                                        recusandae accusantium quod quam deserunt fugit similique iste laboriosam magnam distinctio ex est ad
-                                        dignissimos corrupti impedit soluta excepturi nihil magni, odio repellat id.
+                                        Команда разработчиков планирует расширить функционал Mauverse, добавив возможность просмотра расписаний
+                                        преподавателей и аудиторий, а также интеграцию с курсами в ЭИОС. В будущем приложение станет универсальным
+                                        помощником, объединяющим студентов и преподавателей с ресурсами университета. Среди будущих функций –
+                                        навигатор по кампусам с текстовыми инструкциями для передвижения внутри зданий и между ними, встроенный
+                                        мессенджер для общения и ИИ ассистент для помощи с вопросами по университетским процедурам. Также планируется
+                                        Web3-интеграция, позволяющая использовать блокчейн и внутреннюю валюту для студентов.
                                     </p>
                                 </div>
                             </div>

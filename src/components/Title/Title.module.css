@@ -2,6 +2,7 @@
     font-size: clamp(2.2rem, 4.2vw, 3.8rem);
     line-height: 1.1;
     text-wrap: balance;
+    font-weight: 400;
 }
 
 .h2 {

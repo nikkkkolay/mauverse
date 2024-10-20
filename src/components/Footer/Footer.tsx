@@ -17,7 +17,7 @@ export const Footer = (): JSX.Element => {
 
     const spring = useMySpring(scrollYProgress);
     const height = useTransform(spring, [0, 1], [150, 0]);
-    const top = useTransform(spring, [0, 1], [148, 0]);
+    const top = useTransform(spring, [0, 1], [145, 0]);
 
     const offsetSection = useTransform(spring, [0, 1], isOffsetDisabled ? [0, 0] : [-150, 0]);
 
