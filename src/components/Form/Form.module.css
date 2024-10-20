@@ -23,7 +23,7 @@
 }
 
 .item label {
-    font-size: clamp(16px, 2vw, 26px);
+    font-size: clamp(18px, 2vw, 26px);
     font-weight: 400;
 }
 
@@ -36,7 +36,7 @@
     background-color: var(--bg-secondary-alpha);
     border: none;
     outline: none;
-    font-size: clamp(16px, 2vw, 26px);
+    font-size: clamp(18px, 2vw, 26px);
     resize: none;
     font-weight: 300;
 }

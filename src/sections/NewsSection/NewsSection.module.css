@@ -26,7 +26,7 @@
 
 .newsList {
 	width: 100%;
-	padding-bottom: calc(var(--section-padding) / 6);
+	padding-bottom: 0;
 }
 
 .row {
@@ -40,4 +40,5 @@
 .row h3 {
 	padding-top: calc(var(--section-padding) / 2);
 	font-size: clamp(1.4rem, 2.5vw, 2rem);
+	font-weight: 400;
 }

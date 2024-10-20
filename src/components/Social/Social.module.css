@@ -6,13 +6,8 @@
     list-style-type: none;
 }
 
-.link a {
-    font-weight: 400;
-    font-size: clamp(15px, 1.2vw, 17px);
-}
-
 @media screen and (max-width: 780px) {
     .links {
-        gap: 16px;
+        gap: 14px;
     }
 }

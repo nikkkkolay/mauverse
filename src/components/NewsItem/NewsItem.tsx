@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { format } from '@formkit/tempo';
+import { Title } from '../Title/Title';
 import { INews } from './NewsItem.props';
 import styles from './NewsItem.module.css';
 
@@ -25,7 +26,7 @@ export const NewsItem = (props: INews): JSX.Element => {
                     }}
                 >
                     <div className={styles.row}>
-                        <h3>{props.title}</h3>
+                        <Title tag="h3">{props.title}</Title>
                         <p>{props.announcement}</p>
                     </div>
                     <span className={styles.date}>{format(props.published_at, 'D MMMM YYYY')}</span>

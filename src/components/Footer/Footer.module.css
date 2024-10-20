@@ -55,11 +55,6 @@
     order: 1;
 }
 
-.copyright {
-    font-size: clamp(14px, 1.2vw, 16px);
-}
-
-
 @media screen and (max-width: 780px) {
     .footerContainer {
         flex-direction: column;

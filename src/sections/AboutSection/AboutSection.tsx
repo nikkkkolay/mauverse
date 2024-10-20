@@ -27,7 +27,7 @@ export const AboutSection = (): JSX.Element => {
 
     const spring = useMySpring(scrollYProgress);
 
-    const buttonTop = useTransform(spring, [0, 1], ['-20%', '-100%']);
+    const buttonTop = useTransform(spring, [0, 1], ['-10%', '-100%']);
 
     return (
         <section className={styles.section} ref={sectionViewArea}>
@@ -43,10 +43,10 @@ export const AboutSection = (): JSX.Element => {
                     ))}
                 </motion.div>
                 <div className={styles.col}>
-                    <span className={styles.smallText}>
+                    <p>
                         Приложение предназначено для студентов и преподавателей нашего университета и предоставляет все необходимые инструменты для
                         успешной организации учебного процесса
-                    </span>
+                    </p>
                 </div>
             </Container>
             <BigButtonRow style={{ y: buttonTop, x: -50 }}>

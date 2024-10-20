@@ -41,14 +41,11 @@
 .textInner {
     display: block;
     position: relative;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-size: clamp(1.6rem, 3vw, 2rem);
     line-height: 1.2;
     font-weight: 500;
 }
 
-.smallText {
-    line-height: 1.2;
-}
 
 @media screen and (max-width: 780px) {
     .container {

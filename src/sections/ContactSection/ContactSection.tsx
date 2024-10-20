@@ -20,7 +20,7 @@ export const ContactSection = (): JSX.Element => {
         <section className={styles.section} ref={sectionViewArea}>
             <Container className={styles.container}>
                 <div className={styles.titleContainer}>
-                    <Title tag="h3">
+                    <Title tag="h2">
                         <span>
                             <img src="/logo.svg" alt="Логотип MAUverse" />
                             Напишите
