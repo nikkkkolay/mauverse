@@ -15,8 +15,8 @@
 }
 
 .logo {
-    width: clamp(9rem, 12vw, 18rem);
-    height: clamp(9rem, 12vw, 18rem);
+    width: clamp(9rem, 10vw, 18rem);
+    height: clamp(9rem, 10vw, 18rem);
 }
 
 .header {
