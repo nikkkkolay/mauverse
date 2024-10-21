@@ -9,7 +9,7 @@
 }
 
 .buttonRow {
-	padding: calc(var(--section-padding) / 1.5) 0;
+	padding: calc(var(--section-padding) / 1.2) 0;
 }
 
 .decoration {
@@ -109,7 +109,7 @@
 	}
 
 	.buttonRow {
-		padding: calc(var(--section-padding) / 1.2) 0;
+		padding: calc(var(--section-padding) / 1.5) 0;
 	}
 
 	.images img:first-child {
