@@ -77,21 +77,12 @@ export const AboutPage = (): JSX.Element => {
 
                     <div className={styles.outro}>
                         <Title tag="h3">
-                            Основной функционал <LoadingDots />
+                            Основные возможности <LoadingDots />
                         </Title>
 
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    {' '}
-                                    <ArrowIcon className={styles.icon} />
-                                </div>
-                                <Title tag="h4">Расписание</Title>
-                                <p>Студенты могут легко проверять расписание своей группы, а преподаватели — свое личное расписание.</p>
-                            </div>
-                            <div className={styles.col}>
-                                <div className={styles.stripe}>
-                                    {' '}
                                     <ArrowIcon className={styles.icon} />
                                 </div>
                                 <Title tag="h4">Интеграция ЭИОС</Title>
@@ -102,13 +93,22 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    {' '}
                                     <ArrowIcon className={styles.icon} />
                                 </div>
-                                <Title tag="h4">Dolor</Title>
+                                <Title tag="h4">Расписание</Title>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum expedita possimus in accusantium, iure corporis,
-                                    debitis deleniti unde magnam laboriosam molestias velit sequi esse tempore?
+                                    Возможность просматривать расписание занятий своей группы и получать актуальную информацию о предстоящих занятиях.
+                                    Преподаватели могут проверять свое индивидуальное расписание и планировать учебный процесс.
+                                </p>
+                            </div>
+                            <div className={styles.col}>
+                                <div className={styles.stripe}>
+                                    <ArrowIcon className={styles.icon} />
+                                </div>
+                                <Title tag="h4">Cервисы</Title>
+                                <p>
+                                    Студенты могут заказать нужную справку через студенческий офис, а также отправить запрос в виртуальную приемную к
+                                    ректору или другим сотрудникам и отделам университета.
                                 </p>
                             </div>
                         </div>
@@ -128,12 +128,11 @@ export const AboutPage = (): JSX.Element => {
                                         Планы на будущее <LoadingDots />
                                     </Title>
                                     <p>
-                                        Команда разработчиков планирует расширить функционал Mauverse, добавив возможность просмотра расписаний
-                                        преподавателей и аудиторий, а также интеграцию с курсами в ЭИОС. В будущем приложение станет универсальным
-                                        помощником, объединяющим студентов и преподавателей с ресурсами университета. Среди будущих функций –
-                                        навигатор по кампусам с текстовыми инструкциями для передвижения внутри зданий и между ними, встроенный
-                                        мессенджер для общения и ИИ ассистент для помощи с вопросами по университетским процедурам. Также планируется
-                                        Web3-интеграция, позволяющая использовать блокчейн и внутреннюю валюту для студентов.
+                                        В будущем приложение станет универсальным помощником, объединяющим студентов и преподавателей с ресурсами
+                                        университета. Среди будущих функций – навигатор по кампусам с текстовыми инструкциями для передвижения внутри
+                                        зданий и между ними, встроенный мессенджер для общения и ИИ ассистент для помощи с вопросами по
+                                        университетским процедурам. Также планируется Web3-интеграция, позволяющая использовать блокчейн и внутреннюю
+                                        валюту для студентов.
                                     </p>
                                 </div>
                             </div>
