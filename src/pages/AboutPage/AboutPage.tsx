@@ -1,9 +1,10 @@
 import { useRef } from 'react';
 import { BigButtonRow, Container, Title, LoadingDots, MetaHelmet } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowIcon } from './../../icons/ArrowIcon';
+import { ArrowIcon, EiosIcon, TimetableIcon, ServicesIcon, RoadmapIcon } from './../../icons';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutPage.module.css';
+import classnames from 'classnames';
 
 export const AboutPage = (): JSX.Element => {
     const sectionViewArea = useRef<HTMLDivElement>(null);
@@ -25,7 +26,7 @@ export const AboutPage = (): JSX.Element => {
     const introTextTransform = useTransform(springText, [0, 1], [0, 500]);
     const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 200]);
     const introImgTransform = useTransform(springIntroImg, [0, 1], [-250, 0]);
-    const skitImgTransform = useTransform(springSkitImg, [0, 1], [-250, 0]);
+    const skitImgTransform = useTransform(springSkitImg, [0, 1], [-300, 0]);
 
     return (
         <>
@@ -54,7 +55,7 @@ export const AboutPage = (): JSX.Element => {
                 >
                     <div className={styles.intro} ref={introViewArea}>
                         <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
-                            <ArrowIcon className={styles.icon} style={{ rotate: introArrowRotate }} ref={svgRef} />
+                            <ArrowIcon className={classnames(styles.icon, styles.arrow)} style={{ rotate: introArrowRotate }} ref={svgRef} />
                             <p>
                                 Mauverse было создано в рамках конкурса по разработке мобильных приложений, который проводился нашим университетом.
                                 Команда разработчиков из студентов и преподавателей, приняв участие в конкурсе, начала работу над приложением, чтобы
@@ -77,13 +78,13 @@ export const AboutPage = (): JSX.Element => {
 
                     <div className={styles.outro}>
                         <Title tag="h3">
-                            Основные возможности <LoadingDots />
+                            Базовые возможности <LoadingDots />
                         </Title>
 
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <ArrowIcon className={styles.icon} />
+                                    <EiosIcon className={styles.icon} />
                                 </div>
                                 <Title tag="h4">Интеграция ЭИОС</Title>
                                 <p>
@@ -93,7 +94,7 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <ArrowIcon className={styles.icon} />
+                                    <TimetableIcon className={styles.icon} />
                                 </div>
                                 <Title tag="h4">Расписание</Title>
                                 <p>
@@ -103,7 +104,7 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <ArrowIcon className={styles.icon} />
+                                    <ServicesIcon className={styles.icon} />
                                 </div>
                                 <Title tag="h4">Cервисы</Title>
                                 <p>
@@ -120,12 +121,12 @@ export const AboutPage = (): JSX.Element => {
                         <div className={styles.skit}>
                             <div className={styles.row}>
                                 <div className={styles.col}>
-                                    <motion.img className={styles.img} src="/plug.jpg" alt="plug" style={{ y: skitImgTransform, x: 0 }} />
+                                    <motion.img className={styles.img} src="/roadmap.png" alt="plug" style={{ y: skitImgTransform, x: 0 }} />
                                 </div>
                                 <div className={styles.col}>
-                                    <ArrowIcon className={styles.icon} />
+                                    <RoadmapIcon className={styles.icon} />
                                     <Title tag="h3">
-                                        Планы на будущее <LoadingDots />
+                                        Дорожная карта <LoadingDots />
                                     </Title>
                                     <p>
                                         В будущем приложение станет универсальным помощником, объединяющим студентов и преподавателей с ресурсами

@@ -29,7 +29,7 @@ export const Overlay = (): JSX.Element => {
         <div className={styles.overlay} ref={overlayViewArea}>
             <motion.img
                 className={styles.banner}
-                src="./plug.jpg"
+                src="./plug.png"
                 style={{ x: '-50%', y: y }}
                 transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
             />

@@ -46,10 +46,10 @@
 }
 
 .icon {
-    width: clamp(0.9em, 1.1vw, 1.1em);
+    width: clamp(1.6em, 2vw, 2.1em);
 }
 
-.icon g {
+.icon.arrow g {
     stroke: var(--text-primary-alpha);
 }
 
@@ -76,7 +76,7 @@
 
 .img {
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .special {
@@ -169,6 +169,7 @@
 
     .skitContainer {
         padding-top: calc(var(--section-padding) / 2);
+        padding-bottom: calc(var(--section-padding) / 10);
     }
 
     .skit .row {
