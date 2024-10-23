@@ -14,19 +14,13 @@ export const AboutPage = (): JSX.Element => {
 
     const scrollYSectionProgress = useScroll({ target: sectionViewArea, offset: ['start start', 'end end'] });
     const scrollYIntroImgProgress = useScroll({ target: introViewArea, offset: ['start end', 'end start'] });
-    const scrollYIntroTextProgress = useScroll({ target: sectionViewArea, offset: ['start start', 'end start'] });
-    const scrollYSkitProgress = useScroll({ target: skitViewArea, offset: ['start end', 'end start'] });
 
     const springArrowRotate = useMySpring(scrollYSectionProgress.scrollYProgress);
     const springIntroImg = useMySpring(scrollYIntroImgProgress.scrollYProgress);
-    const springText = useMySpring(scrollYIntroTextProgress.scrollYProgress);
-    const springSkitImg = useMySpring(scrollYSkitProgress.scrollYProgress);
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
-    const introTextTransform = useTransform(springText, [0, 1], [0, 500]);
-    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 200]);
-    const introImgTransform = useTransform(springIntroImg, [0, 1], [-250, 0]);
-    const skitImgTransform = useTransform(springSkitImg, [0, 1], [-300, 0]);
+    const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 150]);
+    const introImgTransform = useTransform(springIntroImg, [0, 1], [-150, 0]);
 
     return (
         <>
@@ -54,7 +48,7 @@ export const AboutPage = (): JSX.Element => {
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
                     <div className={styles.intro} ref={introViewArea}>
-                        <motion.div className={styles.col} style={{ y: introTextTransform, x: 0 }}>
+                        <motion.div className={styles.col}>
                             <ArrowIcon className={classnames(styles.icon, styles.arrow)} style={{ rotate: introArrowRotate }} ref={svgRef} />
                             <p>
                                 Mauverse было создано в рамках конкурса по разработке мобильных приложений, который проводился нашим университетом.
@@ -62,17 +56,17 @@ export const AboutPage = (): JSX.Element => {
                                 предложить инновационное решение для повседневных задач, с которыми сталкиваются студенты и сотрудники университета.
                             </p>
                             <p>
-                                Приложение Mauverse ориентировано как на студентов, так и на преподавателей университета. Студенты смогут получать
-                                доступ к расписанию, информационным ресурсам и контактам преподавателей, а также отслеживать свою академическую
-                                успеваемость. Преподаватели получат доступ к аналогичным функциям, а также смогут управлять своими курсами и
-                                взаимодействовать с учебной группой через уведомления и встроенный мессенджер.
+                                Приложение ориентировано как на студентов, так и на преподавателей университета. Студенты смогут получать доступ к
+                                расписанию, информационным ресурсам и контактам преподавателей, а также отслеживать свою академическую успеваемость.
+                                Преподаватели получат доступ к аналогичным функциям, а также смогут управлять своими курсами и взаимодействовать с
+                                учебной группой через уведомления и встроенный мессенджер.
                             </p>
                             <p className={styles.special}>
-                                разработка <LoadingDots />
+                                <LoadingDots />
                             </p>
                         </motion.div>
                         <div className={styles.col}>
-                            <motion.img className={styles.img} src="/plug.jpg" alt="plug" style={{ y: introImgTransform, x: 0 }} />
+                            <motion.img className={styles.img} src="/img.webp" alt="plug" style={{ y: introImgTransform, x: 0 }} />
                         </div>
                     </div>
 
@@ -121,7 +115,7 @@ export const AboutPage = (): JSX.Element => {
                         <div className={styles.skit}>
                             <div className={styles.row}>
                                 <div className={styles.col}>
-                                    <motion.img className={styles.img} src="/roadmap.png" alt="plug" style={{ y: skitImgTransform, x: 0 }} />
+                                    <img className={styles.img} src="/roadmap.webp" alt="plug" />
                                 </div>
                                 <div className={styles.col}>
                                     <RoadmapIcon className={styles.icon} />

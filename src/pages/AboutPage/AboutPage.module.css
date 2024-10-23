@@ -46,7 +46,7 @@
 }
 
 .icon {
-    width: clamp(1.6em, 2vw, 2.1em);
+    width: clamp(1.6em, 2vw, 1.9em);
 }
 
 .icon.arrow g {
@@ -60,13 +60,13 @@
 }
 
 .intro .col:first-child {
-    width: 40%;
+    width: 50%;
     padding-right: calc(var(--gap-padding) * 4);
     padding-left: calc(var(--gap-padding) * 4);
 }
 
 .intro .col:last-child {
-    width: 60%;
+    width: 50%;
     overflow: hidden;
 }
 
@@ -136,14 +136,12 @@
 }
 
 .skit .col:first-child {
+    display: flex;
+    align-items: center;
     position: relative;
     overflow: hidden;
     padding-right: calc(var(--gap-padding) * 4);
     order: 1;
-}
-
-.skit .col:first-child .img {
-    height: 140%;
 }
 
 @media screen and (max-width: 780px) {
