@@ -20,7 +20,7 @@ export const AboutPage = (): JSX.Element => {
 
     const backgroundTransform = useTransform(scrollYSectionProgress.scrollYProgress, [0, 1], ['#ffffff', '#e9eaeb']);
     const introArrowRotate = useTransform(springArrowRotate, [0, 1], [0, 150]);
-    const introImgTransform = useTransform(springIntroImg, [0, 1], [-150, 0]);
+    const introImgTransform = useTransform(springIntroImg, [0, 1], [-200, 0]);
 
     return (
         <>
@@ -78,7 +78,7 @@ export const AboutPage = (): JSX.Element => {
                         <div className={styles.row}>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <EiosIcon className={styles.icon} />
+                                    <ArrowIcon className={classnames(styles.icon, styles.arrow)} />
                                 </div>
                                 <Title tag="h4">Интеграция ЭИОС</Title>
                                 <p>
@@ -88,7 +88,7 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <TimetableIcon className={styles.icon} />
+                                    <ArrowIcon className={classnames(styles.icon, styles.arrow)} />
                                 </div>
                                 <Title tag="h4">Расписание</Title>
                                 <p>
@@ -98,7 +98,7 @@ export const AboutPage = (): JSX.Element => {
                             </div>
                             <div className={styles.col}>
                                 <div className={styles.stripe}>
-                                    <ServicesIcon className={styles.icon} />
+                                    <ArrowIcon className={classnames(styles.icon, styles.arrow)} />
                                 </div>
                                 <Title tag="h4">Cервисы</Title>
                                 <p>
@@ -118,7 +118,7 @@ export const AboutPage = (): JSX.Element => {
                                     <img className={styles.img} src="/roadmap.webp" alt="plug" />
                                 </div>
                                 <div className={styles.col}>
-                                    <RoadmapIcon className={styles.icon} />
+                                    {/* <RoadmapIcon className={styles.icon} /> */}
                                     <Title tag="h3">
                                         Дорожная карта <LoadingDots />
                                     </Title>

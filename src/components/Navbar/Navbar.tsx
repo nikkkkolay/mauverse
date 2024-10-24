@@ -14,7 +14,7 @@ export const Navbar = forwardRef((_props, ref: Ref<HTMLDivElement>): JSX.Element
     return (
         <nav className={styles.nav} ref={ref}>
             <a href="https://mauniver.ru" target="_blank">
-                {location.pathname === '/contacts' || location.pathname === '/' ? (
+                {location.pathname === '/contacts' ? (
                     <>
                         <img className={styles.logoFull} src="/logo_rus_full_white_H.png" alt="Лого МАУ" />
                         <img className={styles.logoAbb} src="/logo_rus_abb_white_H.png" alt="Лого МАУ" />
