@@ -32,6 +32,7 @@ body {
     z-index: 20;
 
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 
