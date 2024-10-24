@@ -27,8 +27,8 @@
 }
 
 .titleContainer img {
-    min-width: clamp(2.4rem, 5vw, 5rem);
-    height: clamp(2.4rem, 5vw, 5rem);
+    min-width: clamp(2.4rem, 10vw, 3.8rem);
+    height: clamp(2.4rem, 10vw, 3.8rem);
 }
 
 .arrow {
