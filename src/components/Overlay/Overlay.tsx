@@ -3,21 +3,17 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import classnames from 'classnames';
 import { Ticker } from '..';
 import { LabelIcon } from './LabelIcon';
-import { ArrowIcon } from '../../icons';
 import { useMySpring } from '../../hooks/useMySpring';
 import { useLayoutLoading } from '../../store/useLayoutLoading';
 import styles from './Overlay.module.css';
 
 export const Overlay = (): JSX.Element => {
-    const svgRef = useRef<SVGAElement>(null);
     const overlayViewArea = useRef<HTMLDivElement>(null);
     const { reloaded } = useLayoutLoading(state => state);
-
     const { scrollYProgress } = useScroll({ target: overlayViewArea, offset: ['start start', 'end start'] });
 
     const spring = useMySpring(scrollYProgress);
 
-    const rotate = useTransform(spring, [0, 1], [0, 40]);
     const y = useTransform(spring, [0, 1], [0, 200]);
 
     useEffect(() => {
@@ -27,12 +23,18 @@ export const Overlay = (): JSX.Element => {
 
     return (
         <div className={styles.overlay} ref={overlayViewArea}>
-            <motion.img
-                className={styles.banner}
-                src="./plug.png"
-                style={{ x: '-50%', y: y }}
-                transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
-            />
+            <picture>
+                <source media="(max-width: 540px)" srcSet="./banner-sm.webp" />
+                <source media="(min-width: 540px)" srcSet="./banner.webp" />
+                <motion.img
+                    className={styles.banner}
+                    src="./banner.webp"
+                    alt="Banner"
+                    style={{ x: '-50%', y: y }}
+                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                />
+            </picture>
+
             <div className={styles.container}>
                 <motion.div
                     className={classnames(styles.row, styles.about)}
@@ -46,12 +48,6 @@ export const Overlay = (): JSX.Element => {
                         </div>
                         <LabelIcon className={styles.labelIcon} />
                     </a>
-                    <div className={styles.col}>
-                        <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
-                        <h1>
-                            <span> Платформа </span> для студентов и преподавателей
-                        </h1>
-                    </div>
                 </motion.div>
                 <motion.div
                     className={classnames(styles.row, styles.name)}

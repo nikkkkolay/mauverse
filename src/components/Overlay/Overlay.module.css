@@ -85,9 +85,6 @@
 .label .wrapper {
     position: absolute;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
     padding-left: calc(var(--gap-padding) * 1.5);
 }
 
@@ -111,10 +108,11 @@
 @media screen and (max-width: 780px) {
     .about {
         position: static;
-        padding-left: calc(var(--gap-padding) * 1.5);
-        padding-right: calc(var(--gap-padding) * 1.5);
-        padding-bottom: calc(var(--vh, 1vh) * 4);
         order: 2;
+    }
+
+    .container {
+        height: 98%;
     }
 
     .arrow {
@@ -123,14 +121,15 @@
 
     .name {
         order: 1;
-        padding-bottom: calc(var(--gap-padding) * 3);
+        padding-bottom: calc(var(--gap-padding) * 2);
     }
 
     .about h1 {
         padding-right: 0;
     }
 
-    .label {
-        display: none;
+    .label .labelIcon {
+        height: 6em;
     }
+
 }

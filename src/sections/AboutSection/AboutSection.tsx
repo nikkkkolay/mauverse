@@ -32,7 +32,7 @@ export const AboutSection = (): JSX.Element => {
     return (
         <section className={styles.section} ref={sectionViewArea}>
             <Container className={styles.container}>
-                <motion.div className={styles.col} ref={columnViewArea}>
+                <h1 className={styles.col} ref={columnViewArea}>
                     {text.split(' ').map((p, i) => (
                         <motion.span className={styles.text} key={p + i}>
                             <motion.span variants={variants} initial="hidden" animate={isInView && 'visible'} className={styles.textInner}>
@@ -41,7 +41,7 @@ export const AboutSection = (): JSX.Element => {
                             {'\u00A0'}
                         </motion.span>
                     ))}
-                </motion.div>
+                </h1>
                 <div className={styles.col}>
                     <p>
                         Приложение предназначено для студентов и преподавателей нашего университета и предоставляет все необходимые инструменты для

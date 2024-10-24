@@ -23,6 +23,7 @@
 .col:nth-child(1) {
     width: 70%;
     padding-right: calc(var(--gap-padding) * 1.5);
+    font-weight: 400;
 }
 
 .col:nth-child(2) {
