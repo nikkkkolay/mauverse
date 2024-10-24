@@ -19,9 +19,9 @@ export const ContactsPage = (): JSX.Element => {
                         <Title tag="h1">
                             <span>
                                 <img src="./logo.svg" alt="Логотип MAUverse" />
-                                Напишите
+                                Оставьте
                             </span>
-                            <span>и оставьте обратную связь</span>
+                            <span>обратную связь</span>
                         </Title>
 
                         <ArrowIcon className={styles.arrow} />

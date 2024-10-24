@@ -32,10 +32,7 @@ export const AboutPage = (): JSX.Element => {
                     animate={{ y: 0 }}
                     transition={{ duration: 1.8, delay: 0.4, ease: [0.33, 1, 0.68, 1] }}
                 >
-                    <Title tag="h1">
-                        Мобильное приложение
-                        <div>для студентов и преподавателей</div>
-                    </Title>
+                    <Title tag="h1">Платформа для студентов и преподавателей</Title>
                     <BigButtonRow stripe className={styles.buttonRow}>
                         <img className={styles.logo} src="./logo.svg" alt="Логотип MAUverse" />
                     </BigButtonRow>

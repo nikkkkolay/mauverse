@@ -14,7 +14,10 @@
 
 .titleContainer {
     position: relative;
-    padding-bottom: calc(var(--section-padding) / 3);
+}
+
+.buttonRow {
+    padding: calc(var(--section-padding) / 1.8) 0;
 }
 
 .titleContainer span {
@@ -25,8 +28,8 @@
 }
 
 .titleContainer img {
-    min-width: clamp(2.4rem, 10vw, 3.8rem);
-    height: clamp(2.4rem, 10vw, 3.8rem);
+    min-width: clamp(2.4rem, 10vw, 4.2rem);
+    height: clamp(2.4rem, 10vw, 4.2rem);
 }
 
 .arrow {
@@ -41,7 +44,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding-top: calc(var(--section-padding) / 3);
 }
 
 .link {
@@ -54,15 +56,11 @@
         padding-bottom: calc(var(--section-padding) / 3);
     }
 
-    .titleContainer {
-        padding-bottom: calc(var(--section-padding) / 2.5);
+    .buttonRow {
+        padding: calc(var(--section-padding) / 1.6) 0;
     }
 
     .link {
         max-width: 100%;
-    }
-
-    .row {
-        padding-top: calc(var(--section-padding) / 2.5);
     }
 }

@@ -23,13 +23,13 @@ export const ContactSection = (): JSX.Element => {
                     <Title tag="h2">
                         <span>
                             <img src="/logo.svg" alt="Логотип MAUverse" />
-                            Напишите
+                            Оставьте
                         </span>
-                        <span>и оставьте обратную связь</span>
+                        <span>обратную связь</span>
                     </Title>
                     <ArrowIcon className={styles.arrow} ref={svgRef} style={{ rotate }} />
                 </div>
-                <BigButtonRow stripe style={{ right: toRight }}>
+                <BigButtonRow stripe style={{ right: toRight }} className={styles.buttonRow}>
                     <Button fill onClick={() => navigate('/contacts')}>
                         Контакты
                     </Button>
