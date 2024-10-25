@@ -38,7 +38,6 @@ export const AboutSection = (): JSX.Element => {
                             <motion.span variants={variants} initial="hidden" animate={isInView && 'visible'} className={styles.textInner}>
                                 {p}
                             </motion.span>
-                            {'\u00A0'}
                         </motion.span>
                     ))}
                 </h1>

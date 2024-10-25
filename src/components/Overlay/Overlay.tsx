@@ -24,8 +24,8 @@ export const Overlay = (): JSX.Element => {
     return (
         <div className={styles.overlay} ref={overlayViewArea}>
             <picture>
-                <source media="(max-width: 540px)" srcSet="./banner-sm.webp" />
-                <source media="(min-width: 540px)" srcSet="./banner.webp" />
+                <source media="(max-width: 780px)" srcSet="./banner-sm.webp" />
+                <source media="(min-width: 780px)" srcSet="./banner.webp" />
                 <motion.img
                     className={styles.banner}
                     src="./banner.webp"
