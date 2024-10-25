@@ -58,9 +58,6 @@ export const AboutPage = (): JSX.Element => {
                                 Преподаватели получат доступ к аналогичным функциям, а также смогут управлять своими курсами и взаимодействовать с
                                 учебной группой через уведомления и встроенный мессенджер.
                             </p>
-                            <p className={styles.special}>
-                                <LoadingDots />
-                            </p>
                         </motion.div>
                         <div className={styles.col}>
                             <motion.img className={styles.img} src="/img.webp" alt="plug" style={{ y: introImgTransform, x: 0 }} />
