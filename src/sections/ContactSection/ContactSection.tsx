@@ -31,7 +31,7 @@ export const ContactSection = (): JSX.Element => {
                 </div>
                 <BigButtonRow stripe style={{ right: toRight }} className={styles.buttonRow}>
                     <Button fill onClick={() => navigate('/contacts')}>
-                        Контакты
+                        Написать
                     </Button>
                 </BigButtonRow>
                 <div className={styles.row}>

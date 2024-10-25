@@ -14,7 +14,7 @@ export const Overlay = (): JSX.Element => {
 
     const spring = useMySpring(scrollYProgress);
 
-    const y = useTransform(spring, [0, 1], [0, 200]);
+    const y = useTransform(spring, [0, 1], [0, 300]);
 
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
@@ -22,42 +22,38 @@ export const Overlay = (): JSX.Element => {
     }, []);
 
     return (
-        <div className={styles.overlay} ref={overlayViewArea}>
+        <motion.div
+            className={styles.overlay}
+            ref={overlayViewArea}
+            initial={{ y: 300 }}
+            animate={{ y: 0 }}
+            transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+        >
             <picture>
                 <source media="(max-width: 780px)" srcSet="./banner-sm.webp" />
                 <source media="(min-width: 780px)" srcSet="./banner.webp" />
                 <motion.img
                     className={styles.banner}
                     src="./banner.webp"
-                    alt="Banner"
+                    alt="Баннер рука держит телефон с мобильным приложением"
                     style={{ x: '-50%', y: y }}
                     transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
                 />
             </picture>
 
             <div className={styles.container}>
-                <motion.div
-                    className={classnames(styles.row, styles.about)}
-                    initial={{ y: 300 }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                >
+                <div className={classnames(styles.row, styles.about)}>
                     <a className={styles.label} href="https://www.mauniver.ru/files/mauverse-v0.8.apk">
                         <div className={styles.wrapper}>
                             <p>{`Скачать APK >>`}</p>
                         </div>
                         <LabelIcon className={styles.labelIcon} />
                     </a>
-                </motion.div>
-                <motion.div
-                    className={classnames(styles.row, styles.name)}
-                    initial={{ y: 300 }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                >
+                </div>
+                <div className={classnames(styles.row, styles.name)}>
                     <Ticker baseVelocity={5}>MAUverse —</Ticker>
-                </motion.div>
+                </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
