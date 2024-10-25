@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { BigButtonRow, Container, Title, LoadingDots, MetaHelmet } from '../../components';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowIcon, EiosIcon, TimetableIcon, ServicesIcon, RoadmapIcon } from './../../icons';
+import { ArrowIcon } from './../../icons';
 import { useMySpring } from '../../hooks/useMySpring';
 import styles from './AboutPage.module.css';
 import classnames from 'classnames';

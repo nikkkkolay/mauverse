@@ -1,12 +1,12 @@
 .hTag {
-    font-size: clamp(2.2rem, 8.5vw, 4.8rem);
+    font-size: clamp(2.2rem, 9vw, 4.8rem);
     line-height: 1.1;
     text-wrap: balance;
     font-weight: 400;
 }
 
 .h2 {
-    font-size: clamp(2.2rem, 8.5vw, 4.8rem);
+    font-size: clamp(2.2rem, 9vw, 4.8rem);
 }
 
 .h3 {
