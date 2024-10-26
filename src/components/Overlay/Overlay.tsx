@@ -14,7 +14,7 @@ export const Overlay = (): JSX.Element => {
 
     const spring = useMySpring(scrollYProgress);
 
-    const y = useTransform(spring, [0, 1], [0, 300]);
+    const y = useTransform(spring, [0, 1], [0, 150]);
 
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
@@ -37,17 +37,17 @@ export const Overlay = (): JSX.Element => {
             ref={overlayViewArea}
             initial={{ y: 300 }}
             animate={{ y: 0 }}
-            transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+            transition={{ duration: 1.5, delay: reloaded ? 1.8 : 0.6, ease: [0.33, 1, 0.68, 1] }}
         >
             <picture>
-                <source media="(max-width: 780px)" srcSet="./banner-sm.webp" />
-                <source media="(min-width: 780px)" srcSet="./banner.webp" />
+                <source media="(min-width: 780px)" srcSet="/banner.webp" />
+                <source media="(max-width: 780px)" srcSet="/banner-sm.webp" />
                 <motion.img
                     className={styles.banner}
-                    src="./banner.webp"
+                    src="/banner.webp"
                     alt="Баннер рука держит телефон с мобильным приложением"
                     style={{ x: '-50%', y: isMobile ? 0 : y }}
-                    transition={{ duration: reloaded ? 3 : 1.5, delay: 0.6, ease: [0.33, 1, 0.68, 1] }}
+                    loading="eager"
                 />
             </picture>
 
@@ -55,7 +55,7 @@ export const Overlay = (): JSX.Element => {
                 <div className={classnames(styles.row, styles.about)}>
                     <a className={styles.label} href="https://www.mauniver.ru/files/mauverse-v0.8.apk">
                         <div className={styles.wrapper}>
-                            <p>{`Скачать APK >>`}</p>
+                            <p>{`Скачать >>`}</p>
                         </div>
                         <LabelIcon className={styles.labelIcon} />
                     </a>

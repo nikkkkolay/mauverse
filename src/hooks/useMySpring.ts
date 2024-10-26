@@ -1,11 +1,10 @@
 import { useSpring, MotionValue } from 'framer-motion';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export const useMySpring = (value: MotionValue<number>, stiffness: number = 80, damping: number = 25) => {
-    const [isMobile, setIsMobile] = useState(typeof window !== 'undefined' && window.innerWidth <= 780);
-    const springValue = useSpring(value, { stiffness, damping });
+export const useMySpring = (value: MotionValue<number>, stiffness: number = 100, damping: number = 30, mass: number = 1) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 780);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 780);
         };
@@ -14,5 +13,8 @@ export const useMySpring = (value: MotionValue<number>, stiffness: number = 80, 
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    return isMobile ? value : springValue;
+    const mobileSettings = isMobile ? { stiffness: 200, damping: 40, mass: 0.8 } : { stiffness, damping, mass };
+    const springValue = useSpring(value, mobileSettings);
+
+    return springValue;
 };

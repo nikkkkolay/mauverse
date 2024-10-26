@@ -3,13 +3,7 @@
   src: url('Montserrat-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-LightItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,6 +11,7 @@
   src: url('Montserrat-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,13 +19,7 @@
   src: url('Montserrat-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -38,13 +27,7 @@
   src: url('Montserrat-SemiBold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -52,13 +35,7 @@
   src: url('Montserrat-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -66,13 +43,7 @@
   src: url('Montserrat-ExtraBold.ttf') format('truetype');
   font-weight: 800;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
@@ -80,11 +51,5 @@
   src: url('Montserrat-Black.ttf') format('truetype');
   font-weight: 900;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src: url('Montserrat-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
+  font-display: swap;
 }

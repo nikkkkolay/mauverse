@@ -6,13 +6,26 @@
     background-color: var(--bg-primary-gamma);
     color: var(--text-primary-alpha);
     width: 100%;
+    height: calc(100vh - 100px);
 }
 
 .header {
-    padding-top: calc(var(--section-padding) / 1.5);
-    padding-bottom: calc(var(--section-padding) / 3);
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .buttonRow {
     padding: calc(var(--section-padding) / 1.5) 0;
+}
+
+@media screen and (max-width: 780px) {
+
+    .header {
+        padding-top: var(--section-padding);
+        padding-bottom: calc(var(--section-padding) / 3);
+    }
+
+    .sectionContainer {
+        height: initial;
+    }
 }
