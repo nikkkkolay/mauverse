@@ -44,6 +44,7 @@
 
 .content {
 	padding-top: 0;
+	padding-bottom: calc(var(--section-padding) / 2);
 }
 
 .content ul,
@@ -60,6 +61,7 @@
 	font-weight: 300;
 	padding: 0;
 	margin-top: 0;
+	margin-bottom: 1.2rem;
 }
 
 .content ul,
@@ -108,8 +110,16 @@
 		padding-bottom: 0;
 	}
 
+	.content {
+		padding-bottom: calc(var(--section-padding) / 3);
+	}
+
 	.images img:first-child {
 		margin-top: 1rem;
+	}
+
+	.buttonRow {
+		padding: calc(var(--section-padding) / 1.9) 0;
 	}
 
 }
