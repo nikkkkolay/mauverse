@@ -85,7 +85,7 @@
 .label .wrapper {
     position: absolute;
     left: 0;
-    padding-left: calc(var(--gap-padding) * 2.3);
+    padding-left: calc(var(--gap-padding) * 1.5);
 }
 
 .label .wrapper p {
@@ -93,7 +93,7 @@
     transition: all .6s ease;
     line-height: 1;
     font-weight: 500;
-    font-size: 1.13em;
+    font-size: 1.12em;
 }
 
 .label:hover .wrapper p {

@@ -55,7 +55,7 @@ export const Overlay = (): JSX.Element => {
                 <div className={classnames(styles.row, styles.about)}>
                     <a className={styles.label} href="https://www.mauniver.ru/files/mauverse-v0.8.apk">
                         <div className={styles.wrapper}>
-                            <p>{`Скачать >>`}</p>
+                            <p>{`Загрузить >>`}</p>
                         </div>
                         <LabelIcon className={styles.labelIcon} />
                     </a>
