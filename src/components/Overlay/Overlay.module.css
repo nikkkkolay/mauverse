@@ -92,8 +92,7 @@
     display: inline-block;
     transition: all .6s ease;
     line-height: 1;
-    font-weight: 500;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 .label:hover .wrapper p {
