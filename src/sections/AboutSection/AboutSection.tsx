@@ -15,7 +15,7 @@ const variants = {
     },
 };
 
-const text = 'MAUverse — это современное мобильное приложение, разработанное для повышения удобства и качества образовательного процесса';
+const text = 'MAUverse — это продвинутое мобильное приложение, созданное для повышения удобства и качества образовательного процесса';
 
 export const AboutSection = (): JSX.Element => {
     const columnViewArea = useRef<HTMLDivElement>(null);
